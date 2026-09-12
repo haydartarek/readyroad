@@ -81,9 +81,9 @@ public class LearningNotificationWorker {
                 // Channel preference is checked again immediately before sending.
                 jdbc.update("""
                         INSERT INTO learning_notification_deliveries(outbox_id, channel, recipient_key)
-                        SELECT ?, 'EMAIL', 'email' FROM learning_notification_preferences p
-                        JOIN users u ON u.id = p.user_id
-                        WHERE p.user_id = ? AND p.email_enabled AND u.email_verified
+                        SELECT ?, 'EMAIL', 'email' FROM users u
+                        LEFT JOIN learning_notification_preferences p ON p.user_id = u.id
+                        WHERE u.id = ? AND COALESCE(p.email_enabled, TRUE)
                         AND u.is_active AND u.role = 'USER'
                         ON CONFLICT DO NOTHING
                         """, id, userId);

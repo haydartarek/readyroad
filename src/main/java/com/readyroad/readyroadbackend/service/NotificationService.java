@@ -567,6 +567,16 @@ public class NotificationService {
     }
 
     private void save(Notification notification) {
+        boolean learningNotification = switch (notification.getType()) {
+            case EXAM_PASSED, EXAM_FAILED, EXAM_RESULT, STREAK_ACHIEVED, WEAK_AREA,
+                    ACHIEVEMENT, STUDY_REMINDER, LESSON_PROGRESS, NEXT_STEP -> true;
+            default -> false;
+        };
+        if (learningNotification) {
+            User recipient = userRepository.findById(notification.getUserId()).orElse(null);
+            if (recipient == null || recipient.getRole() != Role.USER
+                    || !Boolean.TRUE.equals(recipient.getIsActive())) return;
+        }
         if (notification.getCreatedAt() == null) {
             notification.setCreatedAt(Instant.now());
         }

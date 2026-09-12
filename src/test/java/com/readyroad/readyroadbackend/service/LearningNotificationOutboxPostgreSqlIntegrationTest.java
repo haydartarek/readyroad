@@ -126,4 +126,20 @@ class LearningNotificationOutboxPostgreSqlIntegrationTest {
         verify(transport, times(1)).send(eq("PUSH"), eq(subscriptionId), any());
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM notifications", Integer.class)).isEqualTo(1);
     }
+
+    @Test
+    void queuesEmailByDefaultForUnverifiedLearnerWithoutPreference() {
+        jdbc.update("UPDATE users SET email_verified = FALSE WHERE id = 1");
+        worker.materialize(enqueue());
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM learning_notification_deliveries WHERE channel='EMAIL'",
+                Integer.class)).isEqualTo(1);
+    }
+
+    @Test
+    void explicitEmailOptOutStillPreventsDelivery() {
+        jdbc.update("INSERT INTO learning_notification_preferences(user_id, email_enabled) VALUES (1, FALSE)");
+        worker.materialize(enqueue());
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM learning_notification_deliveries WHERE channel='EMAIL'",
+                Integer.class)).isZero();
+    }
 }

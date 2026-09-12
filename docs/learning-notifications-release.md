@@ -38,8 +38,11 @@ into the new candidate environment. The file must be root-owned mode 0600;
 only the five notification settings above are accepted. The current release
 and rollback environment are not edited. Keep this file out of Git and logs.
 
-Learners must explicitly opt in. Email requires a verified address. Push also
-requires browser permission and HTTPS (localhost is supported for testing).
+Active learner accounts receive email by default without email confirmation.
+An existing explicit email opt-out is respected. Admin and moderator accounts
+do not receive learning notifications. Push registration runs automatically for
+learner sessions with permission; otherwise it requests browser permission on
+the next user interaction. HTTPS is required.
 Disabling a subscription stops this browser's delivery even during API failure.
 No real messages were sent by the unit tests. Crypto tests generate ephemeral
 test keys only. Configuring keys is not evidence of successful delivery.
@@ -50,10 +53,10 @@ test keys only. Configuring keys is not evidence of successful delivery.
    LearningNotificationOutboxPostgreSqlIntegrationTest.
 2. Verify concurrent reminder deduplication, transaction rollback, persistence
    retry and independent email/Push retries in PostgreSQL.
-3. Targeted quiz forms, notification context/panel, channel settings and worker tests.
+3. Targeted quiz forms, notification context/panel, automatic Push enrollment and worker tests.
 4. TypeScript, scoped ESLint and git diff --check.
-5. On localhost:3000, verify opted-out state, opt-in, browser permission denial,
-   successful email/Push receipt, opt-out, logout and all four locales.
+5. Verify automatic email enrollment, browser permission denial, successful
+   email/Push receipt, existing opt-out, logout and all four locales.
 6. Release/CI/deployment is authorized by the Owner; execute only after validation.
 
 ## Rollback

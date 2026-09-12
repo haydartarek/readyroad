@@ -79,9 +79,9 @@ public class LearningNotificationTransport {
         String body = localizedMessage(notification, locale);
         if ("EMAIL".equals(channel)) {
             boolean optedIn = Boolean.TRUE.equals(jdbc.queryForObject("""
-                    SELECT EXISTS(SELECT 1 FROM learning_notification_preferences WHERE user_id = ? AND email_enabled)
+                    SELECT COALESCE((SELECT email_enabled FROM learning_notification_preferences WHERE user_id = ?), TRUE)
                     """, Boolean.class, user.getId()));
-            if (!optedIn || !Boolean.TRUE.equals(user.getEmailVerified())) return false;
+            if (!optedIn) return false;
             if (!emailAvailable()) throw new IllegalStateException("Email delivery not configured");
             var message = new SimpleMailMessage();
             message.setFrom(from); message.setTo(user.getEmail()); message.setSubject("RijVia");

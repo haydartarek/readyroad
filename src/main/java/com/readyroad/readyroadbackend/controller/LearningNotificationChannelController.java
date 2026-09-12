@@ -36,12 +36,11 @@ public class LearningNotificationChannelController {
     public Map<String, Object> settings(@AuthenticationPrincipal UserDetails principal) {
         long userId = userId(principal);
         boolean optedIn = enabled && Boolean.TRUE.equals(jdbc.queryForObject("""
-                SELECT EXISTS(SELECT 1 FROM learning_notification_preferences WHERE user_id = ? AND email_enabled)
+                SELECT COALESCE((SELECT email_enabled FROM learning_notification_preferences WHERE user_id = ?), TRUE)
                 """, Boolean.class, userId));
         var user = users.findById(userId).orElseThrow();
         boolean learner = user.getRole() == com.readyroad.readyroadbackend.domain.enums.Role.USER;
-        boolean verified = Boolean.TRUE.equals(user.getEmailVerified());
-        return Map.of("emailEnabled", optedIn, "emailAvailable", enabled && learner && verified && transport.emailAvailable(),
+        return Map.of("emailEnabled", enabled && learner && optedIn, "emailAvailable", enabled && learner && transport.emailAvailable(),
                 "pushAvailable", enabled && learner && transport.pushAvailable(),
                 "publicKey", enabled ? transport.publicKey() : "");
     }
@@ -51,8 +50,7 @@ public class LearningNotificationChannelController {
     public void email(@AuthenticationPrincipal UserDetails principal, @RequestBody EmailPreference request) {
         long userId = userId(principal);
         requireLearner(userId);
-        if (!enabled || (request.enabled() && (!transport.emailAvailable()
-                || !Boolean.TRUE.equals(users.findById(userId).orElseThrow().getEmailVerified()))))
+        if (!enabled || (request.enabled() && !transport.emailAvailable()))
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Email notifications are not available");
         jdbc.update("""
                 INSERT INTO learning_notification_preferences(user_id, email_enabled) VALUES (?, ?)

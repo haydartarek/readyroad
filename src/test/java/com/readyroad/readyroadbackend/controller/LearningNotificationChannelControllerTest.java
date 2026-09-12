@@ -47,4 +47,16 @@ class LearningNotificationChannelControllerTest {
                 .satisfies(error -> assertThat(((ResponseStatusException) error).getStatusCode().value()).isEqualTo(403));
         verifyNoInteractions(jdbc);
     }
+
+    @Test
+    void unverifiedLearnerCanReceiveEmailWithoutConfirmation() {
+        User user = learner(); user.setEmailVerified(false);
+        when(transport.emailAvailable()).thenReturn(true);
+        when(transport.publicKey()).thenReturn("");
+        when(jdbc.queryForObject(anyString(), eq(Boolean.class), eq(7L))).thenReturn(true);
+        assertThat(controller.settings(user)).containsEntry("emailEnabled", true)
+                .containsEntry("emailAvailable", true);
+        controller.email(user, new LearningNotificationChannelController.EmailPreference(true));
+        verify(jdbc).update(contains("INSERT INTO learning_notification_preferences"), eq(7L), eq(true));
+    }
 }

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class LearningNotificationTransportTest {
     @org.junit.jupiter.params.ParameterizedTest
     @org.junit.jupiter.params.provider.ValueSource(strings = {"ar", "nl", "fr", "en"})
-    void emailUsesTheLearnersLocaleAndCanonicalRoute(String locale) throws Exception {
+    void unverifiedLearnerEmailUsesLocaleAndCanonicalRoute(String locale) throws Exception {
         var jdbc = org.mockito.Mockito.mock(org.springframework.jdbc.core.JdbcTemplate.class);
         var users = org.mockito.Mockito.mock(com.readyroad.readyroadbackend.domain.repository.UserRepository.class);
         var mail = org.mockito.Mockito.mock(org.springframework.mail.javamail.JavaMailSender.class);
@@ -17,7 +17,7 @@ class LearningNotificationTransportTest {
         org.springframework.test.util.ReflectionTestUtils.setField(transport, "from", "sender@example.test");
         org.springframework.test.util.ReflectionTestUtils.setField(transport, "siteUrl", "https://rijvia.be");
         var user = new com.readyroad.readyroadbackend.domain.entity.User();
-        user.setId(1L); user.setPreferredLanguage(locale); user.setEmail("learner@example.test"); user.setEmailVerified(true);
+        user.setId(1L); user.setPreferredLanguage(locale); user.setEmail("learner@example.test"); user.setEmailVerified(false);
         org.mockito.Mockito.when(users.findById(1L)).thenReturn(java.util.Optional.of(user));
         org.mockito.Mockito.when(jdbc.queryForObject(org.mockito.ArgumentMatchers.anyString(),
                 org.mockito.ArgumentMatchers.eq(Boolean.class), org.mockito.ArgumentMatchers.eq(1L))).thenReturn(true);

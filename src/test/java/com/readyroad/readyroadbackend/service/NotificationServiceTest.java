@@ -17,6 +17,29 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class NotificationServiceTest {
     @Mock private LearningNotificationOutbox outbox;
 
+    @org.junit.jupiter.api.BeforeEach
+    void learnerAccount() {
+        var user = new com.readyroad.readyroadbackend.domain.entity.User();
+        user.setId(17L);
+        user.setRole(com.readyroad.readyroadbackend.domain.enums.Role.USER);
+        user.setIsActive(true);
+        org.mockito.Mockito.lenient().when(userRepository.findById(17L))
+                .thenReturn(java.util.Optional.of(user));
+    }
+
+    @org.junit.jupiter.params.ParameterizedTest
+    @org.junit.jupiter.params.provider.EnumSource(value = com.readyroad.readyroadbackend.domain.enums.Role.class,
+            names = {"ADMIN", "MODERATOR"})
+    void staffDoNotReceiveLearningNotifications(com.readyroad.readyroadbackend.domain.enums.Role role) {
+        var user = new com.readyroad.readyroadbackend.domain.entity.User();
+        user.setId(17L); user.setRole(role); user.setIsActive(true);
+        org.mockito.Mockito.when(userRepository.findById(17L)).thenReturn(java.util.Optional.of(user));
+        notificationService.createStudyReminderNotification(17L, "Study", "Return to study", 1);
+        notificationService.createExamPassedNotification(17L, 12L, 41, 50);
+        notificationService.createLessonProgressNotification(17L, "Lesson", "درس", "Les", "Leçon");
+        org.mockito.Mockito.verifyNoInteractions(outbox, notificationRepository);
+    }
+
     @Test
     void defersPersistenceToDurableOutboxWhenEnabled() {
         org.springframework.test.util.ReflectionTestUtils.setField(notificationService, "outboxEnabled", true);
