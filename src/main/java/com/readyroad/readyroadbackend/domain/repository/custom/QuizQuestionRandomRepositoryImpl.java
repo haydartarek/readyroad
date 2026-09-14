@@ -152,6 +152,14 @@ public class QuizQuestionRandomRepositoryImpl implements QuizQuestionRandomRepos
                   ON h.user_id = :userId
                  AND h.question_ref_id = q.id
                  AND h.question_type = 'THEORY'
+                LEFT JOIN (
+                    SELECT history.question_ref_id,
+                           SUM(history.times_presented) AS presentations
+                    FROM user_question_history history
+                    JOIN users learner ON learner.id = history.user_id AND learner.role = 'USER'
+                    WHERE history.question_type = 'THEORY'
+                    GROUP BY history.question_ref_id
+                ) exposure ON exposure.question_ref_id = q.id
                 WHERE q.is_active = true
                   AND q.status = 'PUBLISHED'
                   AND c.is_active = true
@@ -160,11 +168,12 @@ public class QuizQuestionRandomRepositoryImpl implements QuizQuestionRandomRepos
                   AND (h.last_presented_at IS NULL OR h.last_presented_at <= :cooldownCutoff)
                 """ + additionalFilter + """
 
-                GROUP BY q.id, h.last_presented_at
+                GROUP BY q.id, h.last_presented_at, h.times_presented, exposure.presentations
                 HAVING COUNT(o.id) BETWEEN 2 AND 3
                    AND SUM(CASE WHEN o.is_correct = true THEN 1 ELSE 0 END) = 1
                    AND SUM(CASE WHEN %s THEN 0 ELSE 1 END) = 0
-                ORDER BY CASE WHEN h.last_presented_at IS NULL THEN 0 ELSE 1 END,
+                ORDER BY COALESCE(h.times_presented, 0) ASC,
+                         COALESCE(exposure.presentations, 0) ASC,
                          h.last_presented_at ASC,
                 """ + randomFunction + "()";
         sql = sql.formatted(

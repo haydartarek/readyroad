@@ -21,6 +21,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.never;
 
 @ExtendWith(MockitoExtension.class)
 class TrafficSignServicePublicFilterTest {
@@ -56,8 +58,6 @@ class TrafficSignServicePublicFilterTest {
                 backendMessageService);
 
         when(canonicalSignCatalogService.isPubliclyAllowed(any(RoadSign.class))).thenReturn(true);
-        when(signExamRepository.findBySignIdAndExamNumberAndIsActiveTrue(anyLong(), eq(1)))
-                .thenReturn(Optional.empty());
         when(trafficSignMapper.toResponse(any(RoadSign.class)))
                 .thenAnswer(invocation -> toResponse(invocation.getArgument(0)));
     }
@@ -76,6 +76,24 @@ class TrafficSignServicePublicFilterTest {
         assertThat(response)
                 .extracting(TrafficSignResponse::signCode)
                 .containsExactly("A1a");
+    }
+
+    @Test
+    void collectionLoadsExamConfigurationOnceAndPreservesMissingValues() {
+        when(roadSignRepository.findAllByIsActiveTrueOrderBySignCodeAsc()).thenReturn(List.of(
+                sign(1L, "A1a", SignCategory.DANGER, "Bend", "Slow down"),
+                sign(2L, "A14", SignCategory.DANGER, "Slippery road", "Drive carefully"),
+                sign(3L, "A15", SignCategory.DANGER, "School", "Watch for children")));
+        when(signExamRepository.findActiveExamOneProgressConfigs()).thenReturn(List.of(
+                new Object[] { 2L, 12, 10 }, new Object[] { 1L, 8, 7 }));
+
+        List<TrafficSignResponse> response = trafficSignService.getAllActiveSigns();
+
+        assertThat(response).extracting(TrafficSignResponse::signCode).containsExactly("A1a", "A14", "A15");
+        assertThat(response).extracting(TrafficSignResponse::exam1TotalQuestions).containsExactly(8, 12, null);
+        assertThat(response).extracting(TrafficSignResponse::exam1PassingScore).containsExactly(7, 10, null);
+        verify(signExamRepository).findActiveExamOneProgressConfigs();
+        verify(signExamRepository, never()).findBySignIdAndExamNumberAndIsActiveTrue(anyLong(), eq(1));
     }
 
     private static RoadSign sign(Long id, String signCode, SignCategory category, String nameEn, String descriptionEn) {

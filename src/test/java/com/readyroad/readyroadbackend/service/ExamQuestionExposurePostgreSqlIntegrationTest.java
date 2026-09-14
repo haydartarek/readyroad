@@ -3,6 +3,8 @@ package com.readyroad.readyroadbackend.service;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import java.time.LocalDateTime;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,6 +44,7 @@ class ExamQuestionExposurePostgreSqlIntegrationTest {
     @Autowired JdbcTemplate jdbc;
     @Autowired ExamService examService;
     @Autowired UserQuestionHistoryRepository historyRepository;
+    @Autowired QuizQuestionRepository questionRepository;
 
     private long userId;
     private long questionId;
@@ -154,6 +157,54 @@ class ExamQuestionExposurePostgreSqlIntegrationTest {
         assertThat(history.get("answered_at")).isNotNull();
         assertThat(((Number) history.get("times_correct")).intValue()).isZero();
         assertThat(((Number) history.get("times_wrong")).intValue()).isEqualTo(1);
+    }
+
+    @Test
+    void selectionPrioritizesLearnerCoverageThenRealBankExposureAndKeepsCooldown() {
+        long unseen = deliveryQuestion();
+        long bankFrequent = deliveryQuestion();
+        long once = deliveryQuestion();
+        long frequent = deliveryQuestion();
+        long coolingDown = deliveryQuestion();
+        LocalDateTime old = LocalDateTime.now().minusHours(24);
+        historyRepository.upsertQuestionPresented(userId, once, old.plusHours(1), "EXAM");
+        for (int i = 0; i < 5; i++) {
+            historyRepository.upsertQuestionPresented(userId, frequent, old, "EXAM");
+        }
+        historyRepository.upsertQuestionPresented(userId, coolingDown, LocalDateTime.now(), "EXAM");
+        long otherLearner = jdbc.queryForObject("""
+                INSERT INTO users (username, email, full_name, password_hash, role)
+                VALUES ('coverage-other', 'coverage-other@test.local', 'Other', 'test-only', 'USER')
+                RETURNING id
+                """, Long.class);
+        historyRepository.upsertQuestionPresented(otherLearner, bankFrequent, old, "EXAM");
+
+        assertThat(questionRepository.findCooldownEligibleTheoryQuestions(
+                userId, "en", LocalDateTime.now().minusHours(8)))
+                .extracting(QuizQuestion::getId)
+                .containsExactly(unseen, bankFrequent, once, frequent);
+    }
+
+    private long deliveryQuestion() {
+        long id = jdbc.queryForObject("""
+                INSERT INTO quiz_questions
+                    (question_ar, question_en, question_nl, question_fr, question_type,
+                     difficulty_level, category_id, is_active, status, published_at)
+                SELECT 'سؤال واضح', 'A clear driving question', 'Een duidelijke verkeersvraag',
+                       'Une question de circulation', 'MULTIPLE_CHOICE', 'EASY',
+                       category_id, true, 'PUBLISHED', CURRENT_TIMESTAMP
+                FROM quiz_questions WHERE id = ?
+                RETURNING id
+                """, Long.class, questionId);
+        jdbc.update("""
+                INSERT INTO quiz_answer_options
+                    (question_id, display_order, option_text_ar, option_text_en,
+                     option_text_nl, option_text_fr, is_correct, is_active, created_at)
+                VALUES
+                    (?, 1, 'توقف', 'Stop safely', 'Veilig stoppen', 'Arrêter en sécurité', true, true, CURRENT_TIMESTAMP),
+                    (?, 2, 'استمر', 'Continue carefully', 'Voorzichtig doorrijden', 'Continuer prudemment', false, true, CURRENT_TIMESTAMP)
+                """, id, id);
+        return id;
     }
 
     private Map<String, Object> historyRow() {

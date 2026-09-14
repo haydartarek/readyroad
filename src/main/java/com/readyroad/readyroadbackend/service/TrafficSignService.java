@@ -83,11 +83,7 @@ public class TrafficSignService {
     // ─── Public endpoints ───────────────────────────────
 
     public List<TrafficSignResponse> getAllActiveSigns() {
-        return roadSignRepository.findAllByIsActiveTrueOrderBySignCodeAsc()
-                .stream()
-                .filter(canonicalSignCatalogService::isPubliclyAllowed)
-                .map(this::toPublicResponse)
-                .collect(Collectors.toList());
+        return toPublicResponses(roadSignRepository.findAllByIsActiveTrueOrderBySignCodeAsc());
     }
 
     public List<TrafficSignResponse> getFilteredPublicSigns(Long categoryId, String query) {
@@ -121,11 +117,7 @@ public class TrafficSignService {
         if (signCategory == null) {
             return List.of();
         }
-        return roadSignRepository.findAllByCategoryAndIsActiveTrue(signCategory)
-                .stream()
-                .filter(canonicalSignCatalogService::isPubliclyAllowed)
-                .map(this::toPublicResponse)
-                .collect(Collectors.toList());
+        return toPublicResponses(roadSignRepository.findAllByCategoryAndIsActiveTrue(signCategory));
     }
 
     public TrafficSignResponse getSignByCode(String signCode) {
@@ -141,11 +133,7 @@ public class TrafficSignService {
         if (query == null || query.trim().isEmpty()) {
             return getAllActiveSigns();
         }
-        return roadSignRepository.searchRoadSigns(query.trim())
-                .stream()
-                .filter(canonicalSignCatalogService::isPubliclyAllowed)
-                .map(this::toPublicResponse)
-                .collect(Collectors.toList());
+        return toPublicResponses(roadSignRepository.searchRoadSigns(query.trim()));
     }
 
     public long countActiveSigns() {
@@ -268,17 +256,39 @@ public class TrafficSignService {
         return DIRECT_SIGN_CODE_PATTERN.matcher(value).matches();
     }
 
-    private TrafficSignResponse toPublicResponse(RoadSign sign) {
-        TrafficSignResponse base = trafficSignMapper.toResponse(sign);
-        Optional<SignExam> exam1 = signExamRepository.findBySignIdAndExamNumberAndIsActiveTrue(sign.getId(), 1);
+    private List<TrafficSignResponse> toPublicResponses(List<RoadSign> signs) {
+        List<RoadSign> publicSigns = signs.stream()
+                .filter(canonicalSignCatalogService::isPubliclyAllowed)
+                .toList();
+        if (publicSigns.isEmpty()) {
+            return List.of();
+        }
+        Map<Long, Object[]> examConfigs = signExamRepository.findActiveExamOneProgressConfigs().stream()
+                .collect(Collectors.toMap(row -> ((Number) row[0]).longValue(), row -> row));
+        return publicSigns.stream().map(sign -> {
+            Object[] config = examConfigs.get(sign.getId());
+            return toPublicResponse(sign,
+                    config == null || config[1] == null ? null : ((Number) config[1]).intValue(),
+                    config == null || config[2] == null ? null : ((Number) config[2]).intValue());
+        }).toList();
+    }
 
+    private TrafficSignResponse toPublicResponse(RoadSign sign) {
+        Optional<SignExam> exam1 = signExamRepository.findBySignIdAndExamNumberAndIsActiveTrue(sign.getId(), 1);
+        return toPublicResponse(sign,
+                exam1.map(SignExam::getTotalQuestions).orElse(null),
+                exam1.map(SignExam::getPassingScore).orElse(null));
+    }
+
+    private TrafficSignResponse toPublicResponse(RoadSign sign, Integer totalQuestions, Integer passingScore) {
+        TrafficSignResponse base = trafficSignMapper.toResponse(sign);
         return new TrafficSignResponse(
                 base.id(),
                 base.signCode(),
                 base.categoryCode(),
                 base.routeCode(),
-                exam1.map(SignExam::getTotalQuestions).orElse(null),
-                exam1.map(SignExam::getPassingScore).orElse(null),
+                totalQuestions,
+                passingScore,
                 base.nameAr(),
                 base.nameEn(),
                 base.nameNl(),
