@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.mock.web.*;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -31,6 +32,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = PaymentSecurityTest.Config.class)
+@TestPropertySource(properties = "rijvia.payments.enabled=true")
 class PaymentSecurityTest {
     @Configuration @EnableWebMvc
     @Import({SecurityConfig.class, PaymentController.class, StripeWebhookController.class})

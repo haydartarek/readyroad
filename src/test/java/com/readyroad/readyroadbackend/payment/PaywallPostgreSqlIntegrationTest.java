@@ -41,6 +41,15 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 
 @SpringBootTest(classes = PaywallPostgreSqlIntegrationTest.Config.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @ActiveProfiles("postgresql")
+@TestPropertySource(properties = {
+        "rijvia.payments.enabled=true",
+        "STRIPE_SECRET_KEY=sk_test_offline_fixture_not_a_real_key",
+        "STRIPE_WEBHOOK_SECRET=whsec_offline_fixture_not_a_real_secret",
+        "STRIPE_PRICE_ID_3_DAYS=price_offline_3_days",
+        "STRIPE_PRICE_ID_1_WEEK=price_offline_1_week",
+        "STRIPE_PRICE_ID_4_WEEKS=price_offline_4_weeks",
+        "APP_BASE_URL=http://localhost:3000"
+})
 @Testcontainers
 class PaywallPostgreSqlIntegrationTest {
     @Container static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:17.6-alpine");

@@ -5,10 +5,12 @@ import com.google.gson.JsonParser;
 import com.stripe.exception.SignatureVerificationException;
 import com.stripe.net.Webhook;
 import org.springframework.http.HttpStatus;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+@ConditionalOnProperty(name = "rijvia.payments.enabled", havingValue = "true")
 @RestController
 @RequestMapping("/api/stripe")
 public class StripeWebhookController {

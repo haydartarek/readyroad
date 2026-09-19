@@ -6,12 +6,14 @@ import java.time.Instant;
 import java.util.Set;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
+@ConditionalOnProperty(name = "rijvia.payments.enabled", havingValue = "true")
 @Service
 public class CheckoutService {
     private static final Set<String> LOCALES = Set.of("ar", "nl", "fr", "en");

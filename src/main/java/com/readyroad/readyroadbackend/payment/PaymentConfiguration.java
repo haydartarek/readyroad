@@ -6,10 +6,12 @@ import java.time.Clock;
 import java.util.EnumMap;
 import java.util.Map;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
+@ConditionalOnProperty(name = "rijvia.payments.enabled", havingValue = "true")
 @Configuration(proxyBeanMethods = false)
 public class PaymentConfiguration {
     @Bean

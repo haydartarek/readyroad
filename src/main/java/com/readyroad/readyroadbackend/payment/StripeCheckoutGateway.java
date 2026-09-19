@@ -6,7 +6,9 @@ import com.stripe.model.checkout.Session;
 import com.stripe.net.RequestOptions;
 import com.stripe.param.checkout.SessionCreateParams;
 import org.springframework.stereotype.Component;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
+@ConditionalOnProperty(name = "rijvia.payments.enabled", havingValue = "true")
 @Component
 public class StripeCheckoutGateway {
     private final StripeClient client;

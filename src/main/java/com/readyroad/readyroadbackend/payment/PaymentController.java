@@ -9,10 +9,12 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.util.UUID;
 import org.springframework.http.HttpStatus;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+@ConditionalOnProperty(name = "rijvia.payments.enabled", havingValue = "true")
 @RestController
 @RequestMapping("/api")
 public class PaymentController {

@@ -139,6 +139,10 @@ readyroad:
     cooldown-hours: 24
     cron-expression: "0 * * * * *"
 
+
+rijvia:
+  payments:
+    enabled: ${RIJVIA_PAYMENTS_ENABLED:false}
 # Application Info (for /actuator/info)
 info:
   app:

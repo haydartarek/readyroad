@@ -6,11 +6,13 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+@ConditionalOnProperty(name = "rijvia.payments.enabled", havingValue = "true")
 @Service
 public class StripeWebhookService {
     public static final Set<String> HANDLED = Set.of("checkout.session.completed",
