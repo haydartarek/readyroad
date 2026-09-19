@@ -35,6 +35,8 @@ public class MaintenanceModeFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String uri = request.getRequestURI();
+        // Payment confirmations must remain deliverable during maintenance.
+        if ("POST".equals(request.getMethod()) && "/api/stripe/webhook".equals(uri)) return true;
         return MAINTENANCE_ALLOWED_PREFIXES.stream().anyMatch(uri::startsWith);
     }
 

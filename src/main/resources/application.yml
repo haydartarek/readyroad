@@ -22,6 +22,7 @@ spring:
     properties:
       hibernate:
         format_sql: false
+        jdbc.time_zone: UTC
 
   servlet:
     multipart:

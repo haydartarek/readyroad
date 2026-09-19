@@ -56,6 +56,14 @@ services:
       # Spring Profile
       SPRING_PROFILES_ACTIVE: secure,postgresql
 
+      # One-time Checkout: inject through the local environment, never commit credentials.
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      STRIPE_PRICE_ID_3_DAYS: ${STRIPE_PRICE_ID_3_DAYS:-}
+      STRIPE_PRICE_ID_1_WEEK: ${STRIPE_PRICE_ID_1_WEEK:-}
+      STRIPE_PRICE_ID_4_WEEKS: ${STRIPE_PRICE_ID_4_WEEKS:-}
+      APP_BASE_URL: ${APP_BASE_URL:-}
+
       # Database Configuration
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432

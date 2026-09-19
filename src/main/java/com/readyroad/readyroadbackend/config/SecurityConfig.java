@@ -136,6 +136,9 @@ public class SecurityConfig {
                                                 .requestMatchers(HttpMethod.GET, "/api/articles/**").permitAll()
 
                                                 // User Operations
+                                                .requestMatchers(HttpMethod.POST, "/api/stripe/webhook").permitAll()
+                                                .requestMatchers(HttpMethod.POST, "/api/checkout", "/api/purchases/*/resume").authenticated()
+                                                .requestMatchers(HttpMethod.GET, "/api/purchases/*/status").authenticated()
                                                 .requestMatchers(HttpMethod.GET, "/api/auth/me").authenticated()
                                                 .requestMatchers(HttpMethod.POST, "/api/auth/logout").authenticated()
                                                 .requestMatchers("/api/users/me/**").authenticated()
