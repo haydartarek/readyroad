@@ -4,9 +4,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
+import java.util.TimeZone;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -226,14 +229,21 @@ class TheoryQuestionCooldownEligibilityPostgreSqlIntegrationTest {
                      last_shown_at, last_shown_type, times_shown,
                      times_correct, times_wrong)
                 VALUES (?, ?, ?, ?, ?, ?, ?, 'EXAM', ?, 0, 0)
-                """,
-                userId,
-                questionId,
-                questionType,
-                questionId,
-                lastPresentedAt,
-                lastPresentedAt == null ? 0 : 1,
-                legacyLastShownAt,
-                legacyLastShownAt == null ? 0 : 1);
+                """, statement -> {
+                    statement.setLong(1, userId);
+                    statement.setLong(2, questionId);
+                    statement.setString(3, questionType);
+                    statement.setLong(4, questionId);
+                    // Match Hibernate's configured UTC JDBC binding. setObject(LocalDateTime)
+                    // writes wall-clock time directly and shifts these fixtures relative to
+                    // the repository's cutoff parameter on a non-UTC developer machine.
+                    Calendar utc = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+                    statement.setTimestamp(5,
+                            lastPresentedAt == null ? null : Timestamp.valueOf(lastPresentedAt), utc);
+                    statement.setInt(6, lastPresentedAt == null ? 0 : 1);
+                    statement.setTimestamp(7,
+                            legacyLastShownAt == null ? null : Timestamp.valueOf(legacyLastShownAt), utc);
+                    statement.setInt(8, legacyLastShownAt == null ? 0 : 1);
+                });
     }
 }
