@@ -312,7 +312,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle concurrent modification â€” two requests raced to modify the same
+     * Handle concurrent modification — two requests raced to modify the same
      * entity.
      * The losing request receives 409 so the client can retry.
      * HTTP 409 CONFLICT
@@ -341,7 +341,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle NoResourceFoundException â€” static resource not found (image/file).
+     * Handle NoResourceFoundException — static resource not found (image/file).
      * Prevents the generic Exception handler from returning 500 for missing files.
      * HTTP 404 NOT FOUND
      */
@@ -354,7 +354,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Generic fallback â€” catch all unhandled exceptions
+     * Generic fallback — catch all unhandled exceptions
      * Logs the real error internally but returns a safe 500 response.
      * HTTP 500 INTERNAL SERVER ERROR
      */
