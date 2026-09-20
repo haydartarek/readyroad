@@ -7,6 +7,9 @@ import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.*;
+import com.readyroad.readyroadbackend.payment.EntitlementStatus;
+import com.readyroad.readyroadbackend.payment.UserEntitlement;
+import com.readyroad.readyroadbackend.payment.UserEntitlementRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -60,6 +63,9 @@ public class Phase6ConcurrencyIsolationBDDTest {
         private UserRepository userRepository;
 
         @Autowired
+        private UserEntitlementRepository entitlementRepository;
+
+        @Autowired
         private QuizQuestionRepository questionRepository;
 
         @Autowired
@@ -101,12 +107,26 @@ public class Phase6ConcurrencyIsolationBDDTest {
                 examSimulationRepository.deleteAllInBatch();
 
                 // ✅ Clean up existing users to prevent duplicate constraint violations
+                entitlementRepository.deleteAllInBatch();
                 userRepository.deleteAll();
                 userRepository.flush();
 
                 // Create users
                 userA = createUser("usera", "usera@test.com");
                 userB = createUser("userb", "userb@test.com");
+
+                UserEntitlement entitlementA = new UserEntitlement();
+                entitlementA.setUserId(userA.getId());
+                entitlementA.setStatus(EntitlementStatus.ACTIVE);
+                entitlementA.setExpiresAt(java.time.Instant.now().plusSeconds(3600));
+                entitlementRepository.saveAndFlush(entitlementA);
+
+                UserEntitlement entitlementB = new UserEntitlement();
+                entitlementB.setUserId(userB.getId());
+                entitlementB.setStatus(EntitlementStatus.ACTIVE);
+                entitlementB.setExpiresAt(java.time.Instant.now().plusSeconds(3600));
+                entitlementRepository.saveAndFlush(entitlementB);
+
                 userAJwt = loginAndGetJwt(userA.getUsername(), "password123");
                 userBJwt = loginAndGetJwt(userB.getUsername(), "password123");
 

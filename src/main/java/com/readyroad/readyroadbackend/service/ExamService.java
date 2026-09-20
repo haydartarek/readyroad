@@ -745,6 +745,18 @@ public class ExamService {
                     messages.get("exam.submit.invalid_status", exam.getStatus()));
         }
 
+        // Story A4: Preserve expiry precedence before question validation.
+        // A genuine paywall pause is exempt because checkout time is frozen.
+        if (!isPreviewPausedAtPaywall(exam)
+                && now.isAfter(exam.getExpiresAt())) {
+            exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
+            examRepository.save(exam);
+            log.warn("Exam {} expired at {}. Current time: {}", examId, exam.getExpiresAt(), now);
+            throw new ExamExpiredException(
+                    messages.get("exam.submit.expired", TheoryExamTiming.QUESTION_TIME_SECONDS),
+                    examId);
+        }
+
         // 2. Validate question belongs to this exam and enforce current access.
         ExamSimulationQuestion examQuestion =
                 examQuestionRepository
@@ -761,16 +773,6 @@ public class ExamService {
                         userId,
                         examQuestion,
                         now);
-
-        // Story A4: Check time limit
-        if (now.isAfter(exam.getExpiresAt())) {
-            exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
-            examRepository.save(exam);
-            log.warn("Exam {} expired at {}. Current time: {}", examId, exam.getExpiresAt(), now);
-            throw new ExamExpiredException(
-                    messages.get("exam.submit.expired", TheoryExamTiming.QUESTION_TIME_SECONDS),
-                    examId);
-        }
 
         // A submitted answer proves the question was presented. This is a fallback for
         // a failed client-side exposure request and remains idempotent per exam question.
