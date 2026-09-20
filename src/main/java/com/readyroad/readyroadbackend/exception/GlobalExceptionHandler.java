@@ -193,6 +193,34 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
     }
 
+
+    /**
+     * Handle FreeExamLimitReachedException.
+     *
+     * The exam remains IN_PROGRESS; the learner must obtain
+     * an active entitlement before accessing question 11+.
+     *
+     * HTTP 403 FORBIDDEN
+     */
+    @ExceptionHandler(FreeExamLimitReachedException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleFreeExamLimitReached(
+            FreeExamLimitReachedException ex) {
+
+        Map<String, Object> error = new HashMap<>();
+        error.put("error", "FreeExamLimitReachedException");
+        error.put("code", FreeExamLimitReachedException.ERROR_CODE);
+        error.put("message", ex.getMessage());
+        error.put("examId", ex.getExamId());
+
+        if (ex.getQuestionId() != null) {
+            error.put("questionId", ex.getQuestionId());
+        }
+
+        error.put("timestamp", LocalDateTime.now());
+
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+    }
     /**
      * Handle MethodArgumentNotValidException - @Valid @RequestBody validation
      * failures
@@ -284,7 +312,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle concurrent modification — two requests raced to modify the same
+     * Handle concurrent modification â€” two requests raced to modify the same
      * entity.
      * The losing request receives 409 so the client can retry.
      * HTTP 409 CONFLICT
@@ -313,7 +341,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle NoResourceFoundException — static resource not found (image/file).
+     * Handle NoResourceFoundException â€” static resource not found (image/file).
      * Prevents the generic Exception handler from returning 500 for missing files.
      * HTTP 404 NOT FOUND
      */
@@ -326,7 +354,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Generic fallback — catch all unhandled exceptions
+     * Generic fallback â€” catch all unhandled exceptions
      * Logs the real error internally but returns a safe 500 response.
      * HTTP 500 INTERNAL SERVER ERROR
      */

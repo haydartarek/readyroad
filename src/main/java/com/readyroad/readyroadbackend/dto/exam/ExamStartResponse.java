@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.dto.exam;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +10,8 @@ import java.time.Instant;
 import java.util.List;
 
 /**
- * Response DTO for starting exam simulation - Story A1
- * Uses Instant for UTC-aware timestamps
+ * Response DTO for starting/resuming an exam simulation.
+ * Uses Instant for UTC-aware timestamps.
  */
 @Data
 @Builder
@@ -20,6 +21,10 @@ public class ExamStartResponse {
 
     private Long examId;
 
+    /**
+     * Total persisted questions in the complete Belgian theory exam.
+     * Remains 50 even when a free learner can currently see only 10.
+     */
     private Integer totalQuestions;
 
     private Double timeLimitMinutes;
@@ -28,17 +33,43 @@ public class ExamStartResponse {
 
     private String status;
 
-    /**
-     * Exam start time in UTC (ISO-8601 format)
-     * Example: "2026-02-05T19:30:00Z"
-     */
     private Instant startedAt;
 
-    /**
-     * Exam expiration time in UTC (ISO-8601 format)
-     * Example: "2026-02-05T20:00:00Z"
-     */
     private Instant expiresAt;
 
+    /**
+     * Questions currently allowed to be exposed to this learner.
+     *
+     * PREVIEW:
+     * only orders 1..10.
+     *
+     * FULL:
+     * all 50 questions.
+     */
     private List<ExamQuestionDTO> questions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private ExamAccessMode accessMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private ExamAccessState accessState;
+
+    /**
+     * Current free preview limit.
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Integer freeQuestionLimit;
+
+    /**
+     * First question order the frontend should continue with.
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Integer resumeQuestionOrder;
+
+    /**
+     * Questions already finalized by an answer or timeout.
+     * Used to safely hydrate frontend state after refresh/payment.
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private List<Long> finalizedQuestionIds;
 }
