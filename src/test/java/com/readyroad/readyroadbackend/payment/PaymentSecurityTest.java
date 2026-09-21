@@ -64,6 +64,29 @@ class PaymentSecurityTest {
         mvc.perform(post("/api/purchases/" + UUID.randomUUID() + "/resume")).andExpect(status().isUnauthorized());
         verifyNoInteractions(checkout, purchases);
     }
+    @Test void accountAccessRequiresAuthentication() throws Exception {
+        mvc.perform(get("/api/account/access"))
+                .andExpect(status().isUnauthorized());
+
+        verifyNoInteractions(entitlements);
+    }
+
+    @Test void authenticatedUserCanReadFreeAccountAccess() throws Exception {
+        User buyer = new User();
+        buyer.setId(42L);
+        buyer.setUsername("buyer");
+
+        when(entitlements.findById(42L))
+                .thenReturn(java.util.Optional.empty());
+
+        mvc.perform(get("/api/account/access")
+                        .with(user(buyer)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.active").value(false))
+                .andExpect(jsonPath("$.status").value("FREE"));
+
+        verify(entitlements).findById(42L);
+    }
     @Test void webhookIsAnonymousButRequiresSignature() throws Exception {
         mvc.perform(post("/api/stripe/webhook").contentType("application/json").content("{}"))
                 .andExpect(status().isBadRequest());
