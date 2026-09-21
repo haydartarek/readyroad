@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.util.UUID;
@@ -65,10 +66,42 @@ public class PaymentController {
         return new PurchaseResult(id, purchase.getStatus(), purchase.getPlan(), expiry);
     }
 
+    @GetMapping("/account/access")
+    public AccountAccessResult accountAccess(@AuthenticationPrincipal User user) {
+        Long authenticatedUserId = userId(user);
+        UserEntitlement entitlement = entitlements.findById(authenticatedUserId).orElse(null);
+
+        if (entitlement == null) {
+            return new AccountAccessResult(false, EntitlementStatus.FREE, null, null);
+        }
+
+        Instant expiresAt = entitlement.getExpiresAt();
+        boolean active = entitlement.getStatus() == EntitlementStatus.ACTIVE
+                && expiresAt != null
+                && expiresAt.isAfter(Instant.now());
+
+        if (!active) {
+            EntitlementStatus status = entitlement.getStatus() == EntitlementStatus.ACTIVE
+                    ? EntitlementStatus.EXPIRED
+                    : entitlement.getStatus();
+            return new AccountAccessResult(false, status, null, null);
+        }
+
+        PaymentPlan plan = purchases
+                .findFirstByUserIdAndStatusOrderByUpdatedAtDesc(authenticatedUserId, PurchaseStatus.PAID)
+                .map(Purchase::getPlan)
+                .orElse(null);
+
+        OffsetDateTime expiry = expiresAt.atZone(ZoneId.of("Europe/Brussels")).toOffsetDateTime();
+        return new AccountAccessResult(true, EntitlementStatus.ACTIVE, plan, expiry);
+    }
+
     private static Long userId(User user) {
         if (user == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Authentication required");
         return user.getId();
     }
     public record CheckoutRequest(@NotNull PaymentPlan plan, @NotBlank @Size(max = 64) String clientRequestId) {}
     public record PurchaseResult(UUID purchaseId, PurchaseStatus status, PaymentPlan plan, OffsetDateTime expiresAt) {}
+    public record AccountAccessResult(boolean active, EntitlementStatus status, PaymentPlan plan,
+            OffsetDateTime expiresAt) {}
 }
