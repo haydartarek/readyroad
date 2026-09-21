@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.dto.exam;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,10 +9,13 @@ import lombok.NoArgsConstructor;
 import java.time.Instant;
 
 /**
- * Response DTO for exam answer submission
- * Story A2: Submit Exam Answer
+ * Response DTO for exam answer submission.
  *
- * Security Note: Does NOT reveal if answer is correct during exam
+ * Full paid exam:
+ * correctness is NEVER exposed during the exam.
+ *
+ * Free preview:
+ * correctness may be returned for questions 1..10 only.
  */
 @Data
 @Builder
@@ -19,43 +23,43 @@ import java.time.Instant;
 @AllArgsConstructor
 public class SubmitExamAnswerResponse {
 
-    /**
-     * The ID of the saved answer
-     */
     private Long answerId;
 
-    /**
-     * The exam simulation ID
-     */
     private Long examId;
 
-    /**
-     * The question ID
-     */
     private Long questionId;
 
-    /**
-     * The selected option ID
-     */
     private Long selectedOptionId;
 
-    /**
-     * Timestamp when answer was submitted
-     */
     private Instant submittedAt;
 
-    /**
-     * Success message
-     */
     private String message;
 
-    /**
-     * Total answers submitted so far in this exam
-     */
     private Integer totalAnswered;
 
     /**
-     * Total questions in exam (always 50 for Belgian exams)
+     * Always 50 for the complete Belgian theory exam.
      */
     private Integer totalQuestions;
+
+    /**
+     * Present only for FREE preview answers.
+     * Omitted for full paid exam answers.
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Boolean correct;
+
+    /**
+     * Present only for FREE preview answers.
+     * Omitted for full paid exam answers.
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Long correctOptionId;
+
+    /**
+     * Allows the frontend to transition directly to the paywall
+     * after question 10 without requesting question 11.
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private ExamAccessState accessState;
 }

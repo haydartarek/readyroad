@@ -193,6 +193,34 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
     }
 
+
+    /**
+     * Handle FreeExamLimitReachedException.
+     *
+     * The exam remains IN_PROGRESS; the learner must obtain
+     * an active entitlement before accessing question 11+.
+     *
+     * HTTP 403 FORBIDDEN
+     */
+    @ExceptionHandler(FreeExamLimitReachedException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleFreeExamLimitReached(
+            FreeExamLimitReachedException ex) {
+
+        Map<String, Object> error = new HashMap<>();
+        error.put("error", "FreeExamLimitReachedException");
+        error.put("code", FreeExamLimitReachedException.ERROR_CODE);
+        error.put("message", ex.getMessage());
+        error.put("examId", ex.getExamId());
+
+        if (ex.getQuestionId() != null) {
+            error.put("questionId", ex.getQuestionId());
+        }
+
+        error.put("timestamp", LocalDateTime.now());
+
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+    }
     /**
      * Handle MethodArgumentNotValidException - @Valid @RequestBody validation
      * failures

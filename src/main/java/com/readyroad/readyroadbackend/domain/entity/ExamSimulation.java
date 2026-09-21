@@ -45,6 +45,39 @@ public class ExamSimulation extends BaseEntity {
     @Column(name = "expires_at", nullable = false)
     private Instant expiresAt;
 
+    /**
+     * True when this attempt participates in Rijvia's
+     * entitlement/paywall lifecycle.
+     *
+     * New API attempts set this to true whether they initially
+     * start in PREVIEW or FULL mode. Legacy/internal attempts
+     * remain false for backward compatibility.
+     */
+    @Column(name = "preview_attempt", nullable = false)
+    private boolean previewAttempt = false;
+
+    /**
+     * Set once the free learner finalizes question 10.
+     * While this is set and fullAccessResumedAt is null,
+     * the global exam clock is paused at the paywall.
+     */
+    @Column(name = "paywall_reached_at")
+    private Instant paywallReachedAt;
+
+    /**
+     * Set on the most recent successful resume after entitlement activation.
+     * Cleared whenever a new paywall cycle freezes the same attempt again.
+     */
+    @Column(name = "full_access_resumed_at")
+    private Instant fullAccessResumedAt;
+
+    /**
+     * Accumulated wall-clock seconds spent while this attempt was paused
+     * behind the payment paywall. Excluded from final exam duration.
+     */
+    @Column(name = "paywall_paused_seconds", nullable = false)
+    private long paywallPausedSeconds = 0L;
+
     @Column(name = "total_questions", nullable = false)
     private Integer totalQuestions = 50;
 

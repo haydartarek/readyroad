@@ -6,6 +6,9 @@ import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.*;
+import com.readyroad.readyroadbackend.payment.EntitlementStatus;
+import com.readyroad.readyroadbackend.payment.UserEntitlement;
+import com.readyroad.readyroadbackend.payment.UserEntitlementRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -60,6 +63,9 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         private UserRepository userRepository;
 
         @Autowired
+        private UserEntitlementRepository entitlementRepository;
+
+        @Autowired
         private QuizQuestionRepository questionRepository;
 
         @Autowired
@@ -94,6 +100,13 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
                 testUser.setIsActive(true);
                 testUser.setIsLocked(false);
                 testUser = userRepository.save(testUser);
+
+                UserEntitlement entitlement = new UserEntitlement();
+                entitlement.setUserId(testUser.getId());
+                entitlement.setStatus(EntitlementStatus.ACTIVE);
+                entitlement.setExpiresAt(java.time.Instant.now().plusSeconds(3600));
+                entitlementRepository.saveAndFlush(entitlement);
+
                 testUserJwt = loginAndGetJwt(testUser.getUsername(), "password123");
 
                 // Create test category

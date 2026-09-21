@@ -25,6 +25,8 @@ import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
 import com.readyroad.readyroadbackend.dto.exam.ExamResultsDTO;
 import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
+import com.readyroad.readyroadbackend.dto.exam.ExamAccessMode;
+import com.readyroad.readyroadbackend.dto.exam.ExamAccessState;
 import com.readyroad.readyroadbackend.dto.exam.CategoryBreakdownDTO;
 import com.readyroad.readyroadbackend.dto.exam.IncorrectQuestionDTO;
 import com.readyroad.readyroadbackend.dto.exam.AllAnsweredQuestionDTO;
@@ -40,6 +42,7 @@ import com.readyroad.readyroadbackend.exception.ExamExpiredException;
 import com.readyroad.readyroadbackend.exception.InvalidAnswerException;
 import com.readyroad.readyroadbackend.exception.QuestionNotFoundException;
 import com.readyroad.readyroadbackend.exception.UnauthorizedException;
+import com.readyroad.readyroadbackend.exception.FreeExamLimitReachedException;
 import com.readyroad.readyroadbackend.mapper.ExamMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -94,6 +97,8 @@ public class ExamService {
     private final UserRepository userRepository;
     private final TheoryExamQuestionAllocator questionAllocator;
     private final TheoryExamQuestionSnapshotService questionSnapshotService;
+    private final TheoryExamAccessService examAccessService;
+    private final TheoryExamPreviewCatalog previewCatalog;
 
     private static final int EXAM_QUESTION_COUNT = 50;
     private static final int PASSING_SCORE = 41;
@@ -117,7 +122,17 @@ public class ExamService {
      */
     @Transactional
     public ExamSimulation startExamSimulation(Long userId) {
-        log.info("Starting exam simulation for user: {}", userId);
+        return startExamSimulation(userId, false);
+    }
+
+    private ExamSimulation startExamSimulation(
+            Long userId,
+            boolean previewAttempt) {
+
+        log.info(
+                "Starting exam simulation for user: {}, previewAttempt={}",
+                userId,
+                previewAttempt);
 
         User user = userRepository.findByIdForUpdate(userId)
                 .orElseThrow(() -> new IllegalArgumentException(messages.get("auth.user_not_found")));
@@ -131,6 +146,12 @@ public class ExamService {
                 .orElse(null);
 
         if (activeExam != null) {
+            if (isPreviewPausedAtPaywall(activeExam)) {
+                throw new ActiveExamAlreadyExistsException(
+                        userId,
+                        activeExam.getId());
+            }
+
             if (Instant.now().isAfter(activeExam.getExpiresAt())) {
                 // Exam time window has passed — expire it silently so user can start fresh
                 log.info("Auto-expiring stale IN_PROGRESS exam {} for user {} (expired at {})",
@@ -146,8 +167,19 @@ public class ExamService {
         LocalDateTime cooldownCutoff = LocalDateTime.now().minus(THEORY_QUESTION_COOLDOWN);
         TheoryExamQuestionAllocator.Allocation allocation =
                 questionAllocator.allocate(userId, languageCode, cooldownCutoff);
-        List<QuizQuestion> questions = new ArrayList<>(allocation.questions());
+        List<QuizQuestion> questions =
+                new ArrayList<>(allocation.questions());
+
         Collections.shuffle(questions);
+
+        if (previewAttempt) {
+            questions =
+                    new ArrayList<>(
+                            previewCatalog.composeAttemptQuestions(
+                                    questions,
+                                    EXAM_QUESTION_COUNT,
+                                    languageCode));
+        }
 
         if (!allocation.defaultedWeightCategoryCodes().isEmpty()) {
             log.warn(
@@ -213,8 +245,24 @@ public class ExamService {
 
     @Transactional
     public ExamStartResponse startExamResponse(Long userId) {
-        ExamSimulation exam = startExamSimulation(userId);
-        return examMapper.toStartResponse(exam, getExamQuestions(exam.getId()));
+
+        boolean fullAccess =
+                examAccessService.hasFullAccess(userId);
+
+        ExamSimulation exam =
+                startExamSimulation(
+                        userId,
+                        !fullAccess);
+
+        // Every new API-created attempt participates in entitlement checks.
+        // Legacy/internal attempts created through startExamSimulation(userId)
+        // remain outside this lifecycle for backward compatibility.
+        if (!exam.isPreviewAttempt()) {
+            exam.setPreviewAttempt(true);
+            exam = examRepository.save(exam);
+        }
+
+        return toAccessAwareStartResponse(exam, userId);
     }
 
     /**
@@ -267,6 +315,10 @@ public class ExamService {
             return true;
         }
 
+        if (isPreviewPausedAtPaywall(exam)) {
+            return false;
+        }
+
         if (Instant.now().isAfter(exam.getExpiresAt())) {
             exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
             examRepository.save(exam);
@@ -288,32 +340,60 @@ public class ExamService {
      */
     @Transactional
     public ExamSimulation getActiveExam(Long userId) {
-        ExamSimulation exam = examRepository.findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
+        ExamSimulation exam = examRepository
+                .findByUserIdAndStatus(
+                        userId,
+                        ExamSimulation.ExamStatus.IN_PROGRESS)
                 .orElse(null);
 
-        if (exam != null) {
-            if (Instant.now().isAfter(exam.getExpiresAt())) {
-                exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
-                examRepository.save(exam);
-                log.info("Auto-expired stale IN_PROGRESS exam {} during getActiveExam for user {}",
-                        exam.getId(), userId);
-                return null;
-            }
-
-            // ✅ Force load exam questions and their options inside transaction
-            List<ExamSimulationQuestion> questions = examQuestionRepository
-                    .findByExamIdOrderByQuestionOrder(exam.getId());
-            questions.forEach(esq -> {
-                QuizQuestion q = esq.getQuestion();
-                if (q != null && q.getOptions() != null) {
-                    q.getOptions().size(); // Trigger lazy loading
-                }
-            });
+        if (exam == null) {
+            return null;
         }
+
+        Instant now = Instant.now();
+
+        if (exam.isPreviewAttempt()
+                && examAccessService.hasFullAccess(userId)) {
+
+            resumePreviewAfterPaymentIfNeeded(
+                    exam,
+                    now);
+        }
+
+        // While the learner is waiting at the paywall, expiresAt is frozen.
+        // Checkout time must never expire the persisted IN_PROGRESS attempt.
+        if (!isPreviewPausedAtPaywall(exam)
+                && now.isAfter(exam.getExpiresAt())) {
+
+            exam.setStatus(
+                    ExamSimulation.ExamStatus.EXPIRED);
+
+            examRepository.save(exam);
+
+            log.info(
+                    "Auto-expired stale IN_PROGRESS exam {} during getActiveExam for user {}",
+                    exam.getId(),
+                    userId);
+
+            return null;
+        }
+
+        List<ExamSimulationQuestion> questions =
+                examQuestionRepository
+                        .findByExamIdOrderByQuestionOrder(
+                                exam.getId());
+
+        questions.forEach(esq -> {
+            QuizQuestion question = esq.getQuestion();
+
+            if (question != null
+                    && question.getOptions() != null) {
+                question.getOptions().size();
+            }
+        });
 
         return exam;
     }
-
     @Transactional
     public ExamStartResponse getActiveExamResponse(Long userId) {
         ExamSimulation activeExam = getActiveExam(userId);
@@ -321,7 +401,7 @@ public class ExamService {
             return null;
         }
 
-        return examMapper.toStartResponse(activeExam, getExamQuestions(activeExam.getId()));
+        return toAccessAwareStartResponse(activeExam, userId);
     }
 
     /** Get learner-visible exam history. Only completed attempts have results. */
@@ -367,6 +447,13 @@ public class ExamService {
                     messages.get("exam.complete.invalid_status", exam.getStatus()));
         }
 
+        if (exam.isPreviewAttempt()
+                && !examAccessService.hasFullAccess(userId)
+                && answerRepository.countByExamId(examId)
+                        >= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+            throw new FreeExamLimitReachedException(examId, null);
+        }
+
         // Calculate final score from all submitted answers
         List<ExamSimulationAnswer> answers = answerRepository.findByExamId(examId);
         if (answers.size() != exam.getTotalQuestions()) {
@@ -388,7 +475,10 @@ public class ExamService {
         exam.setCorrectAnswers(correctCount);
         exam.setScorePercentage(scorePercentage);
         exam.setTimeTakenSeconds(calculateElapsedSeconds(
-                exam.getStartedAt(), completedAt, exam.getTotalQuestions()));
+                exam.getStartedAt(),
+                completedAt,
+                exam.getTotalQuestions(),
+                exam.getPaywallPausedSeconds()));
 
         examRepository.save(exam);
 
@@ -582,17 +672,30 @@ public class ExamService {
             throw new ExamNotActiveException(
                     messages.get("exam.submit.invalid_status", exam.getStatus()));
         }
-        if (Instant.now().isAfter(exam.getExpiresAt())) {
+
+        ExamSimulationQuestion examQuestion =
+                examQuestionRepository.findByExamIdAndQuestionId(examId, questionId)
+                        .orElseThrow(() -> new QuestionNotFoundException(
+                                messages.get(
+                                        "exam.submit.question_not_found_in_exam",
+                                        questionId,
+                                        examId)));
+
+        Instant accessNow = Instant.now();
+
+        enforceQuestionAccess(
+                exam,
+                userId,
+                examQuestion,
+                accessNow);
+
+        if (accessNow.isAfter(exam.getExpiresAt())) {
             exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
             examRepository.save(exam);
             throw new ExamExpiredException(
                     messages.get("exam.submit.expired", TheoryExamTiming.QUESTION_TIME_SECONDS),
                     examId);
         }
-
-        examQuestionRepository.findByExamIdAndQuestionId(examId, questionId)
-                .orElseThrow(() -> new QuestionNotFoundException(
-                        messages.get("exam.submit.question_not_found_in_exam", questionId, examId)));
 
         persistPresentationIfAbsent(examId, questionId, userId, LocalDateTime.now());
     }
@@ -642,9 +745,10 @@ public class ExamService {
                     messages.get("exam.submit.invalid_status", exam.getStatus()));
         }
 
-        // Story A4: Check time limit
-        if (now.isAfter(exam.getExpiresAt())) {
-            // Auto-expire the exam
+        // Story A4: Preserve expiry precedence before question validation.
+        // A genuine paywall pause is exempt because checkout time is frozen.
+        if (!isPreviewPausedAtPaywall(exam)
+                && now.isAfter(exam.getExpiresAt())) {
             exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
             examRepository.save(exam);
             log.warn("Exam {} expired at {}. Current time: {}", examId, exam.getExpiresAt(), now);
@@ -653,11 +757,22 @@ public class ExamService {
                     examId);
         }
 
-        // 2. Validate question belongs to this exam
-        examQuestionRepository
-                .findByExamIdAndQuestionId(examId, questionId)
-                .orElseThrow(() -> new QuestionNotFoundException(
-                        messages.get("exam.submit.question_not_found_in_exam", questionId, examId)));
+        // 2. Validate question belongs to this exam and enforce current access.
+        ExamSimulationQuestion examQuestion =
+                examQuestionRepository
+                        .findByExamIdAndQuestionId(examId, questionId)
+                        .orElseThrow(() -> new QuestionNotFoundException(
+                                messages.get(
+                                        "exam.submit.question_not_found_in_exam",
+                                        questionId,
+                                        examId)));
+
+        boolean fullAccess =
+                enforceQuestionAccess(
+                        exam,
+                        userId,
+                        examQuestion,
+                        now);
 
         // A submitted answer proves the question was presented. This is a fallback for
         // a failed client-side exposure request and remains idempotent per exam question.
@@ -729,19 +844,45 @@ public class ExamService {
         answer = answerRepository.save(answer);
 
         // 5. Get progress statistics
-        long totalAnswered = answerRepository.countByExamId(examId);
+        long totalAnswered =
+                answerRepository.countByExamId(examId);
 
-        // 6. Build response (do NOT reveal if correct - security requirement)
-        SubmitExamAnswerResponse response = SubmitExamAnswerResponse.builder()
-                .answerId(answer.getId())
-                .examId(examId)
-                .questionId(questionId)
-                .selectedOptionId(request.getSelectedOptionId())
-                .submittedAt(answer.getAnsweredAt())
-                .message(messages.get("exam.submit.success"))
-                .totalAnswered((int) totalAnswered)
-                .totalQuestions(EXAM_QUESTION_COUNT)
-                .build();
+        markPaywallReachedIfNeeded(
+                exam,
+                fullAccess,
+                totalAnswered,
+                now);
+
+        ExamAccessState answerAccessState;
+        if (fullAccess) {
+            answerAccessState = ExamAccessState.FULL_ACTIVE;
+        } else if (totalAnswered >= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+            answerAccessState = ExamAccessState.FREE_LIMIT_REACHED;
+        } else {
+            answerAccessState = ExamAccessState.PREVIEW_ACTIVE;
+        }
+
+        SubmitExamAnswerResponse.SubmitExamAnswerResponseBuilder responseBuilder =
+                SubmitExamAnswerResponse.builder()
+                        .answerId(answer.getId())
+                        .examId(examId)
+                        .questionId(questionId)
+                        .selectedOptionId(request.getSelectedOptionId())
+                        .submittedAt(answer.getAnsweredAt())
+                        .message(messages.get("exam.submit.success"))
+                        .totalAnswered((int) totalAnswered)
+                        .totalQuestions(EXAM_QUESTION_COUNT)
+                        .accessState(answerAccessState);
+
+        // Full paid exams remain blind during the exam.
+        // Correctness is exposed only inside the free preview.
+        if (!fullAccess) {
+            responseBuilder
+                    .correct(answer.getIsCorrect())
+                    .correctOptionId(correctOption.getId());
+        }
+
+        SubmitExamAnswerResponse response = responseBuilder.build();
 
         log.info("Answer submitted successfully. Progress: {}/{}", totalAnswered, EXAM_QUESTION_COUNT);
 
@@ -767,6 +908,22 @@ public class ExamService {
             throw new ExamNotActiveException(
                     messages.get("exam.submit.invalid_status", exam.getStatus()));
         }
+
+        ExamSimulationQuestion examQuestion =
+                examQuestionRepository.findByExamIdAndQuestionId(examId, questionId)
+                        .orElseThrow(() -> new QuestionNotFoundException(
+                                messages.get(
+                                        "exam.submit.question_not_found_in_exam",
+                                        questionId,
+                                        examId)));
+
+        boolean fullAccess =
+                enforceQuestionAccess(
+                        exam,
+                        userId,
+                        examQuestion,
+                        timedOutAt);
+
         if (timedOutAt.isAfter(exam.getExpiresAt())) {
             exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
             examRepository.save(exam);
@@ -775,9 +932,6 @@ public class ExamService {
                     examId);
         }
 
-        examQuestionRepository.findByExamIdAndQuestionId(examId, questionId)
-                .orElseThrow(() -> new QuestionNotFoundException(
-                        messages.get("exam.submit.question_not_found_in_exam", questionId, examId)));
         persistPresentationIfAbsent(examId, questionId, userId, LocalDateTime.now());
 
         ExamSimulationAnswer existing = answerRepository
@@ -807,6 +961,320 @@ public class ExamService {
                 .answerState(AnswerState.TIMED_OUT)
                 .timedOutAt(timedOutAt)
                 .build());
+
+        long totalFinalized =
+                answerRepository.countByExamId(examId);
+
+        markPaywallReachedIfNeeded(
+                exam,
+                fullAccess,
+                totalFinalized,
+                timedOutAt);
+    }
+
+    private ExamStartResponse toAccessAwareStartResponse(
+            ExamSimulation exam,
+            Long userId) {
+
+        boolean fullAccess =
+                !exam.isPreviewAttempt()
+                        || examAccessService.hasFullAccess(userId);
+
+        List<ExamSimulationQuestion> allQuestions =
+                getExamQuestions(exam.getId());
+
+        List<ExamSimulationAnswer> finalizedAnswers =
+                answerRepository.findByExamId(exam.getId());
+
+        Set<Long> finalizedIds = finalizedAnswers.stream()
+                .map(ExamSimulationAnswer::getQuestion)
+                .filter(java.util.Objects::nonNull)
+                .map(QuizQuestion::getId)
+                .collect(Collectors.toSet());
+
+        List<ExamSimulationQuestion> visibleQuestions =
+                fullAccess
+                        ? allQuestions
+                        : allQuestions.stream()
+                                .filter(question ->
+                                        question.getQuestionOrder()
+                                                <= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT)
+                                .toList();
+
+        List<Long> visibleFinalizedIds = visibleQuestions.stream()
+                .filter(question ->
+                        finalizedIds.contains(question.getQuestionId()))
+                .map(ExamSimulationQuestion::getQuestionId)
+                .toList();
+
+        int finalizedPreviewCount =
+                (int) allQuestions.stream()
+                        .filter(question ->
+                                question.getQuestionOrder()
+                                        <= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT)
+                        .filter(question ->
+                                finalizedIds.contains(question.getQuestionId()))
+                        .count();
+
+        markPaywallReachedIfNeeded(
+                exam,
+                fullAccess,
+                finalizedPreviewCount,
+                Instant.now());
+
+        ExamAccessMode accessMode =
+                fullAccess
+                        ? ExamAccessMode.FULL
+                        : ExamAccessMode.PREVIEW;
+
+        ExamAccessState accessState;
+
+        if (fullAccess) {
+            accessState = ExamAccessState.FULL_ACTIVE;
+        } else if (finalizedPreviewCount
+                >= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+            accessState = ExamAccessState.FREE_LIMIT_REACHED;
+        } else {
+            accessState = ExamAccessState.PREVIEW_ACTIVE;
+        }
+
+        int resumeQuestionOrder;
+
+        if (!fullAccess
+                && accessState == ExamAccessState.FREE_LIMIT_REACHED) {
+
+            resumeQuestionOrder =
+                    TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT + 1;
+
+        } else {
+
+            resumeQuestionOrder =
+                    allQuestions.stream()
+                            .filter(question ->
+                                    fullAccess
+                                            || question.getQuestionOrder()
+                                                    <= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT)
+                            .filter(question ->
+                                    !finalizedIds.contains(question.getQuestionId()))
+                            .map(ExamSimulationQuestion::getQuestionOrder)
+                            .findFirst()
+                            .orElse(exam.getTotalQuestions());
+        }
+
+        ExamStartResponse response =
+                examMapper.toStartResponse(
+                        exam,
+                        visibleQuestions);
+
+        response.setAccessMode(accessMode);
+        response.setAccessState(accessState);
+        response.setFreeQuestionLimit(
+                TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT);
+        response.setResumeQuestionOrder(resumeQuestionOrder);
+        response.setFinalizedQuestionIds(visibleFinalizedIds);
+
+        return response;
+    }
+
+    /**
+     * Enforces server-side theory-exam access.
+     *
+     * Legacy attempts stay FULL.
+     * New API attempts continuously respect entitlement state.
+     */
+    private boolean enforceQuestionAccess(
+            ExamSimulation exam,
+            Long userId,
+            ExamSimulationQuestion examQuestion,
+            Instant now) {
+
+        if (!exam.isPreviewAttempt()) {
+            return true;
+        }
+
+        // A running attempt that already exhausted its active exam window
+        // cannot be revived by entering another paywall cycle.
+        // A genuinely paused attempt is exempt because its clock is frozen.
+        if (!isPreviewPausedAtPaywall(exam)
+                && now.isAfter(exam.getExpiresAt())) {
+
+            exam.setStatus(
+                    ExamSimulation.ExamStatus.EXPIRED);
+
+            examRepository.save(exam);
+
+            throw new ExamExpiredException(
+                    messages.get(
+                            "exam.submit.expired",
+                            TheoryExamTiming.QUESTION_TIME_SECONDS),
+                    exam.getId());
+        }
+
+        boolean fullAccess =
+                examAccessService.hasFullAccess(userId);
+
+        if (fullAccess) {
+            resumePreviewAfterPaymentIfNeeded(
+                    exam,
+                    now);
+
+            return true;
+        }
+
+        if (isPreviewPausedAtPaywall(exam)) {
+            throw new FreeExamLimitReachedException(
+                    exam.getId(),
+                    examQuestion.getQuestionId());
+        }
+
+        if (examQuestion.getQuestionOrder()
+                > TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+
+            long finalizedCount =
+                    answerRepository.countByExamId(
+                            exam.getId());
+
+            markPaywallReachedIfNeeded(
+                    exam,
+                    false,
+                    finalizedCount,
+                    now);
+
+            throw new FreeExamLimitReachedException(
+                    exam.getId(),
+                    examQuestion.getQuestionId());
+        }
+
+        return false;
+    }
+
+    /**
+     * Records the moment access stops after the free section.
+     * Reaching the paywall never changes ExamStatus.
+     */
+    private void markPaywallReachedIfNeeded(
+            ExamSimulation exam,
+            boolean fullAccess,
+            long finalizedCount,
+            Instant now) {
+
+        if (!exam.isPreviewAttempt()
+                || fullAccess
+                || finalizedCount
+                        < TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+            return;
+        }
+
+        if (isPreviewPausedAtPaywall(exam)) {
+            return;
+        }
+
+        // Also supports entitlement expiry during an already-started exam.
+        // Never increase the active-time budget when entering a new
+        // paywall cycle.
+        Instant persistedNow =
+                now.truncatedTo(
+                        java.time.temporal.ChronoUnit.MICROS);
+
+        int remainingQuestions =
+                Math.max(
+                        0,
+                        exam.getTotalQuestions()
+                                - (int) Math.min(
+                                        finalizedCount,
+                                        exam.getTotalQuestions()));
+
+        int questionBoundSeconds =
+                TheoryExamTiming.totalSeconds(
+                        remainingQuestions);
+
+        Instant questionBoundDeadline =
+                persistedNow.plusSeconds(
+                        questionBoundSeconds);
+
+        if (exam.getExpiresAt().isAfter(questionBoundDeadline)) {
+            exam.setExpiresAt(questionBoundDeadline);
+        }
+
+        exam.setPaywallReachedAt(persistedNow);
+        exam.setFullAccessResumedAt(null);
+
+        examRepository.save(exam);
+
+        log.info(
+                "Theory exam {} paused at paywall after {} finalized questions",
+                exam.getId(),
+                finalizedCount);
+    }
+
+    /**
+     * Restarts only the remaining answering window after payment.
+     *
+     * For the normal free-preview upgrade:
+     * 50 total - 10 finalized = 40  15s = 600 seconds.
+     *
+     * Idempotent: once fullAccessResumedAt is set, refreshes do not
+     * grant additional time.
+     */
+    private void resumePreviewAfterPaymentIfNeeded(
+            ExamSimulation exam,
+            Instant now) {
+
+        if (!isPreviewPausedAtPaywall(exam)) {
+            return;
+        }
+
+        Instant paywallReachedAt =
+                exam.getPaywallReachedAt();
+
+        // PostgreSQL TIMESTAMPTZ persists microsecond precision.
+        Instant persistedNow =
+                now.truncatedTo(
+                        java.time.temporal.ChronoUnit.MICROS);
+
+        long currentPauseSeconds =
+                Math.max(
+                        0L,
+                        Duration.between(
+                                paywallReachedAt,
+                                persistedNow)
+                                .getSeconds());
+
+        long accumulatedPauseSeconds =
+                Math.max(
+                        0L,
+                        exam.getPaywallPausedSeconds())
+                        + currentPauseSeconds;
+
+        // Shift the already-frozen deadline instead of rebuilding it.
+        // This preserves exactly the active time that remained before
+        // checkout and prevents repeated purchases from inflating time.
+        exam.setExpiresAt(
+                exam.getExpiresAt()
+                        .plusSeconds(currentPauseSeconds));
+
+        exam.setPaywallPausedSeconds(
+                accumulatedPauseSeconds);
+
+        exam.setFullAccessResumedAt(
+                persistedNow);
+
+        examRepository.save(exam);
+
+        log.info(
+                "Theory exam {} resumed after {} paywall seconds; accumulated pause={} seconds",
+                exam.getId(),
+                currentPauseSeconds,
+                accumulatedPauseSeconds);
+    }
+
+    private boolean isPreviewPausedAtPaywall(
+            ExamSimulation exam) {
+
+        return exam != null
+                && exam.isPreviewAttempt()
+                && exam.getPaywallReachedAt() != null
+                && exam.getFullAccessResumedAt() == null;
     }
 
     private void persistPresentationIfAbsent(
@@ -1493,7 +1961,10 @@ public class ExamService {
 
     private Integer resolveExamElapsedSeconds(ExamSimulation exam) {
         Integer calculated = calculateElapsedSeconds(
-                exam.getStartedAt(), exam.getCompletedAt(), exam.getTotalQuestions());
+                exam.getStartedAt(),
+                exam.getCompletedAt(),
+                exam.getTotalQuestions(),
+                exam.getPaywallPausedSeconds());
         if (calculated != null) {
             return calculated;
         }
@@ -1502,17 +1973,39 @@ public class ExamService {
         return stored != null && stored > 0 ? stored : null;
     }
 
-    private Integer calculateElapsedSeconds(
+    Integer calculateElapsedSeconds(
             Instant startedAt,
             Instant completedAt,
-            int totalQuestions) {
-        if (startedAt == null || completedAt == null || completedAt.isBefore(startedAt)) {
+            int totalQuestions,
+            long paywallPausedSeconds) {
+
+        if (startedAt == null
+                || completedAt == null
+                || completedAt.isBefore(startedAt)) {
             return null;
         }
 
-        long elapsedSeconds = Duration.between(startedAt, completedAt).getSeconds();
-        long maximumSeconds = TheoryExamTiming.totalSeconds(totalQuestions);
-        return (int) Math.min(elapsedSeconds, maximumSeconds);
+        long wallClockSeconds =
+                Duration.between(
+                        startedAt,
+                        completedAt)
+                        .getSeconds();
+
+        long activeElapsedSeconds =
+                Math.max(
+                        0L,
+                        wallClockSeconds
+                                - Math.max(
+                                        0L,
+                                        paywallPausedSeconds));
+
+        long maximumSeconds =
+                TheoryExamTiming.totalSeconds(
+                        totalQuestions);
+
+        return (int) Math.min(
+                activeElapsedSeconds,
+                maximumSeconds);
     }
 
     /**
