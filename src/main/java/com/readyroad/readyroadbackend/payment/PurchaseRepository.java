@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 public interface PurchaseRepository extends JpaRepository<Purchase, UUID> {
     Optional<Purchase> findByClientRequestId(String clientRequestId);
     Optional<Purchase> findByIdAndUserId(UUID id, Long userId);
+    Optional<Purchase> findFirstByUserIdAndStatusOrderByUpdatedAtDesc(Long userId, PurchaseStatus status);
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select p from Purchase p where p.id = :id")

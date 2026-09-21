@@ -29,6 +29,8 @@ class PaymentControllerTest {
         assertThatThrownBy(() -> controller.status(null, UUID.randomUUID())).isInstanceOf(ResponseStatusException.class);
         assertThatThrownBy(() -> controller.checkout(null, new PaymentController.CheckoutRequest(PaymentPlan.RIJVIA_3_DAYS, "req"), "en"))
                 .isInstanceOf(ResponseStatusException.class);
+        assertThatThrownBy(() -> controller.accountAccess(null))
+                .isInstanceOf(ResponseStatusException.class);
         verifyNoInteractions(checkout, purchases, entitlements);
     }
 
@@ -44,5 +46,55 @@ class PaymentControllerTest {
         assertThat(controller.status(user, purchase.getId()).expiresAt()).isNull();
         purchase.setStatus(PurchaseStatus.FAILED);
         assertThat(controller.status(user, purchase.getId()).expiresAt()).isNull();
+    }
+
+    @Test void accountAccessReportsFreeWhenNoEntitlementExists() {
+        User user = new User(); user.setId(42L);
+        when(entitlements.findById(42L)).thenReturn(Optional.empty());
+
+        PaymentController.AccountAccessResult result = controller.accountAccess(user);
+
+        assertThat(result.active()).isFalse();
+        assertThat(result.status()).isEqualTo(EntitlementStatus.FREE);
+        assertThat(result.plan()).isNull();
+        assertThat(result.expiresAt()).isNull();
+        verify(purchases, never()).findFirstByUserIdAndStatusOrderByUpdatedAtDesc(anyLong(), any());
+    }
+
+    @Test void accountAccessReportsActivePlanAndExpiryInBrussels() {
+        User user = new User(); user.setId(42L);
+        UserEntitlement entitlement = new UserEntitlement();
+        entitlement.setStatus(EntitlementStatus.ACTIVE);
+        entitlement.setExpiresAt(Instant.parse("2030-09-28T12:00:00Z"));
+        Purchase purchase = new Purchase();
+        purchase.setPlan(PaymentPlan.RIJVIA_1_WEEK);
+        purchase.setStatus(PurchaseStatus.PAID);
+
+        when(entitlements.findById(42L)).thenReturn(Optional.of(entitlement));
+        when(purchases.findFirstByUserIdAndStatusOrderByUpdatedAtDesc(42L, PurchaseStatus.PAID))
+                .thenReturn(Optional.of(purchase));
+
+        PaymentController.AccountAccessResult result = controller.accountAccess(user);
+
+        assertThat(result.active()).isTrue();
+        assertThat(result.status()).isEqualTo(EntitlementStatus.ACTIVE);
+        assertThat(result.plan()).isEqualTo(PaymentPlan.RIJVIA_1_WEEK);
+        assertThat(result.expiresAt().toString()).isEqualTo("2030-09-28T14:00+02:00");
+    }
+
+    @Test void accountAccessTreatsPastActiveEntitlementAsExpired() {
+        User user = new User(); user.setId(42L);
+        UserEntitlement entitlement = new UserEntitlement();
+        entitlement.setStatus(EntitlementStatus.ACTIVE);
+        entitlement.setExpiresAt(Instant.parse("2020-01-01T00:00:00Z"));
+        when(entitlements.findById(42L)).thenReturn(Optional.of(entitlement));
+
+        PaymentController.AccountAccessResult result = controller.accountAccess(user);
+
+        assertThat(result.active()).isFalse();
+        assertThat(result.status()).isEqualTo(EntitlementStatus.EXPIRED);
+        assertThat(result.plan()).isNull();
+        assertThat(result.expiresAt()).isNull();
+        verify(purchases, never()).findFirstByUserIdAndStatusOrderByUpdatedAtDesc(anyLong(), any());
     }
 }
