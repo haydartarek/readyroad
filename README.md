@@ -7,11 +7,28 @@ This repository contains the backend services that power RijVia: authentication,
 **Live platform:** https://rijvia.be  
 **Public API:** https://api.rijvia.be
 
+## Key backend features
+
+- **Production REST API** built with Java 21, Spring Boot, Spring Security, JPA/Hibernate and Maven.
+- **Authentication and authorization** with JWT, Google OAuth support and role-based access control.
+- **Multilingual learning data** for Arabic, Dutch, French and English, including questions, explanations, categories and traffic-sign content.
+- **Exam and practice engine** with persistent user state, progress tracking and learning analytics.
+- **Question-bank and administration APIs** for content management, users, roles, categories, exam history and operational statistics.
+- **Paid access flow** using Stripe Checkout for prepaid access plans with one-time payments and entitlement handling.
+- **Notification infrastructure** including email-related flows and web-push support.
+- **Database layer** using JPA/Hibernate, Flyway migrations and support for PostgreSQL and MySQL.
+- **API documentation and monitoring** through OpenAPI/Swagger and Spring Boot Actuator.
+- **Automated quality checks** with JUnit, Mockito, Spring Security Test and PostgreSQL Testcontainers.
+- **Containerised delivery** with Docker, Docker Compose and GitHub Actions based CI/CD.
+
+The API powers the live **RijVia** web platform and is designed as the central source of truth for security-sensitive behaviour, exam rules, payments, learner progress and persistent data.
+
 ---
 
 ## Table of contents
 
 - [About the backend](#about-the-backend)
+- [Key backend features](#key-backend-features)
 - [Responsibilities](#responsibilities)
 - [Technology stack](#technology-stack)
 - [Architecture](#architecture)
