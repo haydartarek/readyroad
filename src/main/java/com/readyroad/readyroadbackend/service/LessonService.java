@@ -5,7 +5,9 @@ import com.readyroad.readyroadbackend.domain.repository.LessonRepository;
 import com.readyroad.readyroadbackend.dto.response.LessonDetailResponse;
 import com.readyroad.readyroadbackend.dto.response.LessonResponse;
 import com.readyroad.readyroadbackend.mapper.LessonMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -40,14 +42,29 @@ public class LessonService {
      */
     public LessonDetailResponse getLessonByIdOrCode(String idOrCode) {
         Lesson lesson;
+
         try {
             Long id = Long.parseLong(idOrCode);
+
             lesson = lessonRepository.findById(id)
-                    .orElseThrow(() -> new IllegalArgumentException("Lesson not found: " + idOrCode));
+                    .filter(candidate ->
+                            Boolean.TRUE.equals(candidate.getIsActive()))
+                    .orElseThrow(() ->
+                            new ResponseStatusException(
+                                    HttpStatus.NOT_FOUND,
+                                    "Lesson not found: " + idOrCode));
+
         } catch (NumberFormatException e) {
+
             lesson = lessonRepository.findByLessonCode(idOrCode)
-                    .orElseThrow(() -> new IllegalArgumentException("Lesson not found: " + idOrCode));
+                    .filter(candidate ->
+                            Boolean.TRUE.equals(candidate.getIsActive()))
+                    .orElseThrow(() ->
+                            new ResponseStatusException(
+                                    HttpStatus.NOT_FOUND,
+                                    "Lesson not found: " + idOrCode));
         }
+
         return lessonMapper.toDetailResponse(lesson);
     }
 
