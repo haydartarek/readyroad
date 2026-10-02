@@ -1,7 +1,8 @@
 package com.readyroad.readyroadbackend.marketing.editorial;
 
-import jakarta.annotation.PostConstruct;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
+import com.readyroad.readyroadbackend.storage.MediaStorageBucket;
+import com.readyroad.readyroadbackend.storage.MediaStorageService;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -9,12 +10,9 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.HexFormat;
 import java.util.List;
 import java.util.Locale;
@@ -24,7 +22,6 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageWriteParam;
 import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageOutputStream;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,24 +35,14 @@ class EditorialArticleImageProcessor {
             new VariantSpec("MOBILE", 480, 270, 81_920),
             new VariantSpec("OG", 1200, 630, 307_200));
 
-    private final Path storageRoot;
+    private final MediaStorageService storage;
     private final BackendMessageService messages;
 
     EditorialArticleImageProcessor(
-            @Value("${rijvia.editorial.images.directory:data/editorial-images}") String storageDirectory,
+            MediaStorageService storage,
             BackendMessageService messages) {
-        this.storageRoot = Path.of(storageDirectory).toAbsolutePath().normalize();
+        this.storage = storage;
         this.messages = messages;
-    }
-
-    @PostConstruct
-    void initialize() {
-        try {
-            Files.createDirectories(storageRoot.resolve("archive"));
-            Files.createDirectories(storageRoot.resolve("optimized"));
-        } catch (IOException error) {
-            throw new IllegalStateException("Unable to initialize editorial image storage", error);
-        }
     }
 
     Processed process(
@@ -65,10 +52,7 @@ class EditorialArticleImageProcessor {
             double focalPointX,
             double focalPointY) {
         String storageKey = UUID.randomUUID().toString().replace("-", "");
-        Path archiveDirectory = storageRoot.resolve("archive").resolve(storageKey).normalize();
-        Path optimizedDirectory = storageRoot.resolve("optimized").resolve(storageKey).normalize();
-        requireInsideStorage(archiveDirectory);
-        requireInsideStorage(optimizedDirectory);
+        List<StoredObject> storedObjects = new ArrayList<>();
 
         try {
             byte[] sourceBytes = file.getBytes();
@@ -78,33 +62,32 @@ class EditorialArticleImageProcessor {
                 throw new IllegalArgumentException(messages.get("upload.unreadable_image"));
             }
 
-            Files.createDirectories(archiveDirectory);
-            Files.createDirectories(optimizedDirectory);
             String extension = "image/png".equals(contentType) ? "png" : "jpg";
-            Path original = archiveDirectory.resolve("original." + extension);
-            Files.write(original, sourceBytes, StandardOpenOption.CREATE_NEW);
+            String originalKey = "originals/articles/" + storageKey + "/original." + extension;
+            put(MediaStorageBucket.PRIVATE, originalKey, sourceBytes, contentType, storedObjects);
 
             String hash = sha256(sourceBytes);
             String seoName = seoFileName(storedFileName);
             List<ProcessedVariant> variants = VARIANTS.stream()
                     .map(spec -> writeVariant(
                             source,
-                            optimizedDirectory,
                             storageKey,
                             seoName,
                             spec,
                             focalPointX,
-                            focalPointY))
+                            focalPointY,
+                            storedObjects))
                     .toList();
             return new Processed(
                     storageKey,
                     hash,
-                    storageRoot.relativize(original).toString().replace('\\', '/'),
+                    "archive/" + storageKey + "/original." + extension,
                     source.getWidth(),
                     source.getHeight(),
-                    variants);
+                    variants,
+                    List.copyOf(storedObjects));
         } catch (RuntimeException | IOException error) {
-            deleteStorageKey(storageKey);
+            deleteObjects(storedObjects);
             if (error instanceof IllegalArgumentException invalid) {
                 throw invalid;
             }
@@ -114,18 +97,18 @@ class EditorialArticleImageProcessor {
 
     void delete(Processed processed) {
         if (processed != null) {
-            deleteStorageKey(processed.storageKey());
+            deleteObjects(processed.storedObjects());
         }
     }
 
     private ProcessedVariant writeVariant(
             BufferedImage source,
-            Path directory,
             String storageKey,
             String seoName,
             VariantSpec spec,
             double focalPointX,
-            double focalPointY) {
+            double focalPointY,
+            List<StoredObject> storedObjects) {
         int width = spec.width();
         int height = spec.height();
         // Reuse the smaller schema-approved renditions when the source cannot fill the larger one.
@@ -141,13 +124,8 @@ class EditorialArticleImageProcessor {
         BufferedImage rendered = render(source, width, height, focalPointX, focalPointY);
         byte[] bytes = encodeJpegWithinBudget(rendered, spec.maxBytes());
         String fileName = seoName + "-" + spec.type().toLowerCase(Locale.ROOT) + ".jpg";
-        Path output = directory.resolve(fileName).normalize();
-        requireInsideStorage(output);
-        try {
-            Files.write(output, bytes, StandardOpenOption.CREATE_NEW);
-        } catch (IOException error) {
-            throw new IllegalStateException("Unable to store optimized article image variant", error);
-        }
+        String key = "articles/" + storageKey + "/" + fileName;
+        put(MediaStorageBucket.PUBLIC, key, bytes, "image/jpeg", storedObjects);
         return new ProcessedVariant(
                 spec.type(),
                 "JPEG",
@@ -155,6 +133,21 @@ class EditorialArticleImageProcessor {
                 rendered.getWidth(),
                 rendered.getHeight(),
                 bytes.length);
+    }
+
+    private void put(
+            MediaStorageBucket bucket,
+            String key,
+            byte[] bytes,
+            String contentType,
+            List<StoredObject> storedObjects) {
+        try {
+            // Track the attempted key as well: a provider may commit before reporting a failure.
+            storedObjects.add(new StoredObject(bucket, key));
+            storage.put(bucket, key, new ByteArrayInputStream(bytes), bytes.length, contentType);
+        } catch (IOException error) {
+            throw new IllegalStateException("Unable to store editorial article image", error);
+        }
     }
 
     private static BufferedImage render(
@@ -247,33 +240,20 @@ class EditorialArticleImageProcessor {
         }
     }
 
-    private void deleteStorageKey(String storageKey) {
-        deleteTree(storageRoot.resolve("archive").resolve(storageKey));
-        deleteTree(storageRoot.resolve("optimized").resolve(storageKey));
-    }
-
-    private static void deleteTree(Path root) {
-        if (!Files.exists(root)) {
+    private void deleteObjects(List<StoredObject> storedObjects) {
+        if (storedObjects == null) {
             return;
         }
-        try (var paths = Files.walk(root)) {
-            paths.sorted(Comparator.reverseOrder()).forEach(path -> {
-                try {
-                    Files.deleteIfExists(path);
-                } catch (IOException ignored) {
-                    // Best-effort rollback cleanup; the database transaction remains authoritative.
-                }
-            });
-        } catch (IOException ignored) {
-            // Best-effort rollback cleanup; the database transaction remains authoritative.
-        }
+        storedObjects.forEach(object -> {
+            try {
+                storage.delete(object.bucket(), object.key());
+            } catch (IOException | RuntimeException ignored) {
+                // Best-effort rollback cleanup; the database transaction remains authoritative.
+            }
+        });
     }
 
-    private void requireInsideStorage(Path path) {
-        if (!path.normalize().startsWith(storageRoot)) {
-            throw new SecurityException("Invalid editorial image storage path");
-        }
-    }
+    private record StoredObject(MediaStorageBucket bucket, String key) {}
 
     private static String sha256(byte[] bytes) {
         try {
@@ -299,7 +279,8 @@ class EditorialArticleImageProcessor {
             String originalStoragePath,
             int originalWidth,
             int originalHeight,
-            List<ProcessedVariant> variants) {}
+            List<ProcessedVariant> variants,
+            List<StoredObject> storedObjects) {}
 
     record ProcessedVariant(
             String type,

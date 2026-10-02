@@ -11,6 +11,7 @@ import java.io.ByteArrayOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.UUID;
+import java.util.List;
 import javax.imageio.ImageIO;
 import javax.sql.DataSource;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,6 +35,8 @@ import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.server.ResponseStatusException;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -52,14 +55,22 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
 
     @DynamicPropertySource
     static void properties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", POSTGRES::getJdbcUrl);
+        registry.add("spring.datasource.url", () -> POSTGRES.getJdbcUrl() + "&currentSchema=readyroad");
         registry.add("spring.datasource.username", POSTGRES::getUsername);
         registry.add("spring.datasource.password", POSTGRES::getPassword);
-        registry.add("spring.flyway.url", POSTGRES::getJdbcUrl);
+        registry.add("spring.flyway.url", () -> POSTGRES.getJdbcUrl() + "&currentSchema=readyroad");
         registry.add("spring.flyway.user", POSTGRES::getUsername);
         registry.add("spring.flyway.password", POSTGRES::getPassword);
+        registry.add("spring.flyway.default-schema", () -> "readyroad");
+        registry.add("spring.flyway.schemas", () -> "readyroad");
+        registry.add("spring.jpa.properties.hibernate.default_schema", () -> "readyroad");
+        registry.add("app.media.storage.provider", () -> "local");
         registry.add("readyroad.marketing.enabled", () -> "false");
         registry.add("rijvia.editorial.images.directory", () -> IMAGE_DIRECTORY.toString());
+        registry.add("app.media.storage.local-root-directory",
+                () -> IMAGE_DIRECTORY.resolve("public").toString());
+        registry.add("app.media.storage.local-public-directories.articles",
+                () -> IMAGE_DIRECTORY.resolve("optimized").toString());
         registry.add("jwt.secret-key",
                 () -> "ZWRpdG9yaWFsLWltYWdlLXRlc3Qta2V5LW5vdC1mb3ItcHJvZHVjdGlvbg==");
         registry.add("readyroad.admin.default-password", () -> "Image-Test-Only-2026!");
@@ -70,6 +81,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     @Autowired EditorialArticleImageStore store;
     @Autowired WebApplicationContext context;
     @Autowired ObjectMapper objectMapper;
+    @Autowired PlatformTransactionManager transactionManager;
 
     private JdbcTemplate jdbc;
 
@@ -104,6 +116,18 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
             assertThat(variant.publicPath()).startsWith("/images/articles/");
             assertThat(Files.size(publicFile(variant.publicPath()))).isEqualTo(variant.byteSize());
         });
+        String originalStoragePath = jdbc.queryForObject(
+                "SELECT original_storage_path FROM article_image_assets WHERE id = ?",
+                String.class,
+                asset.id());
+        assertThat(originalStoragePath).startsWith("archive/").endsWith("/original.jpg");
+        String storageKey = jdbc.queryForObject(
+                "SELECT storage_key FROM article_image_assets WHERE id = ?",
+                String.class,
+                asset.id());
+        assertThat(originalStoragePath).isEqualTo("archive/" + storageKey + "/original.jpg");
+        assertThat(Files.exists(IMAGE_DIRECTORY.resolve("private-media")
+                .resolve("originals/articles").resolve(storageKey).resolve("original.jpg"))).isTrue();
         assertThat(asset.variants().stream()
                 .filter(value -> value.type().equals("HERO"))
                 .findFirst().orElseThrow().byteSize()).isLessThan(420_000);
@@ -236,6 +260,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
         long firstArticle = imageRequiredArticle(1, "first-article");
         long secondArticle = imageRequiredArticle(2, "second-article");
         var first = service.upload(firstArticle, image("same-source"), metadata("same-source"), "admin");
+        List<Path> filesBeforeDuplicate = storedFiles();
 
         assertThatThrownBy(() -> service.upload(
                 secondArticle,
@@ -249,6 +274,36 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
                 .extracting(EditorialArticleImageDtos.Asset::id)
                 .isEqualTo(first.id());
         assertThat(service.current(secondArticle)).isEmpty();
+        assertThat(storedFiles()).containsExactlyInAnyOrderElementsOf(filesBeforeDuplicate);
+    }
+
+    @Test
+    void transactionRollbackRemovesOriginalAndAllVariantsWithoutChangingExistingFiles() throws Exception {
+        long articleId = imageRequiredArticle(1, "rollback-article");
+        var file = image("rollback-source");
+        List<Path> filesBeforeUpload = storedFiles();
+        new TransactionTemplate(transactionManager).executeWithoutResult(transaction -> {
+            var asset = service.upload(articleId, file, metadata("rollback-source"), "admin");
+            assertThat(asset.variants()).hasSize(5);
+            try {
+                assertThat(storedFiles()).hasSize(filesBeforeUpload.size() + 6);
+            } catch (java.io.IOException error) {
+                throw new java.io.UncheckedIOException(error);
+            }
+            transaction.setRollbackOnly();
+        });
+
+        assertThat(service.current(articleId)).isEmpty();
+        assertThat(storedFiles()).containsExactlyInAnyOrderElementsOf(filesBeforeUpload);
+    }
+
+    private static List<Path> storedFiles() throws java.io.IOException {
+        if (!Files.exists(IMAGE_DIRECTORY)) {
+            return List.of();
+        }
+        try (var files = Files.walk(IMAGE_DIRECTORY)) {
+            return files.filter(Files::isRegularFile).toList();
+        }
     }
 
     @Test
@@ -303,7 +358,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     private boolean tableExists(String tableName) {
         Integer count = jdbc.queryForObject("""
                 SELECT count(*) FROM information_schema.tables
-                WHERE table_schema = 'public' AND table_name = ?
+                WHERE table_schema = 'readyroad' AND table_name = ?
                 """, Integer.class, tableName);
         return count != null && count > 0;
     }
@@ -311,7 +366,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     private boolean columnExists(String tableName, String columnName) {
         Integer count = jdbc.queryForObject("""
                 SELECT count(*) FROM information_schema.columns
-                WHERE table_schema = 'public' AND table_name = ? AND column_name = ?
+                WHERE table_schema = 'readyroad' AND table_name = ? AND column_name = ?
                 """, Integer.class, tableName, columnName);
         return count != null && count > 0;
     }

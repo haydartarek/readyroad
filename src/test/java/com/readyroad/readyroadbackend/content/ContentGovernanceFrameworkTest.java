@@ -320,8 +320,6 @@ class ContentGovernanceFrameworkTest {
                 String suffix = language.toLowerCase(Locale.ROOT);
                 assertText(content, "title_" + suffix, itemId + " title " + language);
                 assertText(content, "content_" + suffix, itemId + " content " + language);
-                assertFalse(content.path("bulletPoints_" + suffix).isEmpty(),
-                        itemId + " bullet points " + language);
             }
         }
     }

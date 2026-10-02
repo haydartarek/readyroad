@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.dto.sign;
 
 import com.readyroad.readyroadbackend.domain.entity.SignExam;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 
 import java.util.List;
 
@@ -27,10 +28,19 @@ public record SignExamQuestionsDto(
         List<SignQuizQuestionDto> questions
 ) {
     public static SignExamQuestionsDto from(SignExam exam, List<SignQuizQuestionDto> questions) {
+        return from(exam, questions, null);
+    }
+
+    public static SignExamQuestionsDto from(
+            SignExam exam,
+            List<SignQuizQuestionDto> questions,
+            MediaUrlResolver mediaUrlResolver) {
         return new SignExamQuestionsDto(
                 exam.getSign().getSignCode(),
                 exam.getSign().getCategory(),
-                exam.getSign().getImagePath(),
+                mediaUrlResolver == null
+                        ? exam.getSign().getImagePath()
+                        : mediaUrlResolver.resolvePublicUrl(exam.getSign().getImagePath()),
                 exam.getSign().getNameNl(),
                 exam.getSign().getNameEn(),
                 exam.getSign().getNameFr(),

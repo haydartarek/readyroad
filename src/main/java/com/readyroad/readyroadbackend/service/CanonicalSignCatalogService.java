@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -477,7 +478,8 @@ public class CanonicalSignCatalogService {
         if (!normalized.startsWith("/")) {
             normalized = "/" + normalized;
         }
-        return normalized;
+        return Normalizer.normalize(normalized, Normalizer.Form.NFD)
+                .replaceAll("\\p{M}+", "");
     }
 
     private static String text(JsonNode node, String field) {

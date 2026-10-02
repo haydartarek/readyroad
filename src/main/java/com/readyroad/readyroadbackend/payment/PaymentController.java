@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.payment;
 
 import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.enums.Role;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -69,10 +70,14 @@ public class PaymentController {
     @GetMapping("/account/access")
     public AccountAccessResult accountAccess(@AuthenticationPrincipal User user) {
         Long authenticatedUserId = userId(user);
+        if (user.getRole() == Role.ADMIN || user.getRole() == Role.MODERATOR) {
+            return new AccountAccessResult(true, EntitlementStatus.ACTIVE, null, null, true);
+        }
+
         UserEntitlement entitlement = entitlements.findById(authenticatedUserId).orElse(null);
 
         if (entitlement == null) {
-            return new AccountAccessResult(false, EntitlementStatus.FREE, null, null);
+            return new AccountAccessResult(false, EntitlementStatus.FREE, null, null, false);
         }
 
         Instant expiresAt = entitlement.getExpiresAt();
@@ -80,20 +85,25 @@ public class PaymentController {
                 && expiresAt != null
                 && expiresAt.isAfter(Instant.now());
 
+        PaymentPlan plan = entitlement.getStatus() == EntitlementStatus.FREE
+                ? null
+                : purchases
+                        .findFirstByUserIdAndStatusOrderByUpdatedAtDesc(authenticatedUserId, PurchaseStatus.PAID)
+                        .map(Purchase::getPlan)
+                        .orElse(null);
+
+        OffsetDateTime expiry = expiresAt == null
+                ? null
+                : expiresAt.atZone(ZoneId.of("Europe/Brussels")).toOffsetDateTime();
+
         if (!active) {
             EntitlementStatus status = entitlement.getStatus() == EntitlementStatus.ACTIVE
                     ? EntitlementStatus.EXPIRED
                     : entitlement.getStatus();
-            return new AccountAccessResult(false, status, null, null);
+            return new AccountAccessResult(false, status, plan, expiry, false);
         }
 
-        PaymentPlan plan = purchases
-                .findFirstByUserIdAndStatusOrderByUpdatedAtDesc(authenticatedUserId, PurchaseStatus.PAID)
-                .map(Purchase::getPlan)
-                .orElse(null);
-
-        OffsetDateTime expiry = expiresAt.atZone(ZoneId.of("Europe/Brussels")).toOffsetDateTime();
-        return new AccountAccessResult(true, EntitlementStatus.ACTIVE, plan, expiry);
+        return new AccountAccessResult(true, EntitlementStatus.ACTIVE, plan, expiry, false);
     }
 
     private static Long userId(User user) {
@@ -103,5 +113,5 @@ public class PaymentController {
     public record CheckoutRequest(@NotNull PaymentPlan plan, @NotBlank @Size(max = 64) String clientRequestId) {}
     public record PurchaseResult(UUID purchaseId, PurchaseStatus status, PaymentPlan plan, OffsetDateTime expiresAt) {}
     public record AccountAccessResult(boolean active, EntitlementStatus status, PaymentPlan plan,
-            OffsetDateTime expiresAt) {}
+            OffsetDateTime expiresAt, boolean unlimited) {}
 }

@@ -73,8 +73,10 @@ public class LessonController {
         Long userId = authenticationUtil.extractUserId(authentication);
         LessonDetailResponse lesson = lessonService.getLessonByIdOrCode(idOrCode);
 
-        int totalPages = body.getOrDefault("totalPages",
-                lesson.pages() != null ? lesson.pages().size() : 1);
+        // The number of pages is server-owned. Accepting a client-provided
+        // totalPages value would let a caller mark a multi-page lesson as
+        // completed by submitting a smaller total.
+        int totalPages = lesson.pages() != null ? lesson.pages().size() : 1;
         Integer pageNumber = body.get("pageNumber");
 
         Map<String, Object> result = lessonProgressService.markPageRead(

@@ -125,6 +125,7 @@ public class LessonVersion {
         return document;
     }
 
+
     public LessonVersionSource getSource() {
         return source;
     }

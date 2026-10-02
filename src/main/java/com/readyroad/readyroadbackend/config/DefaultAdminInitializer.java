@@ -29,7 +29,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @since 2026-02-04
  */
 @Configuration
-@Profile("!production-mirror")
+@Profile("!production-mirror & !local-cms")
 @RequiredArgsConstructor
 @Slf4j
 public class DefaultAdminInitializer {

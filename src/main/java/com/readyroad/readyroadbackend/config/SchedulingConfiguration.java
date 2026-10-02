@@ -11,6 +11,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @Configuration
 @EnableScheduling
-@Profile("!production-mirror")
+@Profile("!production-mirror & !local-cms")
 public class SchedulingConfiguration {
 }

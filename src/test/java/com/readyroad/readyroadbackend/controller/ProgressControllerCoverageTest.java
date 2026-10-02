@@ -7,6 +7,8 @@ import static org.mockito.Mockito.when;
 
 import com.readyroad.readyroadbackend.dto.TheoryQuestionCoverageResponse;
 import com.readyroad.readyroadbackend.dto.TheoryTimeoutAnalysisResponse;
+import com.readyroad.readyroadbackend.dto.WeakAreasOverviewResponse;
+import com.readyroad.readyroadbackend.service.AnalyticsService;
 import com.readyroad.readyroadbackend.service.ProgressService;
 import com.readyroad.readyroadbackend.service.StudentIntelligenceService;
 import com.readyroad.readyroadbackend.service.TheoryQuestionCoverageService;
@@ -29,6 +31,7 @@ class ProgressControllerCoverageTest {
     @Mock private StudentIntelligenceService studentIntelligenceService;
     @Mock private TheoryQuestionCoverageService coverageService;
     @Mock private TheoryTimeoutAnalysisService timeoutAnalysisService;
+    @Mock private AnalyticsService analyticsService;
     @Mock private AuthenticationUtil authenticationUtil;
     @Mock private Authentication authentication;
 
@@ -41,6 +44,7 @@ class ProgressControllerCoverageTest {
                 studentIntelligenceService,
                 coverageService,
                 timeoutAnalysisService,
+                analyticsService,
                 authenticationUtil);
     }
 
@@ -87,5 +91,22 @@ class ProgressControllerCoverageTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).isSameAs(analysis);
         verify(timeoutAnalysisService).getAnalysis(42L, 5);
+    }
+
+    @Test
+    void returnsRealRecommendationsForTheAuthenticatedUserOnly() {
+        WeakAreasOverviewResponse recommendations = WeakAreasOverviewResponse.builder()
+                .weakAreas(List.of())
+                .totalPracticedCategories(2)
+                .overallAccuracy(75.0)
+                .build();
+        when(authenticationUtil.extractUserId(authentication)).thenReturn(42L);
+        when(analyticsService.getWeakAreaRecommendations(42L)).thenReturn(recommendations);
+
+        ResponseEntity<WeakAreasOverviewResponse> response = controller.getRecommendations(authentication);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isSameAs(recommendations);
+        verify(analyticsService).getWeakAreaRecommendations(42L);
     }
 }

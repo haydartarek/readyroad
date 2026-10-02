@@ -111,6 +111,8 @@ public class SecurityConfig {
                                                 .requestMatchers(HttpMethod.HEAD, "/images/quiz/**").permitAll()
                                                 .requestMatchers(HttpMethod.GET, "/images/articles/**").permitAll()
                                                 .requestMatchers(HttpMethod.HEAD, "/images/articles/**").permitAll()
+                                                .requestMatchers(HttpMethod.GET, "/images/lessons/**").permitAll()
+                                                .requestMatchers(HttpMethod.HEAD, "/images/lessons/**").permitAll()
 
                                                 // Authentication
                                                 .requestMatchers(

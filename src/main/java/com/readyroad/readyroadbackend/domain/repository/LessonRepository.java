@@ -34,11 +34,7 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
             " LOWER(p.contentNl) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
             " LOWER(p.contentEn) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
             " LOWER(p.contentFr) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
-            " LOWER(p.contentAr) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
-            " LOWER(COALESCE(p.bulletPointsNl, '')) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
-            " LOWER(COALESCE(p.bulletPointsEn, '')) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
-            " LOWER(COALESCE(p.bulletPointsFr, '')) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
-            " LOWER(COALESCE(p.bulletPointsAr, '')) LIKE LOWER(CONCAT('%', :q, '%')))" +
+            " LOWER(p.contentAr) LIKE LOWER(CONCAT('%', :q, '%')))" +
             " ORDER BY l.displayOrder ASC")
     List<Lesson> searchLessons(@Param("q") String query);
 

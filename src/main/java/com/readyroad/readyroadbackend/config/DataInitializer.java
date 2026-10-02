@@ -8,7 +8,7 @@ import com.readyroad.readyroadbackend.service.CanonicalRoadSignSyncService;
 
 @Slf4j
 @Component
-@Profile("!production-mirror")
+@Profile("!production-mirror & !local-cms")
 public class DataInitializer implements CommandLineRunner {
 
     private final CanonicalRoadSignSyncService canonicalRoadSignSyncService;

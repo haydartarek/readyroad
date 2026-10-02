@@ -60,6 +60,20 @@ spring:
         debug: false
 
 app:
+  media:
+    storage:
+      provider: ${STORAGE_PROVIDER:local}
+      endpoint: ${STORAGE_ENDPOINT:}
+      region: ${STORAGE_REGION:eu-west-1}
+      access-key: ${STORAGE_ACCESS_KEY:}
+      secret-key: ${STORAGE_SECRET_KEY:}
+      public-bucket: ${STORAGE_PUBLIC_BUCKET:rijvia-public}
+      private-bucket: ${STORAGE_PRIVATE_BUCKET:rijvia-private}
+      public-base-url: ${STORAGE_PUBLIC_BASE_URL:}
+      local-root-directory: ${MEDIA_STORAGE_LOCAL_ROOT:public/images}
+      local-public-directories:
+        articles: ${RIJVIA_EDITORIAL_IMAGES_DIRECTORY:data/editorial-images}/optimized
+      path-style-access: ${STORAGE_PATH_STYLE_ACCESS:true}
   cors:
     allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:3001,http://localhost:8890}
     max-age: ${CORS_MAX_AGE:3600}

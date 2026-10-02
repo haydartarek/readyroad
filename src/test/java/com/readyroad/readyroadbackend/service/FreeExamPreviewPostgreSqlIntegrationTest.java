@@ -518,6 +518,39 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
                 .isNotNull();
     }
 
+    @Test
+    void restartingFromTheExistingStartActionCreatesTheSameTenQuestionPreview() {
+        ExamStartResponse started = examService.startExamResponse(userId);
+        Long pausedExamId = started.getExamId();
+
+        for (Long questionId : FIXED_PREVIEW_IDS) {
+            examService.recordQuestionTimeout(
+                    pausedExamId,
+                    questionId,
+                    userId);
+        }
+
+        ExamStartResponse paywall = examService.getActiveExamResponse(userId);
+        assertThat(paywall.getAccessState())
+                .isEqualTo(ExamAccessState.FREE_LIMIT_REACHED);
+
+        ExamStartResponse restarted = examService.startExamResponse(userId);
+
+        assertThat(restarted.getExamId()).isNotEqualTo(pausedExamId);
+        assertThat(restarted.getAccessMode()).isEqualTo(ExamAccessMode.PREVIEW);
+        assertThat(restarted.getAccessState()).isEqualTo(ExamAccessState.PREVIEW_ACTIVE);
+        assertThat(restarted.getResumeQuestionOrder()).isEqualTo(1);
+        assertThat(restarted.getQuestions())
+                .extracting(ExamQuestionDTO::getQuestionId)
+                .containsExactlyElementsOf(FIXED_PREVIEW_IDS);
+
+        assertThat(jdbc.queryForObject(
+                "SELECT status FROM exam_simulations WHERE id = ?",
+                String.class,
+                pausedExamId))
+                .isEqualTo("ABANDONED");
+    }
+
     private void seedTheoryQuestionBank() {
 
         int generatedId =

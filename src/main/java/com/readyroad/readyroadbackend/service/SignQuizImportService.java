@@ -10,6 +10,7 @@ import com.readyroad.readyroadbackend.domain.repository.*;
 import com.readyroad.readyroadbackend.dto.RoadSignDetailDto;
 import com.readyroad.readyroadbackend.dto.RoadSignSummaryDto;
 import com.readyroad.readyroadbackend.dto.SignImportResultDto;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.util.ImportedTextSanitizer;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
@@ -72,6 +73,7 @@ public class SignQuizImportService {
     private final ObjectMapper mapper;
     private final CanonicalSignCatalogService canonicalSignCatalogService;
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+    private final MediaUrlResolver mediaUrlResolver;
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -93,7 +95,8 @@ public class SignQuizImportService {
             ObjectMapper mapper,
             PlatformTransactionManager txManager,
             CanonicalSignCatalogService canonicalSignCatalogService,
-            RoadSignReferenceTextResolver roadSignReferenceTextResolver) {
+            RoadSignReferenceTextResolver roadSignReferenceTextResolver,
+            MediaUrlResolver mediaUrlResolver) {
         this.roadSignRepo = roadSignRepo;
         this.questionRepo = questionRepo;
         this.examRepo = examRepo;
@@ -102,6 +105,7 @@ public class SignQuizImportService {
         this.txTemplate = new TransactionTemplate(txManager);
         this.canonicalSignCatalogService = canonicalSignCatalogService;
         this.roadSignReferenceTextResolver = roadSignReferenceTextResolver;
+        this.mediaUrlResolver = mediaUrlResolver;
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -672,7 +676,7 @@ public class SignQuizImportService {
     public List<RoadSignSummaryDto> getAllActiveSigns() {
         return roadSignRepo.findAllByIsActiveTrueOrderBySignCodeAsc()
                 .stream()
-                .map(RoadSignSummaryDto::from)
+                                .map(sign -> RoadSignSummaryDto.from(sign, mediaUrlResolver))
                 .toList();
     }
 
@@ -686,7 +690,7 @@ public class SignQuizImportService {
         String normalized = code.toLowerCase().replaceAll("[^a-z0-9]+", "_");
         return roadSignRepo.findFirstByNormalizedSignCodeAndIsActiveTrueOrderByIdAsc(normalized)
                 .or(() -> roadSignRepo.findFirstBySignCodeAndIsActiveTrueOrderByIdAsc(code))
-                .map(sign -> RoadSignDetailDto.from(sign, roadSignReferenceTextResolver));
+                .map(sign -> RoadSignDetailDto.from(sign, roadSignReferenceTextResolver, mediaUrlResolver));
     }
 
     // ─────────────────────────────────────────────────────────────────────────

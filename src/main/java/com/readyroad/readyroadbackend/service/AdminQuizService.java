@@ -20,6 +20,7 @@ import com.readyroad.readyroadbackend.dto.response.CorrectAnswerDistributionResp
 import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,6 +31,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronization;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
@@ -54,7 +56,6 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Service
-@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class AdminQuizService {
 
@@ -66,6 +67,43 @@ public class AdminQuizService {
     private final ExamSimulationQuestionRepository examQuestionRepository;
     private final BackendMessageService messages;
     private final MarketingAuditService auditService;
+    private final MediaUrlResolver mediaUrlResolver;
+
+    @Autowired
+    public AdminQuizService(
+            QuizQuestionRepository questionRepository,
+            QuizAnswerOptionRepository optionRepository,
+            CategoryRepository categoryRepository,
+            QuizUserAnswerRepository userAnswerRepository,
+            UserQuestionHistoryRepository historyRepository,
+            ExamSimulationQuestionRepository examQuestionRepository,
+            BackendMessageService messages,
+            MarketingAuditService auditService,
+            MediaUrlResolver mediaUrlResolver) {
+        this.questionRepository = questionRepository;
+        this.optionRepository = optionRepository;
+        this.categoryRepository = categoryRepository;
+        this.userAnswerRepository = userAnswerRepository;
+        this.historyRepository = historyRepository;
+        this.examQuestionRepository = examQuestionRepository;
+        this.messages = messages;
+        this.auditService = auditService;
+        this.mediaUrlResolver = mediaUrlResolver;
+    }
+
+    /** Compatibility constructor retained for service unit tests. */
+    public AdminQuizService(
+            QuizQuestionRepository questionRepository,
+            QuizAnswerOptionRepository optionRepository,
+            CategoryRepository categoryRepository,
+            QuizUserAnswerRepository userAnswerRepository,
+            UserQuestionHistoryRepository historyRepository,
+            ExamSimulationQuestionRepository examQuestionRepository,
+            BackendMessageService messages,
+            MarketingAuditService auditService) {
+        this(questionRepository, optionRepository, categoryRepository, userAnswerRepository,
+                historyRepository, examQuestionRepository, messages, auditService, null);
+    }
 
     private static final List<String> ALLOWED_SORT_FIELDS = List.of(
             "id", "questionEn", "questionAr", "difficultyLevel",
@@ -681,7 +719,9 @@ public class AdminQuizService {
                 DrivingTextSanitizer.sanitize("AR", q.getExplanationAr()),
                 DrivingTextSanitizer.sanitize("NL", q.getExplanationNl()),
                 DrivingTextSanitizer.sanitize("FR", q.getExplanationFr()),
-                q.getContentImageUrl(),
+                mediaUrlResolver == null
+                        ? q.getContentImageUrl()
+                        : mediaUrlResolver.resolvePublicUrl(q.getContentImageUrl()),
                 q.getIsActive(),
                 options.size(),
                 options,

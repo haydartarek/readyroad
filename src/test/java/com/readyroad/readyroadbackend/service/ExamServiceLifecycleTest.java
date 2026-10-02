@@ -32,6 +32,8 @@ import com.readyroad.readyroadbackend.exception.ExamNotActiveException;
 import com.readyroad.readyroadbackend.exception.ExamQuestionPoolUnavailableException;
 import com.readyroad.readyroadbackend.exception.UnauthorizedException;
 import com.readyroad.readyroadbackend.exception.FreeExamLimitReachedException;
+import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
+import com.readyroad.readyroadbackend.dto.exam.ExamAccessState;
 import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot;
 import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.CategorySnapshot;
 import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.LocalizedText;
@@ -39,7 +41,9 @@ import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.Option
 import com.readyroad.readyroadbackend.mapper.ExamMapper;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -99,6 +103,7 @@ class ExamServiceLifecycleTest {
     @Mock UserRepository userRepository;
     @Mock TheoryExamAccessService examAccessService;
     @Mock TheoryExamPreviewCatalog previewCatalog;
+    @Mock com.readyroad.readyroadbackend.storage.MediaUrlResolver mediaUrlResolver;
 
     @InjectMocks ExamService service;
 
@@ -115,6 +120,13 @@ class ExamServiceLifecycleTest {
 
         verify(examRepository).findByUserIdAndStatusOrderByCompletedAtDesc(
                 7L, ExamSimulation.ExamStatus.COMPLETED);
+    }
+
+    @Test
+    void learnerHistoryIncludesEveryAttemptState() {
+        service.getExamHistory(7L);
+
+        verify(examRepository).findByUserIdOrderByStartedAtDesc(7L);
     }
 
     @Test
@@ -666,9 +678,8 @@ class ExamServiceLifecycleTest {
     }
 
     @Test
-    void freeLearnerCannotPresentQuestionEleven() {
+    void freeLearnerCannotPresentQuestionElevenEvenForLegacyAttempt() {
         ExamSimulation exam = activeExam();
-        exam.setPreviewAttempt(true);
 
         ExamSimulationQuestion examQuestion =
                 new ExamSimulationQuestion();
@@ -732,6 +743,60 @@ class ExamServiceLifecycleTest {
 
         verify(examRepository, never()).save(any());
         verifyNoInteractions(examQuestionRepository);
+    }
+
+    @Test
+    void restartingPausedPreviewAbandonsItBeforeCreatingANewAttempt() {
+        User user = new User();
+        user.setPreferredLanguage("en");
+        ExamSimulation paused = activeExam();
+        paused.setPaywallReachedAt(Instant.now());
+        paused.setFullAccessResumedAt(null);
+
+        List<QuizQuestion> questions = new ArrayList<>();
+        for (long id = 1; id <= TheoryExamBlueprintPolicy.EXAM_SIZE; id++) {
+            questions.add(question(id, null));
+        }
+
+        when(userRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(user));
+        when(examRepository.findByUserIdAndStatus(7L, ExamSimulation.ExamStatus.IN_PROGRESS))
+                .thenReturn(Optional.of(paused));
+        when(questionAllocator.allocate(eq(7L), eq("en"), any(LocalDateTime.class)))
+                .thenReturn(new TheoryExamQuestionAllocator.Allocation(
+                        questions,
+                        Map.of(),
+                        Map.of(),
+                        List.of(),
+                        Map.of(),
+                        Map.of(),
+                        Map.of(),
+                        false,
+                        questions.size()));
+        when(previewCatalog.composeAttemptQuestions(
+                any(),
+                eq(TheoryExamBlueprintPolicy.EXAM_SIZE),
+                eq("en")))
+                .thenReturn(questions);
+        when(examRepository.save(any(ExamSimulation.class)))
+                .thenAnswer(invocation -> invocation.getArgument(0));
+        when(examQuestionRepository.save(any(ExamSimulationQuestion.class)))
+                .thenAnswer(invocation -> invocation.getArgument(0));
+
+        when(examAccessService.hasFullAccess(7L)).thenReturn(false);
+        when(examQuestionRepository.findByExamIdOrderByQuestionOrder(any()))
+                .thenReturn(List.of());
+        when(answerRepository.findByExamId(any())).thenReturn(List.of());
+        when(examMapper.toStartResponse(any(), any()))
+                .thenReturn(new ExamStartResponse());
+
+        ExamStartResponse restarted = service.startExamResponse(7L);
+
+        assertThat(paused.getStatus()).isEqualTo(ExamSimulation.ExamStatus.ABANDONED);
+        assertThat(restarted.getAccessState())
+                .isEqualTo(ExamAccessState.PREVIEW_ACTIVE);
+        verify(examRepository).save(paused);
+        verify(examQuestionRepository, org.mockito.Mockito.times(TheoryExamBlueprintPolicy.EXAM_SIZE))
+                .save(any(ExamSimulationQuestion.class));
     }
 
     private static ExamSimulationQuestion examQuestion(

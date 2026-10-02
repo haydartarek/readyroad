@@ -72,4 +72,11 @@ public class ExamStartResponse {
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<Long> finalizedQuestionIds;
+
+    /** Server clock used by native clients to avoid device clock drift. */
+    private Instant serverTime;
+
+    /** Persisted first-presentation deadline for the unfinished resume question. */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Instant questionDeadlineAt;
 }

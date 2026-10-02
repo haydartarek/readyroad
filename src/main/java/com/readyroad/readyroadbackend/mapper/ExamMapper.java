@@ -9,7 +9,8 @@ import com.readyroad.readyroadbackend.dto.exam.ExamQuestionDTO;
 import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
 import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
 import com.readyroad.readyroadbackend.service.TheoryExamTiming;
-import lombok.RequiredArgsConstructor;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -19,10 +20,22 @@ import java.util.stream.Collectors;
  * Mapper for Exam Simulation DTOs - Phase 5
  */
 @Component
-@RequiredArgsConstructor
 public class ExamMapper {
 
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+    private final MediaUrlResolver mediaUrlResolver;
+
+    @Autowired
+    public ExamMapper(RoadSignReferenceTextResolver roadSignReferenceTextResolver,
+            MediaUrlResolver mediaUrlResolver) {
+        this.roadSignReferenceTextResolver = roadSignReferenceTextResolver;
+        this.mediaUrlResolver = mediaUrlResolver;
+    }
+
+    /** Compatibility constructor retained for mapper unit tests. */
+    public ExamMapper(RoadSignReferenceTextResolver roadSignReferenceTextResolver) {
+        this(roadSignReferenceTextResolver, null);
+    }
 
     public ExamStartResponse toStartResponse(ExamSimulation exam, List<ExamSimulationQuestion> examQuestions) {
         int timeLimitSeconds = TheoryExamTiming.totalSeconds(exam.getTotalQuestions());
@@ -50,13 +63,17 @@ public class ExamMapper {
                 .questionTextAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
                 .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
                 .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
-                .imageUrl(question.getContentImageUrl())
+                .imageUrl(resolveImageUrl(question.getContentImageUrl()))
                 .difficultyLevel(question.getDifficultyLevel().name())
                 .categoryName(question.getCategory() != null ? question.getCategory().getNameEn() : null)
                 .options(question.getOptions() != null ? question.getDeliverableOptions().stream()
                         .map(this::toOptionDTO)
                         .collect(Collectors.toList()) : List.of())
                 .build();
+    }
+
+    private String resolveImageUrl(String imageUrl) {
+        return mediaUrlResolver == null ? imageUrl : mediaUrlResolver.resolvePublicUrl(imageUrl);
     }
 
     private ExamOptionDTO toOptionDTO(QuizAnswerOption option) {

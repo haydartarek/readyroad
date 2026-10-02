@@ -29,6 +29,7 @@ class AdminTheoryExamHistoryServiceTest {
     @Mock ExamSimulationAnswerRepository answerRepository;
     @Mock TheoryExamQuestionSnapshotService snapshotService;
     @Mock CategoryRepository categoryRepository;
+    @Mock com.readyroad.readyroadbackend.storage.MediaUrlResolver mediaUrlResolver;
     @InjectMocks AdminTheoryExamHistoryService service;
 
     @Test

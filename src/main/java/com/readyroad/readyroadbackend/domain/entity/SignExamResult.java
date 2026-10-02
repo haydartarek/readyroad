@@ -58,8 +58,13 @@ public class SignExamResult {
     @Column(name = "submission_key", length = 64)
     private String submissionKey;
 
-    @Lob
-    @Column(name = "question_results_json", columnDefinition = "LONGTEXT")
+    /**
+     * PostgreSQL stores this payload in a TEXT column. Do not map it as a
+     * JDBC LOB: PostgreSQL may then interpret legacy text values as large
+     * object OIDs and fail with "Unable to access lob stream" when dashboard
+     * history is read.
+     */
+    @Column(name = "question_results_json", columnDefinition = "TEXT")
     private String questionResultsJson;
 
     @Column(name = "completed_at", nullable = false)

@@ -6,6 +6,8 @@ import com.readyroad.readyroadbackend.dto.OverallProgressResponse;
 import com.readyroad.readyroadbackend.dto.StudentIntelligenceResponse;
 import com.readyroad.readyroadbackend.dto.TheoryQuestionCoverageResponse;
 import com.readyroad.readyroadbackend.dto.TheoryTimeoutAnalysisResponse;
+import com.readyroad.readyroadbackend.dto.WeakAreasOverviewResponse;
+import com.readyroad.readyroadbackend.service.AnalyticsService;
 import com.readyroad.readyroadbackend.service.ProgressService;
 import com.readyroad.readyroadbackend.service.StudentIntelligenceService;
 import com.readyroad.readyroadbackend.service.TheoryQuestionCoverageService;
@@ -48,6 +50,7 @@ public class ProgressController {
     private final StudentIntelligenceService studentIntelligenceService;
     private final TheoryQuestionCoverageService theoryQuestionCoverageService;
     private final TheoryTimeoutAnalysisService theoryTimeoutAnalysisService;
+    private final AnalyticsService analyticsService;
     private final AuthenticationUtil authenticationUtil;
 
     @GetMapping("/intelligence")
@@ -259,7 +262,7 @@ public class ProgressController {
             @ApiResponse(responseCode = "200", description = "Recommendations retrieved successfully"),
             @ApiResponse(responseCode = "401", description = "Unauthorized - Authentication required")
     })
-    public ResponseEntity<?> getRecommendations(Authentication authentication) {
+    public ResponseEntity<WeakAreasOverviewResponse> getRecommendations(Authentication authentication) {
         log.info("GET /api/users/me/progress/recommendations - Recommendations requested");
 
         // Extract user ID from authentication
@@ -271,16 +274,8 @@ public class ProgressController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        // Redirect to analytics service
         log.info("Fetching recommendations for user {}", userId);
-
-        // For now, return a simple response
-        // In a real implementation, this would call
-        // AnalyticsService.getWeakAreaRecommendations
-        return ResponseEntity.ok(Map.of(
-                "message", "Recommendations endpoint working",
-                "userId", userId,
-                "recommendations", List.of()));
+        return ResponseEntity.ok(analyticsService.getWeakAreaRecommendations(userId));
     }
 
     // ============================================================================

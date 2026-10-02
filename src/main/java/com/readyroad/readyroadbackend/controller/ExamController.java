@@ -310,10 +310,10 @@ public class ExamController {
         /**
          * Get exam history for user
          *
-         * GET /api/exams/simulations/history?userId={userId}
+         * GET /api/exams/simulations/history
          */
         @GetMapping("/history")
-        @Operation(summary = "Get exam history", description = "Get all completed exams for the user with their results")
+        @Operation(summary = "Get exam history", description = "Get all exam attempts for the user, including lifecycle states and completed results")
         @ApiResponses({
                         @ApiResponse(responseCode = "200", description = "Exam history retrieved successfully")
         })
@@ -322,9 +322,9 @@ public class ExamController {
                 Long userId = authenticationUtil.getCurrentUserId();
                 log.info("📜 GET /api/exams/simulations/history - userId: {}", userId);
 
-                List<ExamSimulation> completedExams = examService.getCompletedExams(userId);
+                List<ExamSimulation> exams = examService.getExamHistory(userId);
 
-                List<Map<String, Object>> examHistory = completedExams.stream()
+                List<Map<String, Object>> examHistory = exams.stream()
                                 .map(exam -> {
                                         Map<String, Object> examData = new HashMap<>();
                                         examData.put("examId", exam.getId());

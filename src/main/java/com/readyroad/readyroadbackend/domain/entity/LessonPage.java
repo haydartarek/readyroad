@@ -15,6 +15,10 @@ public class LessonPage extends BaseEntity {
     @Column(name = "page_number", nullable = false)
     private Integer pageNumber;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "image_asset_id")
+    private LessonMediaAsset imageAsset;
+
     @Column(nullable = false, columnDefinition = "TEXT")
     private String titleNl;
 
@@ -39,19 +43,6 @@ public class LessonPage extends BaseEntity {
     @Column(columnDefinition = "MEDIUMTEXT")
     private String contentAr;
 
-    /** JSON array of bullet points, stored as TEXT */
-    @Column(columnDefinition = "TEXT")
-    private String bulletPointsNl;
-
-    @Column(columnDefinition = "TEXT")
-    private String bulletPointsEn;
-
-    @Column(columnDefinition = "TEXT")
-    private String bulletPointsFr;
-
-    @Column(columnDefinition = "TEXT")
-    private String bulletPointsAr;
-
     // ─── Getters and Setters ─────────────────────────────
 
     public Lesson getLesson() {
@@ -68,6 +59,14 @@ public class LessonPage extends BaseEntity {
 
     public void setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
+    }
+
+    public LessonMediaAsset getImageAsset() {
+        return imageAsset;
+    }
+
+    public void setImageAsset(LessonMediaAsset imageAsset) {
+        this.imageAsset = imageAsset;
     }
 
     public String getTitleNl() {
@@ -134,35 +133,4 @@ public class LessonPage extends BaseEntity {
         this.contentAr = contentAr;
     }
 
-    public String getBulletPointsNl() {
-        return bulletPointsNl;
-    }
-
-    public void setBulletPointsNl(String bulletPointsNl) {
-        this.bulletPointsNl = bulletPointsNl;
-    }
-
-    public String getBulletPointsEn() {
-        return bulletPointsEn;
-    }
-
-    public void setBulletPointsEn(String bulletPointsEn) {
-        this.bulletPointsEn = bulletPointsEn;
-    }
-
-    public String getBulletPointsFr() {
-        return bulletPointsFr;
-    }
-
-    public void setBulletPointsFr(String bulletPointsFr) {
-        this.bulletPointsFr = bulletPointsFr;
-    }
-
-    public String getBulletPointsAr() {
-        return bulletPointsAr;
-    }
-
-    public void setBulletPointsAr(String bulletPointsAr) {
-        this.bulletPointsAr = bulletPointsAr;
-    }
 }

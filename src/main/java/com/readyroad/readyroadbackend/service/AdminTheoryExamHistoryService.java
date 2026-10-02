@@ -12,6 +12,7 @@ import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot;
 import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.CategorySnapshot;
 import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.LocalizedText;
 import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.OptionSnapshot;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -29,16 +30,19 @@ public class AdminTheoryExamHistoryService {
     private final ExamSimulationAnswerRepository answerRepository;
     private final TheoryExamQuestionSnapshotService snapshotService;
     private final CategoryRepository categoryRepository;
+    private final MediaUrlResolver mediaUrlResolver;
 
     public AdminTheoryExamHistoryService(
             ExamSimulationQuestionRepository questionRepository,
             ExamSimulationAnswerRepository answerRepository,
             TheoryExamQuestionSnapshotService snapshotService,
-            CategoryRepository categoryRepository) {
+            CategoryRepository categoryRepository,
+            MediaUrlResolver mediaUrlResolver) {
         this.questionRepository = questionRepository;
         this.answerRepository = answerRepository;
         this.snapshotService = snapshotService;
         this.categoryRepository = categoryRepository;
+        this.mediaUrlResolver = mediaUrlResolver;
     }
 
     public HistoricalResult load(long examId) {
@@ -66,7 +70,7 @@ public class AdminTheoryExamHistoryService {
         return new HistoricalResult(status, new TheoryExamHistoryResult(List.copyOf(questions)));
     }
 
-    private static HistoricalTheoryQuestion map(
+    private HistoricalTheoryQuestion map(
             ExamSimulationQuestion examQuestion,
             ExamSimulationAnswer answer,
             TheoryExamQuestionSnapshot snapshot,
@@ -122,7 +126,7 @@ public class AdminTheoryExamHistoryService {
                 categoryNameFr,
                 categoryNameAr,
                 snapshot.difficulty(),
-                snapshot.contentImageUrl(),
+                mediaUrlResolver.resolvePublicUrl(snapshot.contentImageUrl()),
                 answer == null || answer.isTimedOut() ? null : answer.getIsCorrect(),
                 answer != null && !answer.isTimedOut(),
                 true);

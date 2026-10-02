@@ -49,6 +49,8 @@ class FlywayCustomSchemaCompatibilityIntegrationTest {
         }
 
         grantTemporaryPublicCreate();
+        flyway(appJdbcUrl, "68").migrate();
+        preparePostV68CutoverFixtures(appJdbcUrl);
         flyway(appJdbcUrl, null).migrate();
         revokeTemporaryPublicCreate();
 
@@ -73,6 +75,24 @@ class FlywayCustomSchemaCompatibilityIntegrationTest {
                     app,
                     "SELECT to_regprocedure('public.protect_article_version_history()') IS NULL"))
                     .isTrue();
+            assertThat(queryInt(app, """
+                    SELECT count(*)
+                    FROM lesson_media_assets
+                    WHERE storage_provider = 'OBJECT_STORAGE'
+                    """))
+                    .isEqualTo(54);
+            assertThat(queryInt(app, """
+                    SELECT count(*)
+                    FROM article_image_assets
+                    WHERE original_storage_path LIKE 'originals/articles/%'
+                    """))
+                    .isEqualTo(8);
+            assertThat(queryInt(app, """
+                    SELECT count(*)
+                    FROM road_signs
+                    WHERE sign_code IN ('A39', 'D3a', 'D3b')
+                    """))
+                    .isEqualTo(3);
             assertThat(queryString(app, """
                     SELECT pg_get_functiondef('readyroad.protect_article_version_history()'::regprocedure)
                     """))
@@ -108,6 +128,89 @@ class FlywayCustomSchemaCompatibilityIntegrationTest {
                 app.setAutoCommit(true);
             }
             assertThat(countVersion(app, versionId)).isZero();
+        }
+    }
+
+    private static void preparePostV68CutoverFixtures(String appJdbcUrl) throws SQLException {
+        try (Connection app = appConnection(appJdbcUrl)) {
+            long lessonId;
+            try (PreparedStatement statement = app.prepareStatement("""
+                    INSERT INTO lessons (
+                        lesson_code, title_nl, title_en, title_fr, title_ar,
+                        description_nl, description_en, description_fr, description_ar
+                    ) VALUES ('compatibility-lesson', 'Compatibiliteit', 'Compatibility',
+                              'Compatibilité', 'توافق', 'Test', 'Test', 'Test', 'اختبار')
+                    RETURNING id
+                    """)) {
+                try (ResultSet result = statement.executeQuery()) {
+                    assertThat(result.next()).isTrue();
+                    lessonId = result.getLong(1);
+                }
+            }
+
+            try (PreparedStatement statement = app.prepareStatement("""
+                    INSERT INTO lesson_media_assets (
+                        lesson_id, storage_key, storage_provider, original_filename,
+                        mime_type, size_bytes, width, height, status
+                    )
+                    SELECT ?, 'lessons/compatibility/' || n || '.png', 'LOCAL',
+                           'compatibility-' || n || '.png', 'image/png', 1, 1600, 900, 'ACTIVE'
+                    FROM generate_series(1, 54) AS media(n)
+                    """)) {
+                statement.setLong(1, lessonId);
+                assertThat(statement.executeUpdate()).isEqualTo(54);
+            }
+
+            long articleTopicId = queryLong(app, """
+                    SELECT id
+                    FROM article_topics
+                    ORDER BY id
+                    OFFSET 1
+                    LIMIT 1
+                    """);
+            long articleId;
+            try (PreparedStatement statement = app.prepareStatement("""
+                    INSERT INTO articles (
+                        article_topic_id, canonical_key, lifecycle_state, canonical_language
+                    ) VALUES (?, 'compatibility-media-article', 'IDEA', 'EN')
+                    RETURNING id
+                    """)) {
+                statement.setLong(1, articleTopicId);
+                try (ResultSet result = statement.executeQuery()) {
+                    assertThat(result.next()).isTrue();
+                    articleId = result.getLong(1);
+                }
+            }
+
+            try (PreparedStatement statement = app.prepareStatement("""
+                    INSERT INTO article_image_assets (
+                        article_id, storage_key, content_sha256, original_storage_path,
+                        original_file_name, original_content_type, original_width,
+                        original_height, status, created_by
+                    )
+                    SELECT ?, 'compatibility-image-' || n,
+                           lpad(to_hex(n), 64, '0'),
+                           'archive/compatibility-' || n || '.png',
+                           'compatibility-' || n || '.png', 'image/png', 1600, 900,
+                           CASE WHEN n = 1 THEN 'APPROVED' ELSE 'PENDING' END,
+                           'test'
+                    FROM generate_series(1, 8) AS image(n)
+                    """)) {
+                statement.setLong(1, articleId);
+                assertThat(statement.executeUpdate()).isEqualTo(8);
+            }
+
+            try (Statement statement = app.createStatement()) {
+                assertThat(statement.executeUpdate("""
+                        INSERT INTO road_signs (
+                            sign_code, normalized_sign_code, category, image_path
+                        ) VALUES
+                            ('A39', 'A39', 'DANGER', ''),
+                            ('D3a', 'D3a', 'MANDATORY', ''),
+                            ('D3b', 'D3b', 'MANDATORY', '')
+                        """))
+                        .isEqualTo(3);
+            }
         }
     }
 
@@ -213,6 +316,13 @@ class FlywayCustomSchemaCompatibilityIntegrationTest {
         try (Statement statement = connection.createStatement(); ResultSet result = statement.executeQuery(sql)) {
             assertThat(result.next()).isTrue();
             return result.getInt(1);
+        }
+    }
+
+    private static long queryLong(Connection connection, String sql) throws SQLException {
+        try (Statement statement = connection.createStatement(); ResultSet result = statement.executeQuery(sql)) {
+            assertThat(result.next()).isTrue();
+            return result.getLong(1);
         }
     }
 

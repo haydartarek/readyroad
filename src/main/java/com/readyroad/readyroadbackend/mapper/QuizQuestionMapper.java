@@ -6,7 +6,8 @@ import com.readyroad.readyroadbackend.dto.QuizAnswerOptionDTO;
 import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
 import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
-import lombok.RequiredArgsConstructor;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
+import org.springframework.beans.factory.annotation.Autowired;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -36,10 +37,22 @@ import java.util.stream.Collectors;
  */
 @Component
 @Slf4j
-@RequiredArgsConstructor
 public class QuizQuestionMapper {
 
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+    private final MediaUrlResolver mediaUrlResolver;
+
+    @Autowired
+    public QuizQuestionMapper(RoadSignReferenceTextResolver roadSignReferenceTextResolver,
+            MediaUrlResolver mediaUrlResolver) {
+        this.roadSignReferenceTextResolver = roadSignReferenceTextResolver;
+        this.mediaUrlResolver = mediaUrlResolver;
+    }
+
+    /** Compatibility constructor retained for mapper unit tests. */
+    public QuizQuestionMapper(RoadSignReferenceTextResolver roadSignReferenceTextResolver) {
+        this(roadSignReferenceTextResolver, null);
+    }
 
     /**
      * Convert QuizQuestion entity to DTO
@@ -66,7 +79,7 @@ public class QuizQuestionMapper {
         dto.setDifficultyLevel(question.getDifficultyLevel());
 
         // Generic content image URL
-        dto.setContentImageUrl(question.getContentImageUrl());
+        dto.setContentImageUrl(resolveImageUrl(question.getContentImageUrl()));
 
         // Category (multilingual)
         if (question.getCategory() != null) {
@@ -101,6 +114,10 @@ public class QuizQuestionMapper {
         }
 
         return dto;
+    }
+
+    private String resolveImageUrl(String imageUrl) {
+        return mediaUrlResolver == null ? imageUrl : mediaUrlResolver.resolvePublicUrl(imageUrl);
     }
 
     /**

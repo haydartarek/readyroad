@@ -34,6 +34,17 @@ class PaymentControllerTest {
         verifyNoInteractions(checkout, purchases, entitlements);
     }
 
+    @Test void staffAccessIsUnlimitedWithoutPayment() {
+        User user = new User(); user.setId(42L);
+        user.setRole(com.readyroad.readyroadbackend.domain.enums.Role.MODERATOR);
+
+        PaymentController.AccountAccessResult result = controller.accountAccess(user);
+
+        assertThat(result.active()).isTrue();
+        assertThat(result.unlimited()).isTrue();
+        verifyNoInteractions(purchases, entitlements);
+    }
+
     @Test void paidExpiryIsPresentedInBrusselsAndPendingExpiryIsNull() {
         User user = new User(); user.setId(42L);
         Purchase purchase = new Purchase(); purchase.setId(UUID.randomUUID()); purchase.setStatus(PurchaseStatus.PAID);
@@ -94,7 +105,8 @@ class PaymentControllerTest {
         assertThat(result.active()).isFalse();
         assertThat(result.status()).isEqualTo(EntitlementStatus.EXPIRED);
         assertThat(result.plan()).isNull();
-        assertThat(result.expiresAt()).isNull();
-        verify(purchases, never()).findFirstByUserIdAndStatusOrderByUpdatedAtDesc(anyLong(), any());
+        assertThat(result.expiresAt().toString()).isEqualTo("2020-01-01T01:00+01:00");
+        assertThat(result.unlimited()).isFalse();
+        verify(purchases).findFirstByUserIdAndStatusOrderByUpdatedAtDesc(42L, PurchaseStatus.PAID);
     }
 }

@@ -5,6 +5,8 @@ import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.CanonicalSignCatalogService;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -14,9 +16,18 @@ import java.util.Map;
 public class TrafficSignMapper {
 
     private final CanonicalSignCatalogService canonicalSignCatalogService;
+    private final MediaUrlResolver mediaUrlResolver;
 
-    public TrafficSignMapper(CanonicalSignCatalogService canonicalSignCatalogService) {
+    @Autowired
+    public TrafficSignMapper(CanonicalSignCatalogService canonicalSignCatalogService,
+            MediaUrlResolver mediaUrlResolver) {
         this.canonicalSignCatalogService = canonicalSignCatalogService;
+        this.mediaUrlResolver = mediaUrlResolver;
+    }
+
+    /** Compatibility constructor retained for mapper unit tests. */
+    public TrafficSignMapper(CanonicalSignCatalogService canonicalSignCatalogService) {
+        this(canonicalSignCatalogService, null);
     }
 
     // ── SignCategory enum → category letter code (for API responses)
@@ -66,7 +77,7 @@ public class TrafficSignMapper {
                 resolved.exceptionsEn(),
                 resolved.exceptionsNl(),
                 resolved.exceptionsFr(),
-                resolved.imagePath());
+                resolveImageUrl(resolved.imagePath()));
     }
 
     public AdminTrafficSignResponse toAdminResponse(RoadSign sign) {
@@ -84,9 +95,13 @@ public class TrafficSignMapper {
                 resolved.descriptionEn(),
                 resolved.descriptionNl(),
                 resolved.descriptionFr(),
-                resolved.imagePath(),
+                resolveImageUrl(resolved.imagePath()),
                 sign.getIsActive(),
                 sign.getCreatedAt(),
                 sign.getUpdatedAt());
+    }
+
+    private String resolveImageUrl(String imagePath) {
+        return mediaUrlResolver == null ? imagePath : mediaUrlResolver.resolvePublicUrl(imagePath);
     }
 }

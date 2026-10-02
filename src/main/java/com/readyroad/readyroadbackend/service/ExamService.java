@@ -44,6 +44,7 @@ import com.readyroad.readyroadbackend.exception.QuestionNotFoundException;
 import com.readyroad.readyroadbackend.exception.UnauthorizedException;
 import com.readyroad.readyroadbackend.exception.FreeExamLimitReachedException;
 import com.readyroad.readyroadbackend.mapper.ExamMapper;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -99,6 +100,7 @@ public class ExamService {
     private final TheoryExamQuestionSnapshotService questionSnapshotService;
     private final TheoryExamAccessService examAccessService;
     private final TheoryExamPreviewCatalog previewCatalog;
+    private final MediaUrlResolver mediaUrlResolver;
 
     private static final int EXAM_QUESTION_COUNT = 50;
     private static final int PASSING_SCORE = 41;
@@ -117,7 +119,7 @@ public class ExamService {
      *
      * @param userId User ID
      * @return ExamSimulation entity (Controller will map to DTO)
-     * @throws IllegalStateException if user already has active exam
+     * @throws IllegalStateException if user already has a non-paused active exam
      * @throws IllegalStateException if insufficient questions available
      */
     @Transactional
@@ -146,13 +148,23 @@ public class ExamService {
                 .orElse(null);
 
         if (activeExam != null) {
-            if (isPreviewPausedAtPaywall(activeExam)) {
-                throw new ActiveExamAlreadyExistsException(
-                        userId,
-                        activeExam.getId());
+            if (isPreviewPausedAtPaywall(activeExam) && previewAttempt) {
+                // The existing exam-start action is also the free-preview
+                // restart action. Once the learner has declined payment,
+                // abandon that paused attempt before creating a new one so
+                // the fixed ten-question preview starts again at question 1.
+                activeExam.setStatus(ExamSimulation.ExamStatus.ABANDONED);
+                activeExam.setCompletedAt(null);
+                activeExam.setCorrectAnswers(null);
+                activeExam.setScorePercentage(null);
+                activeExam.setTimeTakenSeconds(null);
+                examRepository.save(activeExam);
+                log.info(
+                        "Restarting free preview after paywall: abandoned exam {} for user {}",
+                        activeExam.getId(),
+                        userId);
             }
-
-            if (Instant.now().isAfter(activeExam.getExpiresAt())) {
+            else if (Instant.now().isAfter(activeExam.getExpiresAt())) {
                 // Exam time window has passed — expire it silently so user can start fresh
                 log.info("Auto-expiring stale IN_PROGRESS exam {} for user {} (expired at {})",
                         activeExam.getId(), userId, activeExam.getExpiresAt());
@@ -254,9 +266,9 @@ public class ExamService {
                         userId,
                         !fullAccess);
 
-        // Every new API-created attempt participates in entitlement checks.
-        // Legacy/internal attempts created through startExamSimulation(userId)
-        // remain outside this lifecycle for backward compatibility.
+        // Mark API-created attempts so the preview paywall lifecycle can pause
+        // and resume them. Access checks also apply to legacy attempts loaded
+        // from the database after entitlement expiry.
         if (!exam.isPreviewAttempt()) {
             exam.setPreviewAttempt(true);
             exam = examRepository.save(exam);
@@ -352,8 +364,7 @@ public class ExamService {
 
         Instant now = Instant.now();
 
-        if (exam.isPreviewAttempt()
-                && examAccessService.hasFullAccess(userId)) {
+        if (examAccessService.hasFullAccess(userId)) {
 
             resumePreviewAfterPaymentIfNeeded(
                     exam,
@@ -410,6 +421,13 @@ public class ExamService {
         log.info("Fetching exam history for user: {}", userId);
         return examRepository.findByUserIdAndStatusOrderByCompletedAtDesc(
                 userId, ExamSimulation.ExamStatus.COMPLETED);
+    }
+
+    /** Get all learner attempts so the client can render lifecycle states. */
+    @Transactional(readOnly = true)
+    public List<ExamSimulation> getExamHistory(Long userId) {
+        log.info("Fetching all exam attempts for user: {}", userId);
+        return examRepository.findByUserIdOrderByStartedAtDesc(userId);
     }
 
     /**
@@ -976,9 +994,7 @@ public class ExamService {
             ExamSimulation exam,
             Long userId) {
 
-        boolean fullAccess =
-                !exam.isPreviewAttempt()
-                        || examAccessService.hasFullAccess(userId);
+        boolean fullAccess = examAccessService.hasFullAccess(userId);
 
         List<ExamSimulationQuestion> allQuestions =
                 getExamQuestions(exam.getId());
@@ -1073,24 +1089,37 @@ public class ExamService {
         response.setResumeQuestionOrder(resumeQuestionOrder);
         response.setFinalizedQuestionIds(visibleFinalizedIds);
 
+        response.setServerTime(Instant.now());
+        // presented_at is persisted using the server's local timezone. Reuse
+        // that first presentation; a reload must never grant another 15 seconds.
+        if (accessState != ExamAccessState.FREE_LIMIT_REACHED) {
+            allQuestions.stream()
+                    .filter(question -> question.getQuestionOrder() == resumeQuestionOrder)
+                    .filter(question -> !finalizedIds.contains(question.getQuestionId()))
+                    .map(ExamSimulationQuestion::getPresentedAt)
+                    .filter(java.util.Objects::nonNull)
+                    .findFirst()
+                    .ifPresent(presentedAt -> {
+                        Instant deadline = presentedAt.atZone(java.time.ZoneId.systemDefault())
+                                .toInstant().plusSeconds(TheoryExamTiming.QUESTION_TIME_SECONDS);
+                        response.setQuestionDeadlineAt(deadline.isAfter(exam.getExpiresAt())
+                                ? exam.getExpiresAt() : deadline);
+                    });
+        }
+
         return response;
     }
 
     /**
      * Enforces server-side theory-exam access.
      *
-     * Legacy attempts stay FULL.
-     * New API attempts continuously respect entitlement state.
+     * Every active attempt continuously respects the current entitlement state.
      */
     private boolean enforceQuestionAccess(
             ExamSimulation exam,
             Long userId,
             ExamSimulationQuestion examQuestion,
             Instant now) {
-
-        if (!exam.isPreviewAttempt()) {
-            return true;
-        }
 
         // A running attempt that already exhausted its active exam window
         // cannot be revived by entering another paywall cycle.
@@ -1158,8 +1187,7 @@ public class ExamService {
             long finalizedCount,
             Instant now) {
 
-        if (!exam.isPreviewAttempt()
-                || fullAccess
+        if (fullAccess
                 || finalizedCount
                         < TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
             return;
@@ -1272,7 +1300,6 @@ public class ExamService {
             ExamSimulation exam) {
 
         return exam != null
-                && exam.isPreviewAttempt()
                 && exam.getPaywallReachedAt() != null
                 && exam.getFullAccessResumedAt() == null;
     }
@@ -1596,7 +1623,7 @@ public class ExamService {
                                     category == null ? null : category.nameFr())
                             .categoryCode(
                                     category == null ? null : category.code())
-                            .contentImageUrl(question.getContentImageUrl())
+                            .contentImageUrl(mediaUrlResolver.resolvePublicUrl(question.getContentImageUrl()))
                             .userAnswerOptionId(selectedOption.getId())
                             .correctAnswerOptionId(correctOption.getId())
                             .typicalErrorType(
@@ -1787,10 +1814,10 @@ public class ExamService {
                                     category == null ? null : category.nameFr())
                             .categoryCode(
                                     category == null ? null : category.code())
-                            .contentImageUrl(
+                            .contentImageUrl(mediaUrlResolver.resolvePublicUrl(
                                     snapshot != null
                                             ? snapshot.contentImageUrl()
-                                            : question.getContentImageUrl())
+                                            : question.getContentImageUrl()))
                             .isCorrect(answer.getIsCorrect())
                             .wasTimeout(answer.isTimedOut())
                             .difficulty(

@@ -35,6 +35,10 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations("file:public/images/quiz/")
                 .setCachePeriod(3600);
 
+        registry.addResourceHandler("/images/lessons/**")
+                .addResourceLocations("file:public/images/lessons/")
+                .setCachePeriod(3600);
+
         String optimizedImages = Path.of(editorialImageDirectory)
                 .toAbsolutePath()
                 .normalize()

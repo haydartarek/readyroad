@@ -1,24 +1,29 @@
 package com.readyroad.readyroadbackend.mapper;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.Lesson;
 import com.readyroad.readyroadbackend.domain.entity.LessonPage;
 import com.readyroad.readyroadbackend.dto.response.LessonDetailResponse;
 import com.readyroad.readyroadbackend.dto.response.LessonPageResponse;
 import com.readyroad.readyroadbackend.dto.response.LessonResponse;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.List;
 
 @Component
 public class LessonMapper {
 
-    private final ObjectMapper objectMapper;
+    private final MediaUrlResolver mediaUrlResolver;
 
-    public LessonMapper(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
+    @Autowired
+    public LessonMapper(MediaUrlResolver mediaUrlResolver) {
+        this.mediaUrlResolver = mediaUrlResolver;
+    }
+
+    /** Compatibility constructor for small unit tests that only map non-media fields. */
+    public LessonMapper() {
+        this.mediaUrlResolver = null;
     }
 
     /** Map entity → list/summary response (no pages). */
@@ -76,25 +81,27 @@ public class LessonMapper {
                 page.getContentEn(),
                 page.getContentFr(),
                 page.getContentAr(),
-                parseJsonArray(page.getBulletPointsNl()),
-                parseJsonArray(page.getBulletPointsEn()),
-                parseJsonArray(page.getBulletPointsFr()),
-                parseJsonArray(page.getBulletPointsAr()));
+                toLessonImageUrl(page));
     }
 
-    /**
-     * Parse a JSON array string into a List&lt;String&gt;.
-     * Returns empty list on null or parse failure.
-     */
-    private List<String> parseJsonArray(String json) {
-        if (json == null || json.isBlank()) {
-            return Collections.emptyList();
+    private String toLessonImageUrl(
+            LessonPage page) {
+
+        if (page.getImageAsset() == null) {
+            return null;
         }
-        try {
-            return objectMapper.readValue(json, new TypeReference<List<String>>() {
-            });
-        } catch (Exception e) {
-            return Collections.emptyList();
+
+        String storageKey =
+                page.getImageAsset()
+                        .getStorageKey();
+
+        if (storageKey == null
+                || storageKey.isBlank()) {
+            return null;
         }
+
+        return mediaUrlResolver == null
+                ? (storageKey.startsWith("/images/") ? storageKey : "/images/" + storageKey)
+                : mediaUrlResolver.resolvePublicUrl(storageKey);
     }
 }

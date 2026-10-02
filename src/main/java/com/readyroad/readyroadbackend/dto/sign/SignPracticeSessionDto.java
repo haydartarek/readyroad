@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.dto.sign;
 
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -30,11 +31,19 @@ public record SignPracticeSessionDto(
 ) {
     public static SignPracticeSessionDto from(SignPracticeSession s,
                                               List<SignQuizQuestionDto> questions) {
+        return from(s, questions, null);
+    }
+
+    public static SignPracticeSessionDto from(SignPracticeSession s,
+                                              List<SignQuizQuestionDto> questions,
+                                              MediaUrlResolver mediaUrlResolver) {
         return new SignPracticeSessionDto(
                 s.getId(),
                 s.getSignCode(),
                 s.getSign().getCategory(),
-                s.getSign().getImagePath(),
+                mediaUrlResolver == null
+                        ? s.getSign().getImagePath()
+                        : mediaUrlResolver.resolvePublicUrl(s.getSign().getImagePath()),
                 s.getSign().getNameNl(),
                 s.getSign().getNameEn(),
                 s.getSign().getNameFr(),

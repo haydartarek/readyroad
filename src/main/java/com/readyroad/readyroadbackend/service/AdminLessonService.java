@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.Lesson;
 import com.readyroad.readyroadbackend.domain.entity.LessonCategory;
@@ -12,6 +13,7 @@ import com.readyroad.readyroadbackend.domain.entity.LessonPage;
 import com.readyroad.readyroadbackend.domain.entity.LessonVersion;
 import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.enums.LessonMediaStatus;
+import com.readyroad.readyroadbackend.domain.enums.LessonMediaStorageProvider;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.LessonCategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.LessonDraftRepository;
@@ -19,18 +21,22 @@ import com.readyroad.readyroadbackend.domain.repository.LessonMediaAssetReposito
 import com.readyroad.readyroadbackend.domain.repository.LessonRepository;
 import com.readyroad.readyroadbackend.domain.repository.LessonVersionRepository;
 import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.CategoryLinkResponse;
-import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.DraftResponse;
+import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.CreateLessonRequest;
 import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.LessonDetail;
 import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.LessonSummary;
 import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.MediaAssetResponse;
+import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.DraftResponse;
 import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.TheoryCategoryResponse;
 import com.readyroad.readyroadbackend.dto.admin.AdminLessonDtos.VersionSummary;
+import com.readyroad.readyroadbackend.storage.MediaStorageProperties;
 import lombok.RequiredArgsConstructor;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
@@ -54,6 +60,9 @@ public class AdminLessonService {
     private final LessonMediaAssetRepository mediaRepository;
     private final CategoryRepository categoryRepository;
     private final ObjectMapper objectMapper;
+    private final FileUploadService fileUploadService;
+    private final JdbcTemplate jdbcTemplate;
+    private final MediaStorageProperties mediaStorageProperties;
 
     public List<LessonSummary> listLessons() {
 
@@ -65,6 +74,44 @@ public class AdminLessonService {
                 .stream()
                 .map(this::toSummary)
                 .toList();
+    }
+
+    @Transactional
+    public LessonDetail createLesson(
+            CreateLessonRequest request,
+            Long actorUserId) {
+
+        requireActor(actorUserId);
+
+        String lessonCode = request.lessonCode().trim();
+
+        if (lessonRepository.existsByLessonCode(lessonCode)) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Lesson code already exists: " + lessonCode);
+        }
+
+        Lesson lesson = new Lesson();
+        lesson.setLessonCode(lessonCode);
+        lesson.setIsActive(false);
+
+        JsonNode document = createInitialDocument(request, lessonCode);
+        validateDraftDocument(lesson, document);
+        validateCorePublishScope(document);
+        applyPublishedLessonFields(lesson, requireObject(document, "lesson"));
+        applyPublishedPages(lesson, requireArray(document, "pages"));
+
+        Lesson savedLesson = lessonRepository.saveAndFlush(lesson);
+
+        versionRepository.saveAndFlush(
+                LessonVersion.cms(
+                        savedLesson,
+                        1,
+                        document,
+                        "Initial lesson creation",
+                        actorUserId));
+
+        return getLesson(lessonCode);
     }
 
     public LessonDetail getLesson(String idOrCode) {
@@ -229,6 +276,138 @@ public class AdminLessonService {
     }
 
     @Transactional
+    public MediaAssetResponse uploadMedia(
+            String idOrCode,
+            MultipartFile file,
+            String requestedBaseName,
+            Long actorUserId) {
+
+        requireActor(actorUserId);
+
+        Lesson lesson =
+                resolveLesson(idOrCode);
+
+        String imageUrl =
+                fileUploadService
+                        .uploadLessonImage(
+                                file,
+                                lesson.getLessonCode(),
+                                requestedBaseName);
+
+        String storageKey =
+                imageUrl.startsWith("/images/")
+                        ? imageUrl.substring(
+                                "/images/".length())
+                        : imageUrl;
+
+        String originalFilename =
+                file.getOriginalFilename();
+
+        if (originalFilename == null
+                || originalFilename.isBlank()) {
+            originalFilename = "image";
+        }
+
+        LessonMediaAsset asset =
+                new LessonMediaAsset(
+                        lesson,
+                        storageKey,
+                        currentStorageProvider(),
+                        originalFilename,
+                        file.getContentType(),
+                        file.getSize(),
+                        null,
+                        null,
+                        null,
+                        actorUserId);
+
+        return toMediaResponse(
+                mediaRepository.saveAndFlush(
+                        asset));
+    }
+
+    private LessonMediaStorageProvider currentStorageProvider() {
+        return "s3".equalsIgnoreCase(mediaStorageProperties.getProvider())
+                ? LessonMediaStorageProvider.OBJECT_STORAGE
+                : LessonMediaStorageProvider.LOCAL;
+    }
+
+    /**
+     * Permanently purges a lesson image. This is intentionally separate from
+     * normal draft editing so the historical-version immutability rule is not
+     * weakened for any other operation.
+     */
+    @Transactional
+    public DraftResponse purgeMedia(Long assetId) {
+        if (assetId == null || assetId <= 0) {
+            throw new IllegalArgumentException("Media asset id must be positive");
+        }
+
+        LessonMediaAsset asset = mediaRepository.findById(assetId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Lesson media asset not found: " + assetId));
+
+        jdbcTemplate.update(
+                "SET LOCAL readyroad.media_purge = 'on'");
+
+        String storageKey = asset.getStorageKey();
+
+        // Clear the live relational references before deleting the asset row.
+        for (Lesson lesson : lessonRepository.findAll()) {
+            for (LessonPage page : lesson.getPages()) {
+                LessonMediaAsset pageAsset = page.getImageAsset();
+                if (pageAsset != null
+                        && Objects.equals(pageAsset.getId(), assetId)) {
+                    page.setImageAsset(null);
+                }
+            }
+        }
+
+        // Purge every historical JSON reference, including nested references
+        // added by future document fields.
+        for (LessonDraft draft : draftRepository.findAll()) {
+            JsonNode cleaned = removeImageAssetReferences(
+                    draft.getDocument(), assetId);
+            if (!Objects.equals(cleaned, draft.getDocument())) {
+                draft.updateDocument(cleaned, draft.getUpdatedByUserId());
+                draftRepository.save(draft);
+            }
+        }
+
+        for (LessonVersion version : versionRepository.findAll()) {
+            JsonNode cleaned = removeImageAssetReferences(
+                    version.getDocument(), assetId);
+            if (!Objects.equals(cleaned, version.getDocument())) {
+                // Version documents are immutable during normal CMS workflows;
+                // this privileged purge is the one explicit override.
+                jdbcTemplate.update(
+                        "UPDATE lesson_versions SET document = CAST(? AS jsonb) WHERE id = ?",
+                        cleaned.toString(),
+                        version.getId());
+            }
+        }
+
+        lessonRepository.flush();
+        draftRepository.flush();
+        versionRepository.flush();
+
+        if (asset.getStorageProvider() != LessonMediaStorageProvider.LOCAL) {
+            throw new IllegalStateException(
+                    "Cannot purge lesson media from unsupported storage provider: "
+                            + asset.getStorageProvider());
+        }
+
+        mediaRepository.delete(asset);
+        mediaRepository.flush();
+        fileUploadService.deleteLessonImage(storageKey);
+
+        return draftRepository.findById(asset.getLesson().getId())
+                .map(this::toDraftResponse)
+                .orElse(null);
+    }
+
+    @Transactional
     public VersionSummary publishDraft(
             String idOrCode,
             long expectedRevision,
@@ -281,6 +460,11 @@ public class AdminLessonService {
                 document);
 
         validateCorePublishScope(document);
+
+        // Publishing the first saved draft also makes a newly created lesson
+        // visible through the existing public lesson catalog.
+        lesson.setIsActive(true);
+        ((ObjectNode) requireObject(document, "lesson")).put("isActive", true);
 
         applyPublishedLessonFields(
                 lesson,
@@ -463,9 +647,13 @@ public class AdminLessonService {
                         lessonNode,
                         "title");
 
-        validateLockedTitle(
-                lesson,
-                title);
+        for (String language :
+                List.of("ar", "nl", "fr", "en")) {
+
+            requireText(
+                    title,
+                    language);
+        }
 
         JsonNode isActive =
                 lessonNode.get("isActive");
@@ -516,6 +704,7 @@ public class AdminLessonService {
         }
 
         validatePages(
+                lesson,
                 requireArray(document, "pages"));
 
         requireArray(
@@ -545,48 +734,8 @@ public class AdminLessonService {
                         "categoryLinks"));
     }
 
-    private void validateLockedTitle(
-            Lesson lesson,
-            JsonNode title) {
-
-        assertLockedText(
-                "AR",
-                lesson.getTitleAr(),
-                requireText(title, "ar"));
-
-        assertLockedText(
-                "NL",
-                lesson.getTitleNl(),
-                requireText(title, "nl"));
-
-        assertLockedText(
-                "FR",
-                lesson.getTitleFr(),
-                requireText(title, "fr"));
-
-        assertLockedText(
-                "EN",
-                lesson.getTitleEn(),
-                requireText(title, "en"));
-    }
-
-    private void assertLockedText(
-            String language,
-            String published,
-            String draft) {
-
-        if (!Objects.equals(
-                published,
-                draft)) {
-
-            throw new IllegalArgumentException(
-                    "Main lesson title is locked and cannot be changed ("
-                            + language
-                            + ")");
-        }
-    }
-
     private void validatePages(
+            Lesson lesson,
             JsonNode pages) {
 
         if (pages.isEmpty()) {
@@ -640,9 +789,24 @@ public class AdminLessonService {
                     page,
                     "content");
 
-            requireObject(
-                    page,
-                    "bulletPointsRaw");
+            JsonNode imageAssetId =
+                    page.get(
+                            "imageAssetId");
+
+            if (imageAssetId != null
+                    && !imageAssetId.isNull()) {
+
+                if (!imageAssetId.isIntegralNumber()
+                        || imageAssetId.asLong() <= 0) {
+
+                    throw new IllegalArgumentException(
+                            "imageAssetId must be a positive integer or null");
+                }
+
+                requireActiveMediaAsset(
+                        lesson,
+                        imageAssetId.asLong());
+            }
         }
     }
 
@@ -796,6 +960,31 @@ public class AdminLessonService {
             Lesson lesson,
             JsonNode lessonNode) {
 
+        JsonNode title =
+                requireObject(
+                        lessonNode,
+                        "title");
+
+        lesson.setTitleAr(
+                requireText(
+                        title,
+                        "ar"));
+
+        lesson.setTitleNl(
+                requireText(
+                        title,
+                        "nl"));
+
+        lesson.setTitleFr(
+                requireText(
+                        title,
+                        "fr"));
+
+        lesson.setTitleEn(
+                requireText(
+                        title,
+                        "en"));
+
         JsonNode description =
                 requireObject(
                         lessonNode,
@@ -849,8 +1038,8 @@ public class AdminLessonService {
         }
 
         /*
-         * lessonCode, title and isActive are intentionally
-         * not written here. They are locked by validation.
+         * lessonCode and isActive remain controlled outside
+         * editable lesson content.
          */
     }
 
@@ -919,33 +1108,37 @@ public class AdminLessonService {
                             content,
                             "en"));
 
-            JsonNode bulletPointsRaw =
-                    requireObject(
-                            pageNode,
-                            "bulletPointsRaw");
+            JsonNode imageAssetId =
+                    pageNode.get(
+                            "imageAssetId");
 
-            page.setBulletPointsAr(
-                    nullableText(
-                            bulletPointsRaw,
-                            "ar"));
+            if (imageAssetId != null
+                    && !imageAssetId.isNull()) {
 
-            page.setBulletPointsNl(
-                    nullableText(
-                            bulletPointsRaw,
-                            "nl"));
-
-            page.setBulletPointsFr(
-                    nullableText(
-                            bulletPointsRaw,
-                            "fr"));
-
-            page.setBulletPointsEn(
-                    nullableText(
-                            bulletPointsRaw,
-                            "en"));
+                page.setImageAsset(
+                        requireActiveMediaAsset(
+                                lesson,
+                                imageAssetId.asLong()));
+            }
 
             lesson.addPage(page);
         }
+    }
+
+
+    private LessonMediaAsset requireActiveMediaAsset(
+            Lesson lesson,
+            long assetId) {
+
+        return mediaRepository
+                .findByIdAndLesson_IdAndStatus(
+                        assetId,
+                        lesson.getId(),
+                        LessonMediaStatus.ACTIVE)
+                .orElseThrow(() ->
+                        new IllegalArgumentException(
+                                "Active lesson media asset not found: "
+                                        + assetId));
     }
 
 
@@ -985,6 +1178,78 @@ public class AdminLessonService {
         return normalized.isEmpty()
                 ? null
                 : normalized;
+    }
+
+    private String normalizeNullable(String value) {
+        if (value == null) {
+            return null;
+        }
+
+        String normalized = value.trim();
+        return normalized.isEmpty() ? null : normalized;
+    }
+
+    private JsonNode createInitialDocument(
+            CreateLessonRequest request,
+            String lessonCode) {
+
+        ObjectNode root = objectMapper.createObjectNode();
+        root.put("schemaVersion", 1);
+
+        ObjectNode lessonNode = root.putObject("lesson");
+        lessonNode.put("lessonCode", lessonCode);
+        ObjectNode title = lessonNode.putObject("title");
+        title.put("ar", request.titleAr().trim());
+        title.put("nl", request.titleNl().trim());
+        title.put("fr", request.titleFr().trim());
+        title.put("en", request.titleEn().trim());
+        ObjectNode description = lessonNode.putObject("description");
+        putNullable(description, "ar", request.descriptionAr());
+        putNullable(description, "nl", request.descriptionNl());
+        putNullable(description, "fr", request.descriptionFr());
+        putNullable(description, "en", request.descriptionEn());
+        putNullable(lessonNode, "icon", request.icon());
+        lessonNode.put("displayOrder", request.displayOrder());
+        lessonNode.put("estimatedMinutes", request.estimatedMinutes());
+        lessonNode.put("isActive", false);
+
+        ObjectNode page = root.putArray("pages").addObject();
+        page.put("pageNumber", 1);
+        ObjectNode pageTitle = page.putObject("title");
+        pageTitle.put("ar", request.page().titleAr().trim());
+        pageTitle.put("nl", request.page().titleNl().trim());
+        pageTitle.put("fr", request.page().titleFr().trim());
+        pageTitle.put("en", request.page().titleEn().trim());
+        ObjectNode content = page.putObject("content");
+        putNullable(content, "ar", request.page().contentAr());
+        putNullable(content, "nl", request.page().contentNl());
+        putNullable(content, "fr", request.page().contentFr());
+        putNullable(content, "en", request.page().contentEn());
+        page.putNull("imageAssetId");
+
+        root.putArray("structuredSections");
+        ObjectNode seo = root.putObject("seo");
+        seo.putObject("ar");
+        seo.putObject("nl");
+        seo.putObject("fr");
+        seo.putObject("en");
+        root.putArray("media");
+        root.putArray("categoryLinks");
+
+        return root;
+    }
+
+    private void putNullable(
+            ObjectNode node,
+            String field,
+            String value) {
+
+        String normalized = normalizeNullable(value);
+        if (normalized == null) {
+            node.putNull(field);
+        } else {
+            node.put(field, normalized);
+        }
     }
 
     private JsonNode requireObject(
@@ -1154,5 +1419,47 @@ public class AdminLessonService {
         }
 
         return document.deepCopy();
+    }
+
+    private JsonNode removeImageAssetReferences(
+            JsonNode document,
+            long assetId) {
+
+        if (document == null) {
+            return null;
+        }
+
+        JsonNode cleaned = copyJson(document);
+        removeImageAssetReferencesInPlace(cleaned, assetId);
+        return cleaned;
+    }
+
+    private void removeImageAssetReferencesInPlace(
+            JsonNode node,
+            long assetId) {
+
+        if (node == null) {
+            return;
+        }
+
+        if (node.isObject()) {
+            ObjectNode object = (ObjectNode) node;
+            JsonNode imageAssetId = object.get("imageAssetId");
+            if (imageAssetId != null
+                    && imageAssetId.isIntegralNumber()
+                    && imageAssetId.asLong() == assetId) {
+                object.putNull("imageAssetId");
+            }
+
+            object.properties().forEach(entry ->
+                    removeImageAssetReferencesInPlace(
+                            entry.getValue(),
+                            assetId));
+        } else if (node.isArray()) {
+            node.forEach(child ->
+                    removeImageAssetReferencesInPlace(
+                            child,
+                            assetId));
+        }
     }
 }

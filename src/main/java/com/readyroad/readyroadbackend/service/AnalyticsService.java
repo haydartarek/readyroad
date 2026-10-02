@@ -23,6 +23,7 @@ import com.readyroad.readyroadbackend.dto.ErrorPatternResponse.ErrorGroupDTO;
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse.ExampleQuestionDTO;
 import com.readyroad.readyroadbackend.dto.WeakAreaRecommendationResponse;
 import com.readyroad.readyroadbackend.dto.WeakAreasOverviewResponse;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -53,6 +54,7 @@ public class AnalyticsService {
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
     private final BackendMessageService messages;
     private final ExamSimulationAnswerRepository examAnswerRepository;
+    private final MediaUrlResolver mediaUrlResolver;
 
     // Supported error pattern types (6 types as per requirements)
     private static final List<TypicalErrorType> SUPPORTED_PATTERNS = Arrays.asList(
@@ -491,7 +493,7 @@ public class AnalyticsService {
                 .categoryNameAr(question.getCategory() != null ? question.getCategory().getNameAr() : null)
                 .categoryNameNl(question.getCategory() != null ? question.getCategory().getNameNl() : null)
                 .categoryNameFr(question.getCategory() != null ? question.getCategory().getNameFr() : null)
-                .contentImageUrl(question.getContentImageUrl())
+                .contentImageUrl(mediaUrlResolver.resolvePublicUrl(question.getContentImageUrl()))
                 .timesWrong(timesWrong)
                 .build();
     }

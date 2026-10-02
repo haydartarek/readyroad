@@ -70,13 +70,13 @@ public class ContentSourceService {
                 .toList();
         Map<ContentLocale, VerifiedContentSource.LocalizedFacts> facts = new EnumMap<>(ContentLocale.class);
         facts.put(ContentLocale.AR, lessonFacts(source.getTitleAr(), source.getDescriptionAr(), pages,
-                LessonPage::getTitleAr, LessonPage::getContentAr, LessonPage::getBulletPointsAr));
+                LessonPage::getTitleAr, LessonPage::getContentAr));
         facts.put(ContentLocale.NL, lessonFacts(source.getTitleNl(), source.getDescriptionNl(), pages,
-                LessonPage::getTitleNl, LessonPage::getContentNl, LessonPage::getBulletPointsNl));
+                LessonPage::getTitleNl, LessonPage::getContentNl));
         facts.put(ContentLocale.EN, lessonFacts(source.getTitleEn(), source.getDescriptionEn(), pages,
-                LessonPage::getTitleEn, LessonPage::getContentEn, LessonPage::getBulletPointsEn));
+                LessonPage::getTitleEn, LessonPage::getContentEn));
         facts.put(ContentLocale.FR, lessonFacts(source.getTitleFr(), source.getDescriptionFr(), pages,
-                LessonPage::getTitleFr, LessonPage::getContentFr, LessonPage::getBulletPointsFr));
+                LessonPage::getTitleFr, LessonPage::getContentFr));
         return verified(ContentSourceType.LESSON, lessonCode, "LESSON:" + lessonCode, facts, null);
     }
 
@@ -160,14 +160,12 @@ public class ContentSourceService {
             String description,
             List<LessonPage> pages,
             java.util.function.Function<LessonPage, String> pageTitle,
-            java.util.function.Function<LessonPage, String> pageContent,
-            java.util.function.Function<LessonPage, String> pageBullets) {
+            java.util.function.Function<LessonPage, String> pageContent) {
         List<String> values = new ArrayList<>();
         values.add(description);
         for (LessonPage page : pages) {
             values.add(pageTitle.apply(page));
             values.add(pageContent.apply(page));
-            values.add(pageBullets.apply(page));
         }
         return localized(title, values.toArray(String[]::new));
     }

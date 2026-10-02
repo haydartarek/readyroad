@@ -10,6 +10,7 @@ import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import com.readyroad.readyroadbackend.dto.RoadSignSummaryDto;
 import com.readyroad.readyroadbackend.dto.sign.*;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 import lombok.RequiredArgsConstructor;
@@ -58,6 +59,7 @@ public class SignQuizService {
         private final SignExamResultRepository signExamResultRepo;
         private final CanonicalSignCatalogService canonicalSignCatalogService;
         private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+        private final MediaUrlResolver mediaUrlResolver;
         private final NotificationService notificationService;
         private final ObjectMapper objectMapper;
         // Bridge: sign quiz answers → main dashboard category progress
@@ -107,7 +109,7 @@ public class SignQuizService {
                 return roadSignRepo.findAllByIsActiveTrueOrderBySignCodeAsc()
                                 .stream()
                                 .filter(canonicalSignCatalogService::isPubliclyAllowed)
-                                .map(RoadSignSummaryDto::from)
+                                .map(sign -> RoadSignSummaryDto.from(sign, mediaUrlResolver))
                                 .toList();
         }
 
@@ -140,7 +142,7 @@ public class SignQuizService {
                                         answeredQuestionIds);
                         log.info("Returning existing IN_PROGRESS session {} for user {} / sign {} ({} answered, {} remaining)",
                                         s.getId(), userId, signCode, answeredQuestionIds.size(), questions.size());
-                        return SignPracticeSessionDto.from(s, questions);
+                        return SignPracticeSessionDto.from(s, questions, mediaUrlResolver);
                 }
 
                 // Load questions (active only)
@@ -171,12 +173,13 @@ public class SignQuizService {
 
                 // Map questions to DTOs (no isCorrect)
                 List<SignQuizQuestionDto> questionDtos = shuffled.stream()
-                                .map(question -> SignQuizQuestionDto.from(question, roadSignReferenceTextResolver))
+                                .map(question -> SignQuizQuestionDto.from(
+                                                question, roadSignReferenceTextResolver, mediaUrlResolver))
                                 .toList();
 
                 log.info("Started practice session {} for user {} / sign {} ({} questions)",
                                 session.getId(), userId, signCode, shuffled.size());
-                return SignPracticeSessionDto.from(session, questionDtos);
+                return SignPracticeSessionDto.from(session, questionDtos, mediaUrlResolver);
         }
 
         // ── 3. Submit practice answer ────────────────────────────────────────────
@@ -421,12 +424,13 @@ public class SignQuizService {
 
                 List<SignQuizQuestionDto> questions = new ArrayList<>(
                                 exam.getExamQuestions().stream()
-                                                .map(eq -> SignQuizQuestionDto.from(eq.getQuestion(),
-                                                                roadSignReferenceTextResolver))
+                                                .map(eq -> SignQuizQuestionDto.from(
+                                                                eq.getQuestion(), roadSignReferenceTextResolver,
+                                                                mediaUrlResolver))
                                                 .toList());
                 Collections.shuffle(questions);
 
-                return SignExamQuestionsDto.from(exam, questions);
+                return SignExamQuestionsDto.from(exam, questions, mediaUrlResolver);
         }
 
         // ── 6. Submit exam (stateless) ───────────────────────────────────────────
@@ -721,7 +725,7 @@ public class SignQuizService {
                                                         result.getSignCode(),
                                                         sign != null ? canonicalSignCatalogService.routeCodeFor(sign)
                                                                         : result.getSignCode(),
-                                                        sign != null ? sign.getImagePath() : null,
+                                                        sign != null ? mediaUrlResolver.resolvePublicUrl(sign.getImagePath()) : null,
                                                         sign != null ? sign.getNameNl() : null,
                                                         sign != null ? sign.getNameEn() : null,
                                                         sign != null ? sign.getNameFr() : null,
@@ -847,7 +851,7 @@ public class SignQuizService {
                                 code,
                                 routeCode,
                                 sign.getCategory(),
-                                sign.getImagePath(),
+                                mediaUrlResolver.resolvePublicUrl(sign.getImagePath()),
                                 sign.getNameNl(),
                                 sign.getNameEn(),
                                 sign.getNameFr(),
@@ -890,7 +894,7 @@ public class SignQuizService {
                                 code,
                                 routeCode,
                                 sign.getCategory(),
-                                sign.getImagePath(),
+                                mediaUrlResolver.resolvePublicUrl(sign.getImagePath()),
                                 sign.getNameNl(),
                                 sign.getNameEn(),
                                 sign.getNameFr(),
@@ -952,7 +956,7 @@ public class SignQuizService {
                                 storedResult != null ? storedResult.getId() : null,
                                 signCode,
                                 sign != null ? canonicalSignCatalogService.routeCodeFor(sign) : signCode,
-                                sign != null ? sign.getImagePath() : null,
+                                sign != null ? mediaUrlResolver.resolvePublicUrl(sign.getImagePath()) : null,
                                 sign != null ? sign.getNameNl() : null,
                                 sign != null ? sign.getNameEn() : null,
                                 sign != null ? sign.getNameFr() : null,
@@ -1018,7 +1022,8 @@ public class SignQuizService {
                 List<SignQuestion> qs = questionRepo.findAllBySignIdAndIsActiveTrue(signId);
                 return qs.stream()
                                 .filter(question -> !answeredIds.contains(question.getId()))
-                                .map(question -> SignQuizQuestionDto.from(question, roadSignReferenceTextResolver))
+                                .map(question -> SignQuizQuestionDto.from(
+                                                question, roadSignReferenceTextResolver, mediaUrlResolver))
                                 .toList();
         }
 
@@ -1585,7 +1590,8 @@ public class SignQuizService {
                 return randomPracticeQuestionRepo.findBySessionIdOrderByQuestionOrder(sessionId)
                                 .stream()
                                 .map(SignRandomPracticeQuestion::getQuestion)
-                                .map(question -> SignQuizQuestionDto.from(question, roadSignReferenceTextResolver))
+                                .map(question -> SignQuizQuestionDto.from(
+                                                question, roadSignReferenceTextResolver, mediaUrlResolver))
                                 .toList();
         }
 
@@ -1656,7 +1662,9 @@ public class SignQuizService {
                                 sanitizeAndResolveExplanation(questionType, TextLanguage.AR,
                                                 question.getExplanationAr()),
                                 question.getSign() != null ? question.getSign().getSignCode() : null,
-                                question.getSign() != null ? question.getSign().getImagePath() : null,
+                                question.getSign() != null
+                                                ? mediaUrlResolver.resolvePublicUrl(question.getSign().getImagePath())
+                                                : null,
                                 question.getDifficulty() != null ? question.getDifficulty().name() : null);
         }
 

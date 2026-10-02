@@ -228,10 +228,6 @@ public class LessonImportService {
                 page.setContentEn(sanitize("EN", textOr(pageNode, "content_en", textOr(pageNode, "content", ""))));
                 page.setContentFr(sanitize("FR", textOr(pageNode, "content_fr", textOr(pageNode, "content", ""))));
                 page.setContentAr(sanitize("AR", textOr(pageNode, "content_ar", textOr(pageNode, "content", ""))));
-                page.setBulletPointsNl(jsonArrayToString(pageNode, "bulletPoints_nl", "bulletPoints"));
-                page.setBulletPointsEn(jsonArrayToString(pageNode, "bulletPoints_en", "bulletPoints"));
-                page.setBulletPointsFr(jsonArrayToString(pageNode, "bulletPoints_fr", "bulletPoints"));
-                page.setBulletPointsAr(jsonArrayToString(pageNode, "bulletPoints_ar", "bulletPoints"));
                 lesson.addPage(page);
             }
         }
@@ -265,10 +261,6 @@ public class LessonImportService {
         target.setContentEn(source.getContentEn());
         target.setContentFr(source.getContentFr());
         target.setContentAr(source.getContentAr());
-        target.setBulletPointsNl(source.getBulletPointsNl());
-        target.setBulletPointsEn(source.getBulletPointsEn());
-        target.setBulletPointsFr(source.getBulletPointsFr());
-        target.setBulletPointsAr(source.getBulletPointsAr());
         return target;
     }
 
@@ -307,11 +299,9 @@ public class LessonImportService {
                 && Objects.equals(existing.getContentNl(), canonical.getContentNl())
                 && Objects.equals(existing.getContentEn(), canonical.getContentEn())
                 && Objects.equals(existing.getContentFr(), canonical.getContentFr())
-                && Objects.equals(existing.getContentAr(), canonical.getContentAr())
-                && Objects.equals(existing.getBulletPointsNl(), canonical.getBulletPointsNl())
-                && Objects.equals(existing.getBulletPointsEn(), canonical.getBulletPointsEn())
-                && Objects.equals(existing.getBulletPointsFr(), canonical.getBulletPointsFr())
-                && Objects.equals(existing.getBulletPointsAr(), canonical.getBulletPointsAr());
+                && Objects.equals(
+                existing.getContentAr(),
+                canonical.getContentAr());
     }
 
     private enum ImportAction {
@@ -366,30 +356,6 @@ public class LessonImportService {
     private boolean hasText(JsonNode node, String field) {
         JsonNode child = node.path(field);
         return !child.isMissingNode() && !child.isNull() && !child.asText("").isBlank();
-    }
-
-    /**
-     * Read a JSON array field and serialise it to a JSON string for DB storage.
-     * Falls back to {@code fallbackField} if primary is absent.
-     */
-    private String jsonArrayToString(JsonNode parent, String field, String fallbackField) {
-        JsonNode arr = parent.path(field);
-        if (!arr.isArray() || arr.isEmpty()) {
-            arr = parent.path(fallbackField);
-        }
-        if (!arr.isArray() || arr.isEmpty()) {
-            return "[]";
-        }
-        try {
-            List<String> list = objectMapper.convertValue(arr, new TypeReference<List<String>>() {
-            }).stream()
-                    .map(this::normalizeText)
-                    .filter(item -> item != null && !item.isBlank())
-                    .toList();
-            return objectMapper.writeValueAsString(list);
-        } catch (Exception e) {
-            return "[]";
-        }
     }
 
     private String normalizeText(String value) {

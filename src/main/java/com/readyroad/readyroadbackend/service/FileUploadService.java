@@ -1,17 +1,14 @@
 package com.readyroad.readyroadbackend.service;
 
+import com.readyroad.readyroadbackend.storage.MediaStorageBucket;
+import com.readyroad.readyroadbackend.storage.MediaStorageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.text.Normalizer;
 import java.util.Set;
 import java.util.Locale;
@@ -19,8 +16,8 @@ import java.util.UUID;
 
 /**
  * Service for handling secure file uploads.
- * Validates file type and size, stores in the public/images directory
- * so files are served by the existing /images/** resource handler.
+ * Validates images and delegates persistence to MediaStorageService,
+ * preserving the existing /images/** URL contract.
  */
 @Slf4j
 @Service
@@ -35,27 +32,12 @@ public class FileUploadService {
     @Value("${readyroad.upload.max-file-size-mb:5}")
     private int maxFileSizeMb;
 
-    @Value("${readyroad.upload.directory:public/images/quiz}")
-    private String uploadDirectory;
-
     private final BackendMessageService messages;
+    private final MediaStorageService mediaStorageService;
 
-    public FileUploadService(BackendMessageService messages) {
+    public FileUploadService(BackendMessageService messages, MediaStorageService mediaStorageService) {
         this.messages = messages;
-    }
-
-    private Path uploadPath;
-
-    @PostConstruct
-    public void init() {
-        uploadPath = Paths.get(uploadDirectory).toAbsolutePath().normalize();
-        try {
-            Files.createDirectories(uploadPath);
-            log.info("📁 Upload directory ready: {}", uploadPath);
-        } catch (IOException e) {
-            log.error("❌ Could not create upload directory: {}", uploadPath, e);
-            throw new RuntimeException(messages.get("upload.directory_create_failed"), e);
-        }
+        this.mediaStorageService = mediaStorageService;
     }
 
     /**
@@ -69,64 +51,157 @@ public class FileUploadService {
         return uploadImage(file, null);
     }
 
-    public String uploadImage(MultipartFile file, String requestedBaseName) {
-        // Validate not empty
-        if (file.isEmpty()) {
-            throw new IllegalArgumentException(messages.get("upload.file_empty"));
-        }
+    public String uploadImage(
+            MultipartFile file,
+            String requestedBaseName) {
 
-        // Validate content type
-        String contentType = file.getContentType();
-        if (contentType == null || !ALLOWED_CONTENT_TYPES.contains(contentType.toLowerCase())) {
-            throw new IllegalArgumentException(
-                    messages.get("upload.invalid_type", contentType));
-        }
+        return uploadValidatedImage(
+                file,
+                requestedBaseName,
+                "quiz/");
+    }
 
-        // Validate extension
-        String originalFilename = file.getOriginalFilename();
-        String extension = getExtension(originalFilename);
-        if (!ALLOWED_EXTENSIONS.contains(extension.toLowerCase())) {
-            throw new IllegalArgumentException(
-                    messages.get("upload.invalid_extension", extension));
-        }
+    public String uploadLessonImage(
+            MultipartFile file,
+            String lessonCode,
+            String requestedBaseName) {
 
-        String normalizedType = contentType.toLowerCase(Locale.ROOT);
-        String normalizedExtension = extension.toLowerCase(Locale.ROOT);
-        if (!matchesDeclaredType(normalizedType, normalizedExtension) ||
-                !hasValidImageSignature(file, normalizedType)) {
-            throw new IllegalArgumentException(messages.get("upload.unreadable_image"));
-        }
-
-        // Validate file size
-        long maxBytes = (long) maxFileSizeMb * 1024 * 1024;
-        if (file.getSize() > maxBytes) {
-            throw new IllegalArgumentException(
-                    messages.get("upload.file_too_large", file.getSize() / 1024 / 1024, maxFileSizeMb));
-        }
-
-        // Keep a readable owner-provided base name while the UUID suffix guarantees
-        // collision safety. The extension always comes from the validated file.
-        String safeBaseName = sanitizeBaseName(requestedBaseName);
-        String uniqueSuffix = UUID.randomUUID().toString().substring(0, 12);
-        String uniqueName = (safeBaseName.isBlank() ? uniqueSuffix : safeBaseName + "-" + uniqueSuffix)
-                + "." + normalizedExtension;
-        Path targetPath = uploadPath.resolve(uniqueName).normalize();
-
-        // Security: ensure target is still within upload directory
-        if (!targetPath.startsWith(uploadPath)) {
+        if (lessonCode != null && (lessonCode.contains("..")
+                || lessonCode.contains("/") || lessonCode.contains("\\")
+                || lessonCode.contains(":") || lessonCode.indexOf('\0') >= 0)) {
             throw new SecurityException(messages.get("upload.invalid_path"));
         }
 
-        try {
-            Files.copy(file.getInputStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
-            log.info("✅ Image uploaded: {} ({} bytes)", uniqueName, file.getSize());
-        } catch (IOException e) {
-            log.error("❌ Failed to store file: {}", uniqueName, e);
-            throw new RuntimeException(messages.get("upload.store_failed"), e);
+        String safeLessonCode =
+                sanitizeBaseName(lessonCode);
+
+        if (safeLessonCode.isBlank()) {
+            throw new IllegalArgumentException(
+                    "A valid lesson code is required");
         }
 
-        // Return the URL path that matches the /images/** resource handler
-        return "/images/quiz/" + uniqueName;
+        return uploadValidatedImage(
+                file,
+                requestedBaseName,
+                "lessons/"
+                        + safeLessonCode
+                        + "/");
+    }
+
+    private String uploadValidatedImage(
+            MultipartFile file,
+            String requestedBaseName,
+            String storageKeyPrefix) {
+
+        if (file.isEmpty()) {
+            throw new IllegalArgumentException(
+                    messages.get(
+                            "upload.file_empty"));
+        }
+
+        String contentType =
+                file.getContentType();
+
+        if (contentType == null
+                || !ALLOWED_CONTENT_TYPES.contains(
+                        contentType.toLowerCase())) {
+
+            throw new IllegalArgumentException(
+                    messages.get(
+                            "upload.invalid_type",
+                            contentType));
+        }
+
+        String originalFilename =
+                file.getOriginalFilename();
+
+        String extension =
+                getExtension(
+                        originalFilename);
+
+        if (!ALLOWED_EXTENSIONS.contains(
+                extension.toLowerCase())) {
+
+            throw new IllegalArgumentException(
+                    messages.get(
+                            "upload.invalid_extension",
+                            extension));
+        }
+
+        String normalizedType =
+                contentType.toLowerCase(
+                        Locale.ROOT);
+
+        String normalizedExtension =
+                extension.toLowerCase(
+                        Locale.ROOT);
+
+        if (!matchesDeclaredType(
+                normalizedType,
+                normalizedExtension)
+                || !hasValidImageSignature(
+                        file,
+                        normalizedType)) {
+
+            throw new IllegalArgumentException(
+                    messages.get(
+                            "upload.unreadable_image"));
+        }
+
+        long maxBytes =
+                (long) maxFileSizeMb
+                        * 1024
+                        * 1024;
+
+        if (file.getSize() > maxBytes) {
+
+            throw new IllegalArgumentException(
+                    messages.get(
+                            "upload.file_too_large",
+                            file.getSize()
+                                    / 1024
+                                    / 1024,
+                            maxFileSizeMb));
+        }
+
+        String safeBaseName =
+                sanitizeBaseName(
+                        requestedBaseName);
+
+        String uniqueSuffix =
+                UUID.randomUUID()
+                        .toString()
+                        .substring(0, 12);
+
+        String uniqueName =
+                (
+                        safeBaseName.isBlank()
+                                ? uniqueSuffix
+                                : safeBaseName
+                                        + "-"
+                                        + uniqueSuffix
+                )
+                        + "."
+                        + normalizedExtension;
+
+        String storageKey = storageKeyPrefix + uniqueName;
+
+        try (InputStream input = file.getInputStream()) {
+            mediaStorageService.put(
+                    MediaStorageBucket.PUBLIC,
+                    storageKey,
+                    input,
+                    file.getSize(),
+                    normalizedType);
+        } catch (IOException exception) {
+
+            throw new RuntimeException(
+                    messages.get(
+                            "upload.store_failed"),
+                    exception);
+        }
+
+        return "/images/" + storageKey;
     }
 
     static String sanitizeBaseName(String requestedBaseName) {
@@ -168,18 +243,15 @@ public class FileUploadService {
         String filename = imageUrl.substring("/images/quiz/".length());
 
         // Security: prevent path traversal
-        if (filename.contains("..") || filename.contains("/") || filename.contains("\\")) {
+        if (filename.isBlank() || filename.equals(".") || filename.contains("..")
+                || filename.contains("/") || filename.contains("\\")
+                || filename.contains(":") || filename.indexOf('\0') >= 0) {
             log.warn("⚠️ Suspicious filename in delete request: {}", filename);
             return false;
         }
 
-        Path filePath = uploadPath.resolve(filename).normalize();
-        if (!filePath.startsWith(uploadPath)) {
-            return false;
-        }
-
         try {
-            boolean deleted = Files.deleteIfExists(filePath);
+            boolean deleted = mediaStorageService.delete(MediaStorageBucket.PUBLIC, "quiz/" + filename);
             if (deleted) {
                 log.info("🗑️ Image deleted: {}", filename);
             }
@@ -187,6 +259,40 @@ public class FileUploadService {
         } catch (IOException e) {
             log.error("❌ Failed to delete file: {}", filename, e);
             return false;
+        }
+    }
+
+    /**
+     * Permanently removes a lesson image through the media storage abstraction.
+     * The storage key is the value persisted in lesson_media_assets
+     * (for example, lessons/les-30/page-1.png).
+     */
+    public boolean deleteLessonImage(String storageKey) {
+        if (storageKey == null || storageKey.isBlank()) {
+            return false;
+        }
+
+        if (!storageKey.startsWith("lessons/") || storageKey.contains("..")
+                || storageKey.contains("\\") || storageKey.contains(":")
+                || storageKey.indexOf('\0') >= 0) {
+            throw new SecurityException(messages.get("upload.invalid_path"));
+        }
+
+        for (String segment : storageKey.split("/", -1)) {
+            if (segment.isBlank() || segment.equals(".")) {
+                throw new SecurityException(messages.get("upload.invalid_path"));
+            }
+        }
+
+        try {
+            boolean deleted = mediaStorageService.delete(MediaStorageBucket.PUBLIC, storageKey);
+            if (deleted) {
+                log.info("Lesson image permanently deleted: {}", storageKey);
+            }
+            return deleted;
+        } catch (IOException exception) {
+            log.error("Failed to permanently delete lesson image: {}", storageKey, exception);
+            throw new IllegalStateException("Unable to delete lesson image from storage", exception);
         }
     }
 

@@ -1,7 +1,5 @@
 package com.readyroad.readyroadbackend.dto.response;
 
-import java.util.List;
-
 /**
  * Lesson page detail response — returned as nested items inside
  * LessonDetailResponse.
@@ -17,8 +15,5 @@ public record LessonPageResponse(
         String contentEn,
         String contentFr,
         String contentAr,
-        List<String> bulletPointsNl,
-        List<String> bulletPointsEn,
-        List<String> bulletPointsFr,
-        List<String> bulletPointsAr) {
+        String imageUrl) {
 }

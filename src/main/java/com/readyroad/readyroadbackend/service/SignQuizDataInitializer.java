@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-@Profile("!production-mirror")
+@Profile("!production-mirror & !local-cms")
 @RequiredArgsConstructor
 public class SignQuizDataInitializer {
 

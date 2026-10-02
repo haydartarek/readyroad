@@ -3,6 +3,9 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.payment.EntitlementStatus;
 import com.readyroad.readyroadbackend.payment.UserEntitlement;
 import com.readyroad.readyroadbackend.payment.UserEntitlementRepository;
+import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.enums.Role;
+import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,6 +29,9 @@ class TheoryExamAccessServiceTest {
 
     @Mock
     private UserEntitlementRepository entitlementRepository;
+
+    @Mock
+    private UserRepository userRepository;
 
     private TheoryExamAccessService service;
 
@@ -100,6 +106,36 @@ class TheoryExamAccessServiceTest {
                 .thenReturn(Optional.of(entitlement(
                         EntitlementStatus.ACTIVE,
                         NOW.plusSeconds(1))));
+
+        assertTrue(service.hasFullAccess(USER_ID));
+    }
+
+    @Test
+    void adminHasFullAccessWithoutEntitlement() {
+        User admin = new User();
+        admin.setId(USER_ID);
+        admin.setRole(Role.ADMIN);
+        when(userRepository.findById(USER_ID)).thenReturn(Optional.of(admin));
+
+        service = new TheoryExamAccessService(
+                entitlementRepository,
+                userRepository,
+                Clock.fixed(NOW, ZoneOffset.UTC));
+
+        assertTrue(service.hasFullAccess(USER_ID));
+    }
+
+    @Test
+    void moderatorHasFullAccessWithoutEntitlement() {
+        User moderator = new User();
+        moderator.setId(USER_ID);
+        moderator.setRole(Role.MODERATOR);
+        when(userRepository.findById(USER_ID)).thenReturn(Optional.of(moderator));
+
+        service = new TheoryExamAccessService(
+                entitlementRepository,
+                userRepository,
+                Clock.fixed(NOW, ZoneOffset.UTC));
 
         assertTrue(service.hasFullAccess(USER_ID));
     }

@@ -34,7 +34,7 @@ public interface ExamSimulationRepository extends JpaRepository<ExamSimulation, 
             Long userId,
             ExamSimulation.ExamStatus status);
 
-    /** All statuses for operational activity counters; never use as result history. */
+    /** All learner attempts, ordered for the history timeline. */
     List<ExamSimulation> findByUserIdOrderByStartedAtDesc(Long userId);
 
     /**

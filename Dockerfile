@@ -30,27 +30,19 @@ RUN addgroup -g 1001 readyroad && \
 # Copy jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Copy official traffic sign images into the backend image.
-COPY public/images/signs ./public/images/signs
-
 # The sign importer intentionally reads one directory per sign from disk.
 COPY --from=build /app/src/main/resources/data/signs_import ./data/signs_import
 
 # Install su-exec for privilege drop in entrypoint
 RUN apk add --no-cache su-exec
 
-# Create required directories and set ownership
-RUN mkdir -p /app/logs /app/public/images/signs /app/public/images/quiz /app/data/editorial-images && \
+# Create the log directory and set ownership.
+RUN mkdir -p /app/logs && \
     chown -R readyroad:readyroad /app
 
-# Entrypoint: fix volume mount ownership at startup, then run the app
-# Named Docker volumes are mounted as root after image build; this corrects
-# permissions before the JVM starts so uploads always succeed.
-RUN printf '#!/bin/sh\nchown readyroad:readyroad /app/public/images/quiz /app/data/editorial-images 2>/dev/null || true\nchmod 755 /app/public/images/quiz /app/data/editorial-images 2>/dev/null || true\nexec su-exec readyroad java ${JAVA_OPTS} -jar /app/app.jar "$@"\n' \
+# Entrypoint drops privileges before starting the application.
+RUN printf '#!/bin/sh\nexec su-exec readyroad java ${JAVA_OPTS} -jar /app/app.jar "$@"\n' \
     > /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
-
-# Keep running as root so entrypoint.sh can chown the volume mount;
-# su-exec in the script then drops to readyroad before starting Java.
 
 # Expose port
 EXPOSE 8890

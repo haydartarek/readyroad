@@ -27,4 +27,10 @@ public interface LessonMediaAssetRepository
     long countByLesson_IdAndStatus(
             Long lessonId,
             LessonMediaStatus status);
+
+    Optional<LessonMediaAsset> findByIdAndLesson_IdAndStatus(
+            Long id,
+            Long lessonId,
+            LessonMediaStatus status);
+
 }

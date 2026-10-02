@@ -114,8 +114,9 @@ services:
       # CORS — allowed origins for the backend API
       # Set CORS_ALLOWED_ORIGINS in .env to a comma-separated list of frontend origins.
       # Example: CORS_ALLOWED_ORIGINS=https://rijvia.be,https://www.rijvia.be
-      # Falls back to localhost:3000 (development only) when not set.
-      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000}
+      # Falls back to the local Web and Flutter dev servers (development only)
+      # when not set.
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:63783}
 
       # Google OAuth / Social Login
       GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
@@ -126,12 +127,13 @@ services:
     expose:
       - "8890"
 
+    # Local Flutter Web/desktop clients reach the API through the host.
+    ports:
+      - "8890:8890"
+
     volumes:
       - backend_logs:/app/logs
       - ./src/main/resources/data/signs_import:/app/data/signs_import:ro
-      - ./public/images/signs:/app/public/images/signs:ro
-      - sign_uploads:/app/public/images/quiz
-      - article_uploads:/app/data/editorial-images
 
     networks:
       - readyroad-network
@@ -204,8 +206,4 @@ volumes:
     external: true
     name: readyroad-postgresql_postgres_data
   backend_logs:
-    driver: local
-  article_uploads:
-    driver: local
-  sign_uploads:
     driver: local

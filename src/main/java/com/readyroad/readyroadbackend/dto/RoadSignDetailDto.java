@@ -7,6 +7,7 @@ import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.enums.SignDifficulty;
 import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
 import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 
@@ -185,11 +186,18 @@ public record RoadSignDetailDto(
     }
 
     public static RoadSignDetailDto from(RoadSign s, RoadSignReferenceTextResolver resolver) {
+        return from(s, resolver, null);
+    }
+
+    public static RoadSignDetailDto from(
+            RoadSign s,
+            RoadSignReferenceTextResolver resolver,
+            MediaUrlResolver mediaUrlResolver) {
         return new RoadSignDetailDto(
                 s.getId(),
                 s.getSignCode(),
                 s.getCategory(),
-                s.getImagePath(),
+                mediaUrlResolver == null ? s.getImagePath() : mediaUrlResolver.resolvePublicUrl(s.getImagePath()),
                 Boolean.TRUE.equals(s.getSeriousViolation()),
                 s.getNameNl(),
                 s.getNameEn(),

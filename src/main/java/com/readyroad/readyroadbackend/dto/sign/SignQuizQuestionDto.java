@@ -4,6 +4,7 @@ import com.readyroad.readyroadbackend.domain.entity.SignQuestion;
 import com.readyroad.readyroadbackend.domain.enums.SignDifficulty;
 import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
 import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
+import com.readyroad.readyroadbackend.storage.MediaUrlResolver;
 import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 
 import java.util.ArrayList;
@@ -39,6 +40,13 @@ public record SignQuizQuestionDto(
     }
 
     public static SignQuizQuestionDto from(SignQuestion q, RoadSignReferenceTextResolver resolver) {
+        return from(q, resolver, null);
+    }
+
+    public static SignQuizQuestionDto from(
+            SignQuestion q,
+            RoadSignReferenceTextResolver resolver,
+            MediaUrlResolver mediaUrlResolver) {
         SignQuestionType questionType = q.getQuestionType();
         // Shuffle choices so the correct answer is not always in position 1.
         // Validation uses stable choice IDs (FK), never visual position.
@@ -58,7 +66,11 @@ public record SignQuizQuestionDto(
                 resolveQuestion(resolver, "FR", questionType, q.getQuestionFr()),
                 resolveQuestion(resolver, "AR", questionType, q.getQuestionAr()),
                 q.getSign() != null ? q.getSign().getSignCode() : null,
-                q.getSign() != null ? q.getSign().getImagePath() : null,
+                q.getSign() == null
+                        ? null
+                        : mediaUrlResolver == null
+                                ? q.getSign().getImagePath()
+                                : mediaUrlResolver.resolvePublicUrl(q.getSign().getImagePath()),
                 choices);
     }
 
