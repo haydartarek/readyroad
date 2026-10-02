@@ -107,14 +107,14 @@ assert_activation() {
 }
 
 frontend_only="up -d --no-deps --no-build frontend"
-both_services="up -d --no-build backend frontend"
+backend_only="up -d --no-deps --no-build backend"
 assert_activation "$frontend_only"
 fixture_running_state="sha256:$(printf '%064d' 2) true healthy"
-assert_activation "$both_services"
+assert_activation "$backend_only"
 fixture_running_state="${image_id} true unhealthy"
-assert_activation "$both_services"
+assert_activation "$backend_only"
 fixture_running_state="${image_id} false healthy"
-assert_activation "$both_services"
+assert_activation "$backend_only"
 fixture_running_state="${image_id} true healthy"
 for mutation in \
   '.services.backend.environment.PORT="8891"' \
@@ -122,7 +122,7 @@ for mutation in \
   '.services.backend.healthcheck.test=["CMD","different-probe"]'; do
   jq "$mutation" "${activation_next}/baseline.json" \
     >"${activation_next}/config.json"
-  assert_activation "$both_services"
+  assert_activation "$backend_only"
 done
 printf 'invalid-json\n' >"${activation_next}/config.json"
 : >"$activation_calls"

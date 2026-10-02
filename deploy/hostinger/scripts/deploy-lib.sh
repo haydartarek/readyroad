@@ -267,7 +267,10 @@ rr_activate_application() {
     rr_log INFO backend_reused "reason=unchanged_image_and_runtime_config"
     rr_compose "$next_release" up -d --no-deps --no-build frontend
   else
-    rr_compose "$next_release" up -d --no-build backend frontend
+    # Start the backend separately.  Starting backend and frontend together
+    # makes Compose wait on frontend's service_healthy dependency and can
+    # fail before rr_wait_container_health gets its full backend timeout.
+    rr_compose "$next_release" up -d --no-deps --no-build backend
   fi
 }
 

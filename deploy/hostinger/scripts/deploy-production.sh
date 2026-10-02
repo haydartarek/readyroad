@@ -385,6 +385,7 @@ fi
 activation_started=1
 rr_activate_application "$rollback_target" "$final_release"
 rr_wait_container_health readyroad-backend 420
+rr_compose "$final_release" up -d --no-deps --no-build frontend
 rr_wait_container_health readyroad-frontend 180
 
 if (( SIMULATE_HEALTH_FAILURE == 1 )); then

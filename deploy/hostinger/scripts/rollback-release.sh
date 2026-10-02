@@ -103,8 +103,9 @@ STATE_FILE="${READYROAD_STATE_DIR}/rollback-$(date -u +%Y%m%dT%H%M%SZ).env"
 } >"$STATE_FILE"
 
 rr_log WARNING rollback_started "target=$(basename "$TARGET_RELEASE")"
-rr_compose "$TARGET_RELEASE" up -d --no-build backend frontend
+rr_compose "$TARGET_RELEASE" up -d --no-deps --no-build backend
 rr_wait_container_health readyroad-backend 420
+rr_compose "$TARGET_RELEASE" up -d --no-deps --no-build frontend
 rr_wait_container_health readyroad-frontend 180
 rr_atomic_current_link "$TARGET_RELEASE"
 rr_compose "$TARGET_RELEASE" up -d --no-deps --no-build caddy
