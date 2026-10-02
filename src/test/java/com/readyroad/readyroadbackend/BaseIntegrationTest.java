@@ -129,7 +129,10 @@ public abstract class BaseIntegrationTest {
                     user.setEmail(username + "@test.local");
                     user.setFullName(username);
                     user.setPasswordHash("integration-test-password-hash");
-                    user.setRole(Role.USER);
+                    // These fixtures exercise complete 50-question exam
+                    // lifecycles; ADMIN provides the intended full-access path
+                    // without weakening the production preview guard.
+                    user.setRole(Role.ADMIN);
                     user.setIsActive(true);
                     user.setIsLocked(false);
                     user.setPreferredLanguage("en");

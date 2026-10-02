@@ -70,6 +70,10 @@ class ExamCompletionConcurrencyPostgreSqlIntegrationTest {
                 VALUES ('phase7-user', 'phase7@test.local', 'Phase 7 User', 'not-a-secret', 'USER', 'en')
                 RETURNING id
                 """, Long.class);
+        jdbc.update("""
+                INSERT INTO user_entitlement (user_id, status, expires_at)
+                VALUES (?, 'ACTIVE', CURRENT_TIMESTAMP + INTERVAL '1 day')
+                """, userId);
         examId = jdbc.queryForObject("""
                 INSERT INTO exam_simulations
                     (user_id, started_at, expires_at, total_questions, status)

@@ -1142,14 +1142,6 @@ public class ExamService {
         boolean fullAccess =
                 examAccessService.hasFullAccess(userId);
 
-        // Legacy/internal attempts predate the preview lifecycle and must keep
-        // their original full-exam behavior. API-created attempts explicitly
-        // set previewAttempt=true, including paid attempts that may later lose
-        // entitlement and re-enter the paywall flow.
-        if (!exam.isPreviewAttempt()) {
-            return true;
-        }
-
         if (fullAccess) {
             resumePreviewAfterPaymentIfNeeded(
                     exam,
