@@ -30,6 +30,9 @@ RUN addgroup -g 1001 readyroad && \
 # Copy jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
+# Copy official traffic sign images into the backend image.
+COPY public/images/signs ./public/images/signs
+
 # The sign importer intentionally reads one directory per sign from disk.
 COPY --from=build /app/src/main/resources/data/signs_import ./data/signs_import
 

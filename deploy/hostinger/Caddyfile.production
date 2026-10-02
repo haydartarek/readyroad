@@ -33,7 +33,12 @@
 
 rijvia.be {
 	import safe_defaults
-	reverse_proxy frontend:3000
+	handle /images/signs/* {
+		reverse_proxy backend:8890
+	}
+	handle {
+		reverse_proxy frontend:3000
+	}
 }
 
 api.rijvia.be {
