@@ -16,7 +16,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -175,6 +177,13 @@ public class LessonImportService {
         Optional<Lesson> existing = lessonRepository.findByLessonCode(lessonCode);
         boolean isNew = existing.isEmpty();
         Lesson canonical = buildCanonicalLesson(node, lessonCode, index);
+        Map<Integer, LessonPage> existingPagesByNumber = existing
+                .map(lesson -> {
+                    Map<Integer, LessonPage> pages = new HashMap<>();
+                    lesson.getPages().forEach(page -> pages.put(page.getPageNumber(), page));
+                    return pages;
+                })
+                .orElseGet(Map::of);
 
         if (!isNew && matchesCanonicalLesson(existing.get(), canonical)) {
             return ImportAction.SKIPPED;
@@ -188,7 +197,12 @@ public class LessonImportService {
         lesson = lessonRepository.saveAndFlush(lesson);
 
         for (LessonPage canonicalPage : canonical.getPages()) {
-            lesson.addPage(copyPage(canonicalPage));
+            LessonPage copiedPage = copyPage(canonicalPage);
+            LessonPage existingPage = existingPagesByNumber.get(copiedPage.getPageNumber());
+            if (existingPage != null) {
+                copiedPage.setImageAsset(existingPage.getImageAsset());
+            }
+            lesson.addPage(copiedPage);
         }
         if (!canonical.getPages().isEmpty()) {
             lessonRepository.saveAndFlush(lesson);

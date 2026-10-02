@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.Lesson;
+import com.readyroad.readyroadbackend.domain.entity.LessonPage;
 import com.readyroad.readyroadbackend.domain.repository.LessonRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,27 +44,43 @@ class LessonImportServiceIdempotencyTest {
         var firstImport = lessonImportService.importFromClasspath();
         var secondImport = lessonImportService.importFromClasspath();
 
-        assertThat(firstImport.created()).isEqualTo(30);
+        assertThat(firstImport.created()).isEqualTo(32);
         assertThat(secondImport.created()).isZero();
         assertThat(secondImport.updated()).isZero();
-        assertThat(secondImport.skipped()).isEqualTo(30);
+        assertThat(secondImport.skipped()).isEqualTo(32);
         assertThat(secondImport.errors()).isEmpty();
     }
 
     @Test
-    void canonicalImportRestoresTheApprovedMechanicsTitleAndKeepsItOnRestart() {
+    void canonicalImportRestoresTheApprovedVehicleTechnologyTitleAndKeepsItOnRestart() {
         lessonImportService.importFromClasspath();
-        Lesson mechanics = storedLessons.get("les-29");
-        assertThat(mechanics.getTitleAr()).isEqualTo("أساسيات ميكانيك السيارة");
+        Lesson mechanics = storedLessons.get("les-31");
+        assertThat(mechanics.getTitleAr()).isEqualTo("الإطارات والفرامل وتقنيات السيارة لرخصة القيادة B");
         mechanics.setTitleAr("أساسيات تكنولوجيا السيارة");
 
         var repaired = lessonImportService.importFromClasspath();
         var restarted = lessonImportService.importFromClasspath();
 
         assertThat(repaired.updated()).isOne();
-        assertThat(repaired.skipped()).isEqualTo(29);
-        assertThat(storedLessons.get("les-29").getTitleAr()).isEqualTo("أساسيات ميكانيك السيارة");
+        assertThat(repaired.skipped()).isEqualTo(31);
+        assertThat(storedLessons.get("les-31").getTitleAr()).isEqualTo("الإطارات والفرامل وتقنيات السيارة لرخصة القيادة B");
         assertThat(restarted.updated()).isZero();
-        assertThat(restarted.skipped()).isEqualTo(30);
+        assertThat(restarted.skipped()).isEqualTo(32);
+    }
+
+    @Test
+    void canonicalImportPreservesExistingPageMediaWhenContentChanges() {
+        lessonImportService.importFromClasspath();
+        Lesson lesson = storedLessons.get("les-0");
+        LessonPage page = lesson.getPages().get(0);
+        var imageAsset = org.mockito.Mockito.mock(
+                com.readyroad.readyroadbackend.domain.entity.LessonMediaAsset.class);
+        page.setImageAsset(imageAsset);
+        page.setContentEn("stale content");
+
+        lessonImportService.importFromClasspath();
+
+        assertThat(storedLessons.get("les-0").getPages().get(0).getImageAsset())
+                .isSameAs(imageAsset);
     }
 }
