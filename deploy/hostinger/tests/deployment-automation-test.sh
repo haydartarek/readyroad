@@ -32,6 +32,13 @@ grep -Fq 'COPY public/images/signs ./public/images/signs' \
 grep -Fq 'handle /images/signs/* {' \
   "${SCRIPT_DIR}/../Caddyfile.production" ||
   fail "traffic sign requests must be routed to the backend"
+for sign_image in \
+  "public/images/signs/danger_signs/A39 Twee richtingsverkeer toegelaten na een stuk eenrichtingsverkeer.png" \
+  "public/images/signs/mandatory_signs/D3a Verplicht een van de pijlen te volgen.png" \
+  "public/images/signs/mandatory_signs/D3b Verplicht een van de pijlen te volgen.png"; do
+  [[ -s "${SCRIPT_DIR}/../../../${sign_image}" ]] ||
+    fail "expected normalized traffic sign asset is missing: ${sign_image}"
+done
 
 make_release() {
   local name="$1"
