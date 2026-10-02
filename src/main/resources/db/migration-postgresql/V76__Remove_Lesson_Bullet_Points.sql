@@ -13,7 +13,7 @@ BEGIN
     SELECT COUNT(*)
     INTO bullet_column_count
     FROM information_schema.columns
-    WHERE table_schema = 'readyroad'
+    WHERE table_schema = current_schema()
       AND table_name = 'lesson_pages'
       AND column_name IN (
           'bullet_points_nl',
@@ -31,7 +31,7 @@ END
 $$;
 
 
-UPDATE readyroad.lesson_drafts AS d
+UPDATE lesson_drafts AS d
 SET document = jsonb_set(
     d.document,
     '{pages}',
@@ -65,7 +65,7 @@ SELECT set_config(
 );
 
 
-UPDATE readyroad.lesson_versions AS v
+UPDATE lesson_versions AS v
 SET document = jsonb_set(
     v.document,
     '{pages}',
@@ -103,7 +103,7 @@ DO $$
 BEGIN
     IF EXISTS (
         SELECT 1
-        FROM readyroad.lesson_drafts AS d
+        FROM lesson_drafts AS d
         WHERE jsonb_typeof(d.document -> 'pages') = 'array'
           AND EXISTS (
               SELECT 1
@@ -118,7 +118,7 @@ BEGIN
 
     IF EXISTS (
         SELECT 1
-        FROM readyroad.lesson_versions AS v
+        FROM lesson_versions AS v
         WHERE jsonb_typeof(v.document -> 'pages') = 'array'
           AND EXISTS (
               SELECT 1
@@ -134,7 +134,7 @@ END
 $$;
 
 
-ALTER TABLE readyroad.lesson_pages
+ALTER TABLE lesson_pages
     DROP COLUMN bullet_points_nl,
     DROP COLUMN bullet_points_en,
     DROP COLUMN bullet_points_fr,
