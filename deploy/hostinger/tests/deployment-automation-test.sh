@@ -26,6 +26,13 @@ fail() {
   exit 1
 }
 
+grep -Fq 'COPY public/images/signs ./public/images/signs' \
+  "${SCRIPT_DIR}/../../../Dockerfile" ||
+  fail "traffic sign assets must be included in the backend image"
+grep -Fq 'handle /images/signs/* {' \
+  "${SCRIPT_DIR}/../Caddyfile.production" ||
+  fail "traffic sign requests must be routed to the backend"
+
 make_release() {
   local name="$1"
   local status="${2:-SUCCESS}"
