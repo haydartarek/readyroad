@@ -79,6 +79,7 @@ services:
       - readyroad-backend-logs:/app/logs
       - readyroad-uploads:/app/public/images/quiz
       - readyroad-article-images:/app/data/editorial-images
+      - readyroad-lesson-media:/app/public/images/lessons
       - /opt/readyroad/secrets/google/marketing-service-account.json:/run/secrets/google/marketing-service-account.json:ro
     networks:
       - readyroad-network
@@ -173,6 +174,9 @@ volumes:
   readyroad-article-images:
     external: true
     name: readyroad-article-images
+  readyroad-lesson-media:
+    external: true
+    name: readyroad-lesson-media
   readyroad-caddy-data:
     external: true
     name: readyroad-caddy-data

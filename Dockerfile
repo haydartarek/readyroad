@@ -33,10 +33,6 @@ COPY --from=build /app/target/*.jar app.jar
 # Copy official traffic sign images into the backend image.
 COPY public/images/signs ./public/images/signs
 
-# Lesson media uses the backend's public media route and must be present in
-# every release image alongside its database metadata.
-COPY public/images/lessons ./public/images/lessons
-
 # The sign importer intentionally reads one directory per sign from disk.
 COPY --from=build /app/src/main/resources/data/signs_import ./data/signs_import
 
