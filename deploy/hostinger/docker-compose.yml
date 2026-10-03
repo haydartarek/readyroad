@@ -61,6 +61,7 @@ services:
     init: true
     env_file:
       - .env.production
+      - /opt/readyroad/secrets/payments.env
     environment:
       SPRING_PROFILES_ACTIVE: secure,postgresql
       PORT: "8890"
