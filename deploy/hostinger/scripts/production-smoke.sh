@@ -62,10 +62,17 @@ probe_get() {
   local name="$1"
   local url="$2"
   local jq_filter="${3:-}"
+  local auth_config="${4:-}"
+  local -a auth_arguments=()
   local output="${temporary_directory}/${name}.json"
   local status
 
+  if [[ -n "$auth_config" ]]; then
+    auth_arguments=(--config "$auth_config")
+  fi
+
   status="$(curl --silent --show-error --location --max-time 90 \
+    "${auth_arguments[@]}" \
     --output "$output" --write-out '%{http_code}' "$url")"
   [[ "$status" == "200" ]] ||
     rr_die "smoke_http_failure:${name}:${status}"
@@ -263,8 +270,6 @@ probe_get traffic_signs "${API_URL}/api/traffic-signs" \
   'if type == "array" then length > 0 else (.content | length) > 0 end'
 probe_get lessons "${API_URL}/api/lessons" \
   'if type == "array" then length > 0 else (.content | length) > 0 end'
-probe_get random_quiz "${API_URL}/api/quiz/random?count=5" \
-  'type == "array" and length == 5'
 probe_get robots "${FRONTEND_URL}/robots.txt"
 probe_get sitemap "${FRONTEND_URL}/sitemap.xml"
 probe_published_articles
@@ -298,6 +303,8 @@ printf 'header = "Authorization: Bearer %s"\n' "$token" >"$auth_config"
 chmod 0600 "$auth_config"
 token=""
 
+probe_get random_quiz "${API_URL}/api/quiz/random?count=5" \
+  'type == "array" and length == 5' "$auth_config"
 probe_authenticated auth_me "${API_URL}/api/auth/me" "$auth_config"
 probe_authenticated admin_authorization \
   "${API_URL}/api/admin/dashboard" "$auth_config"

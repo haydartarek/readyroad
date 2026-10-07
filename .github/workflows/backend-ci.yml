@@ -54,6 +54,7 @@ jobs:
           bash -n deploy/hostinger/scripts/deploy-production.sh
           bash -n deploy/hostinger/scripts/production-smoke.sh
           bash deploy/hostinger/tests/deployment-automation-test.sh
+          bash deploy/hostinger/tests/production-smoke-auth-test.sh
 
       - name: Setup Java
         uses: actions/setup-java@v5
