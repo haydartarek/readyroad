@@ -4,13 +4,12 @@ import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.Lesson;
 import com.readyroad.readyroadbackend.domain.entity.LessonCategory;
 import com.readyroad.readyroadbackend.domain.repository.LessonRepository;
-import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.TheoryQuestionCoverageStore;
 import com.readyroad.readyroadbackend.dto.response.HomeLessonOverviewResponse;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -20,19 +19,23 @@ import java.util.stream.Collectors;
 public class HomeLessonOverviewService {
 
     private final LessonRepository lessonRepository;
-    private final QuizQuestionRepository quizQuestionRepository;
+    private final TheoryQuestionCoverageStore coverageStore;
     private final EntityManager entityManager;
 
     public HomeLessonOverviewService(
             LessonRepository lessonRepository,
-            QuizQuestionRepository quizQuestionRepository,
+            TheoryQuestionCoverageStore coverageStore,
             EntityManager entityManager) {
         this.lessonRepository = lessonRepository;
-        this.quizQuestionRepository = quizQuestionRepository;
+        this.coverageStore = coverageStore;
         this.entityManager = entityManager;
     }
 
     public List<HomeLessonOverviewResponse> getOverview() {
+        return getOverview("en");
+    }
+
+    public List<HomeLessonOverviewResponse> getOverview(String languageCode) {
         List<Lesson> lessons =
                 lessonRepository.findAllByIsActiveTrueOrderByDisplayOrderAsc();
 
@@ -67,22 +70,8 @@ public class HomeLessonOverviewService {
                         .collect(Collectors.groupingBy(
                                 link -> link.getLesson().getId()));
 
-        Map<Long, Long> questionCountsByCategory = new HashMap<>();
-
-        for (Object[] row :
-                quizQuestionRepository.countCompliantQuestionsByCategoryIds()) {
-
-            if (row == null
-                    || row.length < 2
-                    || !(row[0] instanceof Number categoryId)
-                    || !(row[1] instanceof Number questionCount)) {
-                continue;
-            }
-
-            questionCountsByCategory.put(
-                    categoryId.longValue(),
-                    questionCount.longValue());
-        }
+        Map<Long, Long> questionCountsByCategory =
+                coverageStore.countEligibleQuestionsByCategory(languageCode);
 
         return lessons.stream()
                 .map(lesson -> toResponse(

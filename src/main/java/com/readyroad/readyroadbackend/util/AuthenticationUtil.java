@@ -25,6 +25,15 @@ public class AuthenticationUtil {
         return handleProductionMode(authentication);
     }
 
+    /** Paid content always requires a verified user, including in development mode. */
+    public Long extractVerifiedUserId(Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated()
+                || !(authentication.getPrincipal() instanceof User user)) {
+            return null;
+        }
+        return user.getId();
+    }
+
     public Long getCurrentUserId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return extractUserId(authentication);

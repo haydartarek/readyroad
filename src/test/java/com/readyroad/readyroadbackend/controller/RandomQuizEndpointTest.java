@@ -5,8 +5,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,7 @@ import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -48,8 +52,12 @@ class RandomQuizEndpointTest {
     @Autowired
     private QuizQuestionRepository quizQuestionRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     private MockMvc mockMvc;
     private Long categoryId;
+    private User staffUser;
 
     @BeforeEach
     void setUp() {
@@ -66,6 +74,17 @@ class RandomQuizEndpointTest {
             quizQuestionRepository.save(createPublishedQuestion(category, index));
         }
         quizQuestionRepository.flush();
+
+        staffUser = userRepository.findByUsername("random-quiz-staff")
+                .orElseGet(() -> {
+                    User staff = new User();
+                    staff.setUsername("random-quiz-staff");
+                    staff.setEmail("random-quiz-staff@example.test");
+                    staff.setFullName("Random Quiz Staff");
+                    staff.setPasswordHash("unused-test-password-hash");
+                    staff.setRole(Role.ADMIN);
+                    return userRepository.saveAndFlush(staff);
+                });
     }
 
     @Test
@@ -116,6 +135,7 @@ class RandomQuizEndpointTest {
     @Test
     void theoryExamReturnsMappedCategoriesAndOptionsAfterTheServiceTransactionCloses() throws Exception {
         mockMvc.perform(get("/api/quiz/theory-exam")
+                        .with(user(staffUser))
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(3))
@@ -126,6 +146,13 @@ class RandomQuizEndpointTest {
                                 org.hamcrest.Matchers.equalTo("Random quiz category"))))
                 .andExpect(jsonPath("$[*].options.length()")
                         .value(org.hamcrest.Matchers.everyItem(org.hamcrest.Matchers.equalTo(3))));
+    }
+
+    @Test
+    void theoryExamRejectsAnonymousRequestsEvenInDevelopmentMode() throws Exception {
+        mockMvc.perform(get("/api/quiz/theory-exam")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isUnauthorized());
     }
 
     private Category createCategory() {

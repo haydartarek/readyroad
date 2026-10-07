@@ -53,7 +53,7 @@ class ProgressControllerCoverageTest {
         when(authenticationUtil.extractUserId(authentication)).thenReturn(null);
 
         ResponseEntity<TheoryQuestionCoverageResponse> response =
-                controller.getTheoryQuestionCoverage(authentication);
+                controller.getTheoryQuestionCoverage(authentication, null);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
         verifyNoInteractions(coverageService);
@@ -69,14 +69,34 @@ class ProgressControllerCoverageTest {
                 .categories(List.of())
                 .build();
         when(authenticationUtil.extractUserId(authentication)).thenReturn(42L);
-        when(coverageService.getCoverage(42L)).thenReturn(coverage);
+        when(coverageService.getCoverage(42L, null)).thenReturn(coverage);
 
         ResponseEntity<TheoryQuestionCoverageResponse> response =
-                controller.getTheoryQuestionCoverage(authentication);
+                controller.getTheoryQuestionCoverage(authentication, null);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).isSameAs(coverage);
-        verify(coverageService).getCoverage(42L);
+        verify(coverageService).getCoverage(42L, null);
+    }
+
+    @Test
+    void forwardsRequestedCoverageLanguageForAuthenticatedUser() {
+        TheoryQuestionCoverageResponse coverage = TheoryQuestionCoverageResponse.builder()
+                .languageCode("ar")
+                .eligibleQuestions(0L)
+                .uniqueQuestionsSeen(0L)
+                .unseenQuestions(0L)
+                .categories(List.of())
+                .build();
+        when(authenticationUtil.extractUserId(authentication)).thenReturn(42L);
+        when(coverageService.getCoverage(42L, "ar")).thenReturn(coverage);
+
+        ResponseEntity<TheoryQuestionCoverageResponse> response =
+                controller.getTheoryQuestionCoverage(authentication, "ar");
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isSameAs(coverage);
+        verify(coverageService).getCoverage(42L, "ar");
     }
 
     @Test

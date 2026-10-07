@@ -30,8 +30,15 @@ public class TheoryQuestionCoverageService {
 
     @Transactional(readOnly = true)
     public TheoryQuestionCoverageResponse getCoverage(long userId) {
+        return getCoverage(userId, null);
+    }
+
+    @Transactional(readOnly = true)
+    public TheoryQuestionCoverageResponse getCoverage(long userId, String requestedLanguage) {
         String languageCode = userRepository.findById(userId)
-                .map(user -> supportedLanguage(user.getPreferredLanguage()))
+                .map(user -> requestedLanguage == null || requestedLanguage.isBlank()
+                        ? supportedLanguage(user.getPreferredLanguage())
+                        : supportedLanguage(requestedLanguage))
                 .orElseThrow(() -> new IllegalArgumentException("Authenticated user does not exist"));
         List<CategoryCoverage> categories = coverageStore.findCoverage(userId, languageCode).stream()
                 .map(TheoryQuestionCoverageService::toCategoryCoverage)

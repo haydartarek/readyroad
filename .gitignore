@@ -36,3 +36,9 @@ node_modules/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Runtime uploads are preserved in the production persistent media volumes.
+# Their approved checksums are versioned under deploy/hostinger/media/.
+/public/images/quiz/
+/data/editorial-images/
+/public/private-media/

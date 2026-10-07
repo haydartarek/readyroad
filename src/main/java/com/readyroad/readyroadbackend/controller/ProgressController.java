@@ -89,12 +89,13 @@ public class ProgressController {
             @ApiResponse(responseCode = "401", description = "User not authenticated", content = @Content)
     })
     public ResponseEntity<TheoryQuestionCoverageResponse> getTheoryQuestionCoverage(
-            Authentication authentication) {
+            Authentication authentication,
+            @RequestParam(value = "language", required = false) String language) {
         Long userId = authenticationUtil.extractUserId(authentication);
         if (userId == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
-        return ResponseEntity.ok(theoryQuestionCoverageService.getCoverage(userId));
+        return ResponseEntity.ok(theoryQuestionCoverageService.getCoverage(userId, language));
     }
 
     @GetMapping("/theory-timeouts")

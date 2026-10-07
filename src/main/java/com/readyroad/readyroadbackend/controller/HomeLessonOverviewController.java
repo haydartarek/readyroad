@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -21,7 +22,8 @@ public class HomeLessonOverviewController {
     }
 
     @GetMapping
-    public ResponseEntity<List<HomeLessonOverviewResponse>> getOverview() {
-        return ResponseEntity.ok(service.getOverview());
+    public ResponseEntity<List<HomeLessonOverviewResponse>> getOverview(
+            @RequestParam(defaultValue = "en") String lang) {
+        return ResponseEntity.ok(service.getOverview(lang));
     }
 }

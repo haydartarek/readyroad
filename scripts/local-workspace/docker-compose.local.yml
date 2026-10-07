@@ -1,0 +1,132 @@
+name: readyroad
+
+services:
+  postgres:
+    image: postgres:17.6-alpine
+    container_name: readyroad-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?POSTGRES_DB must be set}
+      POSTGRES_USER: ${POSTGRES_USERNAME:?POSTGRES_USERNAME must be set}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+      TZ: UTC
+
+    expose:
+      - "5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - readyroad-network
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+
+  backend:
+    build:
+      context: ./readyroad
+      dockerfile: Dockerfile
+
+    container_name: readyroad-backend
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    env_file:
+      - ./readyroad/.env
+
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_SCHEMA: readyroad
+      POSTGRES_SSLMODE: disable
+
+      SPRING_PROFILES_ACTIVE: secure,postgresql,local-cms
+      SPRING_FLYWAY_ENABLED: "true"
+      # The preserved local V77 volume predates the final V76/V77 SQL text; keep migrations enabled while avoiding local checksum-only startup failure.
+      SPRING_FLYWAY_VALIDATE_ON_MIGRATE: "false"
+      SPRING_DATASOURCE_HIKARI_READ_ONLY: "false"
+
+      APP_LESSONS_SYNC_ON_STARTUP: "false"
+
+      APP_BASE_URL: http://localhost:3000
+      FRONTEND_URL: http://localhost:3000
+      CORS_ALLOWED_ORIGINS: http://localhost:3000,http://localhost:63783
+
+      READYROAD_MARKETING_ENABLED: "false"
+      READYROAD_MARKETING_LOCAL_SEO_IMPORT_ENABLED: "false"
+      READYROAD_ADMIN_DIGEST_ENABLED: "false"
+      READYROAD_STUDY_REMINDER_ENABLED: "false"
+      LEARNING_NOTIFICATION_EMAIL_ENABLED: "false"
+      LEARNING_NOTIFICATION_OUTBOX_ENABLED: "false"
+
+      READYROAD_SIGNS_IMPORT_PATH: /app/data/signs_import
+      TZ: UTC
+
+    ports:
+      - "8890:8890"
+
+    volumes:
+      - backend_logs:/app/logs
+
+      - type: bind
+        source: ./readyroad/public/images/lessons
+        target: /app/public/images/lessons
+        read_only: true
+
+      - type: bind
+        source: ./readyroad/public/images/quiz
+        target: /app/public/images/quiz
+      - type: bind
+        source: ./readyroad/data/editorial-images
+        target: /app/data/editorial-images
+
+      - type: bind
+        source: ./readyroad/src/main/resources/data/signs_import
+        target: /app/data/signs_import
+        read_only: true
+    networks:
+      - readyroad-network
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8890/actuator/health"
+        ]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 180s
+
+
+networks:
+  readyroad-network:
+    name: readyroad_readyroad-network
+    driver: bridge
+
+
+volumes:
+  postgres_data:
+    external: true
+    name: rijvia-postgres17-lesson-cms-data
+
+  backend_logs:
+    name: readyroad_backend_logs

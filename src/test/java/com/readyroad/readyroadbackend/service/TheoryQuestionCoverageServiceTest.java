@@ -123,6 +123,18 @@ class TheoryQuestionCoverageServiceTest {
         verify(coverageStore).findCoverage(userId, expected);
     }
 
+    @Test
+    void explicitRequestedLanguageOverridesStoredPreference() {
+        long userId = 18L;
+        when(userRepository.findById(userId)).thenReturn(java.util.Optional.of(user("nl")));
+        when(coverageStore.findCoverage(userId, "ar")).thenReturn(List.of());
+
+        TheoryQuestionCoverageResponse result = service.getCoverage(userId, "AR");
+
+        assertThat(result.getLanguageCode()).isEqualTo("ar");
+        verify(coverageStore).findCoverage(userId, "ar");
+    }
+
     private static Stream<Arguments> supportedLanguages() {
         return Stream.of(
                 Arguments.of("ar", "ar"),

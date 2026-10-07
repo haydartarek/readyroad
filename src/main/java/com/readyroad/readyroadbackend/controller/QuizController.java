@@ -11,6 +11,7 @@ import com.readyroad.readyroadbackend.mapper.QuizQuestionMapper;
 import com.readyroad.readyroadbackend.service.CategoryService;
 import com.readyroad.readyroadbackend.service.PracticeService;
 import com.readyroad.readyroadbackend.service.QuizService;
+import com.readyroad.readyroadbackend.service.TheoryCategoryPracticeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -52,6 +53,7 @@ public class QuizController {
     private final PracticeService practiceService;
     private final AuthenticationUtil authenticationUtil;
     private final QuizQuestionMapper quizQuestionMapper;
+    private final TheoryCategoryPracticeService theoryCategoryPracticeService;
 
     /**
      * Generate a random quiz
@@ -64,10 +66,24 @@ public class QuizController {
     @GetMapping("/random")
     @Operation(summary = "Generate random quiz", description = "Returns random questions from all active categories")
     public ResponseEntity<List<QuizQuestionDTO>> generateRandomQuiz(
-            @Parameter(description = "Number of questions (max 50)", example = "10") @RequestParam(defaultValue = "10") int count) {
+            @Parameter(description = "Number of questions (max 50)", example = "10") @RequestParam(defaultValue = "10") int count,
+            Authentication authentication) {
 
-        List<QuizQuestion> questions = quizService.generateRandomQuiz(count);
-        return ResponseEntity.ok(quizQuestionMapper.toDTOList(questions));
+        Long userId =
+                authentication == null
+                        ? null
+                        : authenticationUtil.extractVerifiedUserId(
+                                authentication);
+
+        List<QuizQuestion> questions =
+                theoryCategoryPracticeService
+                        .getLegacyRandomQuestions(
+                                userId,
+                                count);
+
+        return ResponseEntity.ok(
+                quizQuestionMapper.toDTOList(
+                        questions));
     }
 
     /**
@@ -83,10 +99,25 @@ public class QuizController {
     @Operation(summary = "Generate quiz by category", description = "Returns random questions from a specific category")
     public ResponseEntity<List<QuizQuestionDTO>> generateQuizByCategory(
             @Parameter(description = "Category ID", example = "1") @PathVariable Long categoryId,
-            @Parameter(description = "Number of questions (max 50)", example = "10") @RequestParam(defaultValue = "10") int count) {
+            @Parameter(description = "Number of questions (max 50)", example = "10") @RequestParam(defaultValue = "10") int count,
+            Authentication authentication) {
 
-        List<QuizQuestion> questions = quizService.generateQuizByCategory(categoryId, count);
-        return ResponseEntity.ok(quizQuestionMapper.toDTOList(questions));
+        Long userId =
+                authentication == null
+                        ? null
+                        : authenticationUtil.extractVerifiedUserId(
+                                authentication);
+
+        List<QuizQuestion> questions =
+                theoryCategoryPracticeService
+                        .getLegacyCategoryQuestions(
+                                userId,
+                                categoryId,
+                                count);
+
+        return ResponseEntity.ok(
+                quizQuestionMapper.toDTOList(
+                        questions));
     }
 
     /**
@@ -184,7 +215,7 @@ public class QuizController {
             Authentication authentication) {
 
         // Extract user ID from authentication
-        Long userId = authenticationUtil.extractUserId(authentication);
+        Long userId = authenticationUtil.extractVerifiedUserId(authentication);
 
         // In production mode, return 401 if not authenticated
         if (userId == null) {
@@ -193,10 +224,11 @@ public class QuizController {
         }
 
         // Submit answer and get feedback
-        SubmitPracticeAnswerResponse response = practiceService.submitPracticeAnswer(
-                userId,
-                questionId,
-                request);
+        SubmitPracticeAnswerResponse response =
+                theoryCategoryPracticeService.submitLegacyAnswer(
+                        userId,
+                        questionId,
+                        request);
 
         return ResponseEntity.ok(response);
     }
@@ -219,10 +251,15 @@ public class QuizController {
     @Operation(summary = "Get Belgian theory exam question set (20E+20M+10H)")
     public ResponseEntity<List<QuizQuestionDTO>> getTheoryExamQuestions(
             Authentication authentication) {
-        Long userId = authenticationUtil.extractUserId(authentication);
+        Long userId = authenticationUtil.extractVerifiedUserId(authentication);
         if (userId == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+
+        theoryCategoryPracticeService
+                .requireFullAccessForLegacyTheoryExam(
+                        userId);
+
         List<QuizQuestion> questions = quizService.getTheoryExamQuestions();
         return ResponseEntity.ok(quizQuestionMapper.toDTOList(questions));
     }
@@ -239,10 +276,15 @@ public class QuizController {
     public ResponseEntity<TheoryExamResultDTO> checkTheoryExamAnswers(
             @RequestBody List<TheoryExamAnswerRequest> answers,
             Authentication authentication) {
-        Long userId = authenticationUtil.extractUserId(authentication);
+        Long userId = authenticationUtil.extractVerifiedUserId(authentication);
         if (userId == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+
+        theoryCategoryPracticeService
+                .requireFullAccessForLegacyTheoryExam(
+                        userId);
+
         TheoryExamResultDTO result = quizService.checkTheoryExamAnswers(answers);
         return ResponseEntity.ok(result);
     }
