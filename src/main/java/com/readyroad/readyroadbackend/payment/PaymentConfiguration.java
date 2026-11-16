@@ -21,6 +21,7 @@ public class PaymentConfiguration {
         Map<PaymentPlan, String> prices = new EnumMap<>(PaymentPlan.class);
         prices.put(PaymentPlan.RIJVIA_3_DAYS, required(env, "STRIPE_PRICE_ID_3_DAYS"));
         prices.put(PaymentPlan.RIJVIA_1_WEEK, required(env, "STRIPE_PRICE_ID_1_WEEK"));
+        prices.put(PaymentPlan.RIJVIA_2_WEEKS, required(env, "STRIPE_PRICE_ID_2_WEEKS"));
         prices.put(PaymentPlan.RIJVIA_4_WEEKS, required(env, "STRIPE_PRICE_ID_4_WEEKS"));
         String baseUrl = required(env, "APP_BASE_URL").replaceAll("/+$", "");
         URI uri;

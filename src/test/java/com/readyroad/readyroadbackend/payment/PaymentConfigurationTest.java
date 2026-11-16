@@ -12,13 +12,13 @@ class PaymentConfigurationTest {
     private MockEnvironment environment() {
         MockEnvironment env = new MockEnvironment();
         for (String name : List.of("STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "STRIPE_PRICE_ID_3_DAYS",
-                "STRIPE_PRICE_ID_1_WEEK", "STRIPE_PRICE_ID_4_WEEKS")) env.setProperty(name, "offline-fixture");
+                "STRIPE_PRICE_ID_1_WEEK", "STRIPE_PRICE_ID_2_WEEKS", "STRIPE_PRICE_ID_4_WEEKS")) env.setProperty(name, "offline-fixture");
         env.setProperty("APP_BASE_URL", "http://localhost:3000");
         return env;
     }
     @ParameterizedTest
     @ValueSource(strings = {"STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "STRIPE_PRICE_ID_3_DAYS",
-            "STRIPE_PRICE_ID_1_WEEK", "STRIPE_PRICE_ID_4_WEEKS", "APP_BASE_URL"})
+            "STRIPE_PRICE_ID_1_WEEK", "STRIPE_PRICE_ID_2_WEEKS", "STRIPE_PRICE_ID_4_WEEKS", "APP_BASE_URL"})
     void failsClearlyForEachMissingVariable(String name) {
         MockEnvironment env = environment();
         env.setProperty(name, " ");

@@ -41,6 +41,9 @@ public class CheckoutService {
         // Locale is supplied from the existing frontend language context and validated at this boundary.
         if (!LOCALES.contains(locale)) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Unsupported checkout locale");
         UUID id = transactions.execute(tx -> {
+            if (plan == PaymentPlan.RIJVIA_3_DAYS && purchases.findByClientRequestId(requestId).isEmpty()) {
+                throw new ResponseStatusException(HttpStatus.GONE, "Three-day plan is no longer available");
+            }
             purchases.insertIfAbsent(UUID.randomUUID(), userId, plan.name(), requestId, locale, clock.instant());
             Purchase purchase = purchases.findByClientRequestId(requestId).orElseThrow();
             if (!purchase.getUserId().equals(userId)) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Purchase not found");

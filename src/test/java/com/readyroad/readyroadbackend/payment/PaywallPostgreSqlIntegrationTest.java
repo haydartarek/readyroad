@@ -47,6 +47,7 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
         "STRIPE_WEBHOOK_SECRET=whsec_offline_fixture_not_a_real_secret",
         "STRIPE_PRICE_ID_3_DAYS=price_offline_3_days",
         "STRIPE_PRICE_ID_1_WEEK=price_offline_1_week",
+        "STRIPE_PRICE_ID_2_WEEKS=price_offline_2_weeks",
         "STRIPE_PRICE_ID_4_WEEKS=price_offline_4_weeks",
         "APP_BASE_URL=http://localhost:3000"
 })
@@ -125,6 +126,22 @@ class PaywallPostgreSqlIntegrationTest {
     }
 
     private Purchase purchase(PaymentPlan plan) {
+        if (plan == PaymentPlan.RIJVIA_3_DAYS) {
+            Purchase historical = new Purchase();
+            historical.setId(UUID.randomUUID());
+            historical.setUserId(user.getId());
+            historical.setPlan(plan);
+            historical.setClientRequestId(UUID.randomUUID().toString());
+            historical.setStatus(PurchaseStatus.PENDING);
+            historical.setCheckoutLocale("ar");
+            historical.setCreatedAt(NOW);
+            historical.setUpdatedAt(NOW);
+            Session checkoutSession = session(historical);
+            historical.setCheckoutSessionId(checkoutSession.getId());
+            historical.setCheckoutUrl(checkoutSession.getUrl());
+            historical.setCheckoutExpiresAt(Instant.ofEpochSecond(checkoutSession.getExpiresAt()));
+            return purchases.saveAndFlush(historical);
+        }
         var result = checkout.checkout(user.getId(), plan, UUID.randomUUID().toString(), "ar");
         return purchases.findById(result.purchaseId()).orElseThrow();
     }
@@ -196,11 +213,37 @@ class PaywallPostgreSqlIntegrationTest {
         assertThat(status(purchase)).isEqualTo(PurchaseStatus.PENDING);
     }
 
+    @Test void newThreeDayCheckoutIsRejectedWithoutCreatingPurchase() throws Exception {
+        String requestId = UUID.randomUUID().toString();
+        assertThatThrownBy(() -> checkout.checkout(user.getId(), PaymentPlan.RIJVIA_3_DAYS, requestId, "ar"))
+                .isInstanceOfSatisfying(ResponseStatusException.class, ex -> assertThat(ex.getStatusCode().value()).isEqualTo(410));
+        assertThat(purchases.findByClientRequestId(requestId)).isEmpty();
+        verify(stripe, never()).create(any());
+    }
+
+    @Test void existingThreeDayCheckoutCanStillBeResumed() throws Exception {
+        Purchase historical = purchase(PaymentPlan.RIJVIA_3_DAYS);
+        var result = checkout.checkout(user.getId(), PaymentPlan.RIJVIA_3_DAYS, historical.getClientRequestId(), "fr");
+        assertThat(result.purchaseId()).isEqualTo(historical.getId());
+        assertThat(result.checkoutUrl()).isEqualTo(historical.getCheckoutUrl());
+        verify(stripe, never()).create(any());
+    }
+
+    @Test void twoWeekPurchaseActivatesExactlyFourteenDaysOnce() {
+        Purchase purchase = purchase(PaymentPlan.RIJVIA_2_WEEKS);
+        var completed = event(purchase, "completed", true);
+        webhooks.process(completed);
+        webhooks.process(completed);
+        webhooks.process(event(purchase, "async_payment_succeeded", true));
+        assertThat(status(purchase)).isEqualTo(PurchaseStatus.PAID);
+        assertThat(expiry()).isEqualTo(NOW.plus(14, ChronoUnit.DAYS));
+    }
+
     @Test void enforcesOwnershipPlanAndRetrySessionReuse() throws Exception {
         String requestId = UUID.randomUUID().toString();
-        var first = checkout.checkout(user.getId(), PaymentPlan.RIJVIA_3_DAYS, requestId, "ar");
-        assertThat(checkout.checkout(user.getId(), PaymentPlan.RIJVIA_3_DAYS, requestId, "fr")).isEqualTo(first);
-        assertThatThrownBy(() -> checkout.checkout(newUser().getId(), PaymentPlan.RIJVIA_3_DAYS, requestId, "ar"))
+        var first = checkout.checkout(user.getId(), PaymentPlan.RIJVIA_2_WEEKS, requestId, "ar");
+        assertThat(checkout.checkout(user.getId(), PaymentPlan.RIJVIA_2_WEEKS, requestId, "fr")).isEqualTo(first);
+        assertThatThrownBy(() -> checkout.checkout(newUser().getId(), PaymentPlan.RIJVIA_2_WEEKS, requestId, "ar"))
                 .isInstanceOfSatisfying(ResponseStatusException.class, ex -> assertThat(ex.getStatusCode().value()).isEqualTo(404));
         assertThatThrownBy(() -> checkout.checkout(user.getId(), PaymentPlan.RIJVIA_1_WEEK, requestId, "ar"))
                 .isInstanceOfSatisfying(ResponseStatusException.class, ex -> assertThat(ex.getStatusCode().value()).isEqualTo(409));
@@ -211,17 +254,17 @@ class PaywallPostgreSqlIntegrationTest {
         doThrow(new ApiConnectionException("Offline fixture"))
                 .doAnswer(call -> session(call.getArgument(0))).when(stripe).create(any());
         String requestId = UUID.randomUUID().toString();
-        assertThatThrownBy(() -> checkout.checkout(user.getId(), PaymentPlan.RIJVIA_3_DAYS, requestId, "nl"))
+        assertThatThrownBy(() -> checkout.checkout(user.getId(), PaymentPlan.RIJVIA_2_WEEKS, requestId, "nl"))
                 .isInstanceOf(ResponseStatusException.class);
         Purchase durable = purchases.findByClientRequestId(requestId).orElseThrow();
         assertThat(durable.getCheckoutSessionId()).isNull();
-        var retry = checkout.checkout(user.getId(), PaymentPlan.RIJVIA_3_DAYS, requestId, "fr");
+        var retry = checkout.checkout(user.getId(), PaymentPlan.RIJVIA_2_WEEKS, requestId, "fr");
         assertThat(retry.purchaseId()).isEqualTo(durable.getId());
         assertThat(purchases.findById(durable.getId()).orElseThrow().getCheckoutLocale()).isEqualTo("nl");
     }
 
     @Test void expiredLinkRequiresNewRequestWithoutAnotherStripeSession() throws Exception {
-        Purchase purchase = purchase(PaymentPlan.RIJVIA_3_DAYS);
+        Purchase purchase = purchase(PaymentPlan.RIJVIA_2_WEEKS);
         when(clock.instant()).thenReturn(NOW.plus(2, ChronoUnit.DAYS));
         assertThatThrownBy(() -> checkout.checkout(user.getId(), purchase.getPlan(), purchase.getClientRequestId(), "ar"))
                 .isInstanceOfSatisfying(ResponseStatusException.class, ex -> assertThat(ex.getStatusCode().value()).isEqualTo(410));
@@ -234,7 +277,7 @@ class PaywallPostgreSqlIntegrationTest {
         try (var executor = Executors.newFixedThreadPool(2)) {
             var tasks = List.of(1, 2).stream().map(i -> executor.submit(() -> {
                 start.await();
-                return checkout.checkout(user.getId(), PaymentPlan.RIJVIA_3_DAYS, requestId, "en");
+                return checkout.checkout(user.getId(), PaymentPlan.RIJVIA_2_WEEKS, requestId, "en");
             })).toList();
             start.countDown();
             assertThat(tasks.get(0).get(15, TimeUnit.SECONDS)).isEqualTo(tasks.get(1).get(15, TimeUnit.SECONDS));
