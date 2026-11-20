@@ -25,7 +25,7 @@ import java.time.Instant;
 import com.readyroad.readyroadbackend.dto.response.HomeLessonOverviewResponse.CategorySummary;
 
 /**
- * Paid category-practice API for the theoretical question bank.
+ * Category-practice API for the theoretical question bank.
  *
  * The category code is an internal routing identifier.
  * User-facing clients must display the localized category name,
@@ -60,11 +60,12 @@ public class TheoryCategoryPracticeController {
         CategorySummary snapshot = new CategorySummary(summary.categoryCode(), summary.nameNl(),
                 summary.nameEn(), summary.nameFr(), summary.nameAr(), questions.size(),
                 summary.primary(), summary.displayOrder());
-        return ResponseEntity.ok(new CategoryExamResponse(snapshot, questions, Instant.now()));
+        return ResponseEntity.ok(new CategoryExamResponse(snapshot, questions, Instant.now(),
+                !theoryCategoryPracticeService.hasFullAccess(userId)));
     }
 
     public record CategoryExamResponse(CategorySummary category,
-            List<QuizQuestionDTO> questions, Instant serverTime) {
+            List<QuizQuestionDTO> questions, Instant serverTime, boolean preview) {
     }
 
     @GetMapping("/{categoryCode}/questions")

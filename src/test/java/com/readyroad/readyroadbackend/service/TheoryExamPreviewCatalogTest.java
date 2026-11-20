@@ -1,227 +1,61 @@
 package com.readyroad.readyroadbackend.service;
 
+import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import java.util.List;
+import java.util.stream.LongStream;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class TheoryExamPreviewCatalogTest {
 
-    private static final String CONFIG =
-            "127,60,62,364,220,20,136,41,428,65";
-
     @Test
-    void configuredIdsHaveTheApprovedStableOrder() {
-        QuizQuestionRepository repository =
-                mock(QuizQuestionRepository.class);
+    void selectsOneStableQuestionPerEligibleCategoryIncludingNewCategories() {
+        QuizQuestionRepository repository = mock(QuizQuestionRepository.class);
+        List<QuizQuestion> eligible = List.of(
+                question(9, 1, "TH01", 1), question(4, 1, "TH01", 1),
+                question(17, 2, "TH02", 2), question(8, 3, "TH11", 3));
+        for (String locale : List.of("en", "nl", "fr", "ar")) {
+            when(repository.findTheoryQuestionBankCandidates(locale)).thenReturn(eligible);
+        }
+        TheoryExamPreviewCatalog catalog = new TheoryExamPreviewCatalog(repository);
 
-        TheoryExamPreviewCatalog catalog =
-                new TheoryExamPreviewCatalog(
-                        repository,
-                        CONFIG);
-
-        assertEquals(
-                List.of(
-                        127L,
-                        60L,
-                        62L,
-                        364L,
-                        220L,
-                        20L,
-                        136L,
-                        41L,
-                        428L,
-                        65L),
-                catalog.questionIds());
+        assertEquals(List.of(4L, 17L, 8L), catalog.loadQuestions("en").stream()
+                .map(QuizQuestion::getId).toList());
+        assertEquals(8L, catalog.questionForCategory("TH11", "ar").getId());
     }
 
     @Test
-    void eligibleQuestionsAreReturnedInConfiguredOrderForRequestedLanguage() {
-        QuizQuestionRepository repository =
-                mock(QuizQuestionRepository.class);
+    void excludesQuestionsMissingInAnyLanguageAndComposesOnePerCategory() {
+        QuizQuestionRepository repository = mock(QuizQuestionRepository.class);
+        List<QuizQuestion> eligible = List.of(question(1, 1, "TH01", 1),
+                question(2, 1, "TH01", 1), question(3, 2, "TH11", 2));
+        when(repository.findTheoryQuestionBankCandidates("en")).thenReturn(eligible);
+        when(repository.findTheoryQuestionBankCandidates("nl")).thenReturn(eligible);
+        when(repository.findTheoryQuestionBankCandidates("fr")).thenReturn(eligible);
+        when(repository.findTheoryQuestionBankCandidates("ar")).thenReturn(eligible.subList(1, 3));
+        TheoryExamPreviewCatalog catalog = new TheoryExamPreviewCatalog(repository);
+        List<QuizQuestion> allocated = LongStream.range(100, 150)
+                .mapToObj(id -> question(id, 1, "TH01", 1)).toList();
 
-        TheoryExamPreviewCatalog catalog =
-                new TheoryExamPreviewCatalog(
-                        repository,
-                        CONFIG);
+        List<QuizQuestion> result = catalog.composeAttemptQuestions(allocated, 50, "ar");
 
-        when(repository.findTheoryQuestionBankCandidates("en"))
-                .thenReturn(List.of(
-                        question(9999L),
-                        question(65L),
-                        question(428L),
-                        question(41L),
-                        question(136L),
-                        question(20L),
-                        question(220L),
-                        question(364L),
-                        question(62L),
-                        question(60L),
-                        question(127L)));
-
-        List<Long> resultIds =
-                catalog.loadQuestions("en")
-                        .stream()
-                        .map(QuizQuestion::getId)
-                        .toList();
-
-        assertEquals(
-                List.of(
-                        127L,
-                        60L,
-                        62L,
-                        364L,
-                        220L,
-                        20L,
-                        136L,
-                        41L,
-                        428L,
-                        65L),
-                resultIds);
+        assertEquals(50, result.size());
+        assertEquals(List.of(2L, 3L), result.stream().limit(2).map(QuizQuestion::getId).toList());
+        assertEquals(100L, result.get(2).getId());
     }
 
-    @Test
-    void freeAttemptStartsWithApprovedTenAndAddsFortyAllocatedQuestions() {
-        QuizQuestionRepository repository =
-                mock(QuizQuestionRepository.class);
-
-        TheoryExamPreviewCatalog catalog =
-                new TheoryExamPreviewCatalog(
-                        repository,
-                        CONFIG);
-
-        List<QuizQuestion> previewQuestions =
-                catalog.questionIds()
-                        .stream()
-                        .map(TheoryExamPreviewCatalogTest::question)
-                        .toList();
-
-        when(repository.findTheoryQuestionBankCandidates("en"))
-                .thenReturn(previewQuestions);
-
-        List<QuizQuestion> allocatedQuestions =
-                java.util.stream.LongStream
-                        .range(1000L, 1050L)
-                        .mapToObj(TheoryExamPreviewCatalogTest::question)
-                        .toList();
-
-        List<QuizQuestion> result =
-                catalog.composeAttemptQuestions(
-                        allocatedQuestions,
-                        50,
-                        "en");
-
-        assertEquals(
-                50,
-                result.size());
-
-        assertEquals(
-                List.of(
-                        127L,
-                        60L,
-                        62L,
-                        364L,
-                        220L,
-                        20L,
-                        136L,
-                        41L,
-                        428L,
-                        65L),
-                result.stream()
-                        .limit(10)
-                        .map(QuizQuestion::getId)
-                        .toList());
-
-        assertEquals(
-                java.util.stream.LongStream
-                        .range(1000L, 1040L)
-                        .boxed()
-                        .toList(),
-                result.stream()
-                        .skip(10)
-                        .map(QuizQuestion::getId)
-                        .toList());
-
-        assertEquals(
-                50L,
-                result.stream()
-                        .map(QuizQuestion::getId)
-                        .distinct()
-                        .count());
-    }
-
-    @Test
-    void configuredQuestionUnavailableForRequestedLanguageFailsClosed() {
-        QuizQuestionRepository repository =
-                mock(QuizQuestionRepository.class);
-
-        TheoryExamPreviewCatalog catalog =
-                new TheoryExamPreviewCatalog(
-                        repository,
-                        CONFIG);
-
-        List<QuizQuestion> eligible =
-                new ArrayList<>(
-                        catalog.questionIds()
-                                .stream()
-                                .map(TheoryExamPreviewCatalogTest::question)
-                                .toList());
-
-        eligible.removeIf(
-                question ->
-                        question.getId().equals(65L));
-
-        when(repository.findTheoryQuestionBankCandidates("ar"))
-                .thenReturn(eligible);
-
-        IllegalStateException exception =
-                assertThrows(
-                        IllegalStateException.class,
-                        () -> catalog.loadQuestions("ar"));
-
-        assertEquals(
-                "Free theory preview is misconfigured for language ar; "
-                        + "unavailable question IDs: [65]",
-                exception.getMessage());
-    }
-
-    @Test
-    void configurationMustContainExactlyTenIds() {
-        QuizQuestionRepository repository =
-                mock(QuizQuestionRepository.class);
-
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> new TheoryExamPreviewCatalog(
-                        repository,
-                        "1,2,3,4,5,6,7,8,9"));
-    }
-
-    @Test
-    void configurationRejectsDuplicateIds() {
-        QuizQuestionRepository repository =
-                mock(QuizQuestionRepository.class);
-
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> new TheoryExamPreviewCatalog(
-                        repository,
-                        "1,2,3,4,5,6,7,8,9,9"));
-    }
-
-    private static QuizQuestion question(Long id) {
-        QuizQuestion question =
-                new QuizQuestion();
-
+    private static QuizQuestion question(long id, long categoryId, String code, int order) {
+        Category category = new Category();
+        category.setId(categoryId);
+        category.setCode(code);
+        category.setDisplayOrder(order);
+        QuizQuestion question = new QuizQuestion();
         question.setId(id);
-
+        question.setCategory(category);
         return question;
     }
 }

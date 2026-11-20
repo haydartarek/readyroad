@@ -198,7 +198,7 @@ public class GlobalExceptionHandler {
      * Handle FreeExamLimitReachedException.
      *
      * The exam remains IN_PROGRESS; the learner must obtain
-     * an active entitlement before accessing question 11+.
+     * an active entitlement before accessing questions beyond the category preview.
      *
      * HTTP 403 FORBIDDEN
      */

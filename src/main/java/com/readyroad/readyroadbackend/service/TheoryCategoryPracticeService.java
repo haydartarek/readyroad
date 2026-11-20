@@ -22,7 +22,7 @@ import java.util.Collections;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Paid practice flow for the ten canonical theoretical-exam categories.
+ * Category practice flow for active managed theoretical-exam categories.
  *
  * Category codes are internal identifiers only.
  * Presentation layers must render localized category names instead.
@@ -32,7 +32,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class TheoryCategoryPracticeService {
 
     private static final Pattern CANONICAL_THEORY_CATEGORY =
-            Pattern.compile("^TH(?:0[1-9]|10)$");
+            Pattern.compile("^TH[0-9]+$");
 
     private final CategoryRepository categoryRepository;
     private final QuizQuestionRepository quizQuestionRepository;
@@ -40,6 +40,7 @@ public class TheoryCategoryPracticeService {
     private final PracticeService practiceService;
     private final TheoryExamAccessService theoryExamAccessService;
     private final TheoryQuestionCoverageStore coverageStore;
+    private final TheoryExamPreviewCatalog previewCatalog;
 
     @Transactional(readOnly = true)
     public CategorySummary getSummary(String categoryCode, String languageCode) {
@@ -52,8 +53,12 @@ public class TheoryCategoryPracticeService {
     /** All currently deliverable questions, with no random-quiz count cap. */
     @Transactional(readOnly = true)
     public List<QuizQuestion> getExamQuestions(Long userId, String categoryCode, String languageCode) {
-        requireFullAccess(userId);
         Category category = requireActiveTheoryCategory(categoryCode);
+        requireAuthenticated(userId);
+        if (!theoryExamAccessService.hasFullAccess(userId)) {
+            QuizQuestion preview = previewCatalog.questionForCategory(category.getCode(), languageCode);
+            return preview == null ? List.of() : List.of(preview);
+        }
         List<Long> ids = coverageStore.findEligibleQuestionIds(category.getId(), languageCode);
         if (ids.isEmpty()) {
             return List.of();
@@ -84,7 +89,7 @@ public class TheoryCategoryPracticeService {
     }
 
     /**
-     * Submit an answer inside a paid category-practice flow.
+     * Submit an answer inside a category-practice flow.
      *
      * The question must belong to the requested category. This prevents
      * a client from mixing question IDs between category routes.
@@ -95,10 +100,9 @@ public class TheoryCategoryPracticeService {
             Long questionId,
             SubmitPracticeAnswerRequest request) {
 
-        requireFullAccess(userId);
-
         Category category =
                 requireActiveTheoryCategory(categoryCode);
+        requireAuthenticated(userId);
 
         QuizQuestion question =
                 quizQuestionRepository.findById(questionId)
@@ -117,6 +121,13 @@ public class TheoryCategoryPracticeService {
                     "QUESTION_CATEGORY_MISMATCH");
         }
 
+        if (!theoryExamAccessService.hasFullAccess(userId)) {
+            QuizQuestion preview = previewCatalog.questionForCategory(category.getCode(), "en");
+            if (preview == null || !Objects.equals(preview.getId(), questionId)) {
+                throw new ResponseStatusException(HttpStatus.FORBIDDEN, "PAID_ACCESS_REQUIRED");
+            }
+        }
+
         return practiceService.submitPracticeAnswer(
                 userId,
                 questionId,
@@ -128,7 +139,7 @@ public class TheoryCategoryPracticeService {
      * Compatibility path for the legacy random quiz endpoint.
      *
      * Non-theory questions preserve the historical public behavior.
-     * If any returned question belongs to TH01..TH10,
+     * If any returned question belongs to a managed TH category,
      * full paid access is required before delivery.
      */
     public List<QuizQuestion> getLegacyRandomQuestions(
@@ -233,19 +244,21 @@ public class TheoryCategoryPracticeService {
                 .matches();
     }
     private void requireFullAccess(Long userId) {
-
-        if (userId == null) {
-
-            throw new ResponseStatusException(
-                    HttpStatus.UNAUTHORIZED,
-                    "AUTHENTICATION_REQUIRED");
-        }
-
+        requireAuthenticated(userId);
         if (!theoryExamAccessService.hasFullAccess(userId)) {
-
             throw new ResponseStatusException(
                     HttpStatus.FORBIDDEN,
                     "PAID_ACCESS_REQUIRED");
+        }
+    }
+
+    public boolean hasFullAccess(Long userId) {
+        return userId != null && theoryExamAccessService.hasFullAccess(userId);
+    }
+
+    private void requireAuthenticated(Long userId) {
+        if (userId == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "AUTHENTICATION_REQUIRED");
         }
     }
 

@@ -80,6 +80,7 @@ services:
       - readyroad-backend-logs:/app/logs
       - readyroad-uploads:/app/public/images/quiz
       - readyroad-article-images:/app/data/editorial-images
+      - readyroad-signs-import:/app/data/signs_import
       - readyroad-lesson-media:/app/public/images/lessons
       - /opt/readyroad/secrets/google/marketing-service-account.json:/run/secrets/google/marketing-service-account.json:ro
     networks:
@@ -176,6 +177,9 @@ volumes:
   readyroad-article-images:
     external: true
     name: readyroad-article-images
+  readyroad-signs-import:
+    external: true
+    name: readyroad-signs-import
   readyroad-lesson-media:
     external: true
     name: readyroad-lesson-media

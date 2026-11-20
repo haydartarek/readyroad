@@ -35,28 +35,24 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 @Testcontainers
 class FreeExamPreviewPostgreSqlIntegrationTest {
 
-    private static final List<Long> FIXED_PREVIEW_IDS =
+    private static final List<Long> EXPECTED_CATEGORY_PREVIEW_IDS =
             List.of(
                     127L,
                     60L,
                     62L,
-                    364L,
                     220L,
                     20L,
                     136L,
                     41L,
-                    428L,
                     65L);
 
     /**
      * PostgreSQL migration fixtures currently expose TH01..TH08.
      *
-     * The production preview IDs remain exactly the approved ten IDs.
-     * Category assignment here is test-fixture inventory only; this
-     * integration test verifies preview ordering/access/paywall lifecycle,
-     * not production taxonomy classification.
+     * This integration test verifies one preview question for each seeded
+     * category, ordering, access, and the paywall lifecycle.
      *
-     * TH01 and TH02 intentionally receive two preview IDs so every
+     * TH01 and TH02 intentionally receive two candidate IDs so every
      * migration-backed category still has enough inventory for the
      * 50-question allocator.
      */
@@ -203,7 +199,7 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
     }
 
     @Test
-    void freePreviewUpgradesAndResumesSameExamAtQuestionEleven() {
+    void freePreviewUpgradesAndResumesSameExamAfterOneQuestionPerCategory() {
 
         // ========================================================
         // FREE start
@@ -230,13 +226,13 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
                         ExamAccessState.PREVIEW_ACTIVE);
 
         assertThat(started.getFreeQuestionLimit())
-                .isEqualTo(10);
+                .isEqualTo(EXPECTED_CATEGORY_PREVIEW_IDS.size());
 
         assertThat(started.getResumeQuestionOrder())
                 .isEqualTo(1);
 
         assertThat(started.getQuestions())
-                .hasSize(10);
+                .hasSize(EXPECTED_CATEGORY_PREVIEW_IDS.size());
 
         assertThat(
                 started.getQuestions()
@@ -244,7 +240,7 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
                         .map(ExamQuestionDTO::getQuestionId)
                         .toList())
                 .containsExactlyElementsOf(
-                        FIXED_PREVIEW_IDS);
+                        EXPECTED_CATEGORY_PREVIEW_IDS);
 
         assertThat(
                 jdbc.queryForObject("""
@@ -268,10 +264,10 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
 
 
         // ========================================================
-        // Finalize Q1-Q10 using timeout path
+        // Finalize the category preview using the timeout path
         // ========================================================
 
-        for (Long questionId : FIXED_PREVIEW_IDS) {
+        for (Long questionId : EXPECTED_CATEGORY_PREVIEW_IDS) {
             examService.recordQuestionTimeout(
                     examId,
                     questionId,
@@ -297,14 +293,14 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
                         ExamAccessState.FREE_LIMIT_REACHED);
 
         assertThat(paywall.getResumeQuestionOrder())
-                .isEqualTo(11);
+                .isEqualTo(EXPECTED_CATEGORY_PREVIEW_IDS.size() + 1);
 
         assertThat(paywall.getQuestions())
-                .hasSize(10);
+                .hasSize(EXPECTED_CATEGORY_PREVIEW_IDS.size());
 
         assertThat(paywall.getFinalizedQuestionIds())
                 .containsExactlyElementsOf(
-                        FIXED_PREVIEW_IDS);
+                        EXPECTED_CATEGORY_PREVIEW_IDS);
 
         Map<String, Object> pausedState =
                 jdbc.queryForMap("""
@@ -332,31 +328,31 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
 
 
         // ========================================================
-        // Q11 cannot leak to FREE learner
+        // The next question cannot leak to a free learner
         // ========================================================
 
-        Long questionElevenId =
+        Long nextQuestionId =
                 jdbc.queryForObject("""
                         SELECT question_id
                         FROM exam_simulation_questions
                         WHERE exam_id = ?
-                          AND question_order = 11
+                          AND question_order = ?
                         """,
                         Long.class,
-                        examId);
+                        examId, EXPECTED_CATEGORY_PREVIEW_IDS.size() + 1);
 
-        assertThat(questionElevenId)
+        assertThat(nextQuestionId)
                 .isNotNull();
 
         assertThat(
-                FIXED_PREVIEW_IDS)
+                EXPECTED_CATEGORY_PREVIEW_IDS)
                 .doesNotContain(
-                        questionElevenId);
+                        nextQuestionId);
 
         assertThatThrownBy(
                 () -> examService.recordQuestionPresented(
                         examId,
-                        questionElevenId,
+                        nextQuestionId,
                         userId))
                 .isInstanceOf(
                         FreeExamLimitReachedException.class);
@@ -423,7 +419,7 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
 
 
         // ========================================================
-        // First paid resume: SAME exam, Q11, 600 seconds
+        // First paid resume: same exam and remaining question time
         // ========================================================
 
         Instant beforeResume =
@@ -457,26 +453,26 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
                 .hasSize(50);
 
         assertThat(paid.getResumeQuestionOrder())
-                .isEqualTo(11);
+                .isEqualTo(EXPECTED_CATEGORY_PREVIEW_IDS.size() + 1);
 
         assertThat(paid.getFinalizedQuestionIds())
                 .containsExactlyElementsOf(
-                        FIXED_PREVIEW_IDS);
+                        EXPECTED_CATEGORY_PREVIEW_IDS);
 
         assertThat(paid.getExpiresAt())
                 .isAfterOrEqualTo(
-                        beforeResume.plusSeconds(599));
+                        beforeResume.plusSeconds((50 - EXPECTED_CATEGORY_PREVIEW_IDS.size()) * 15L - 1));
 
         assertThat(paid.getExpiresAt())
                 .isBeforeOrEqualTo(
-                        afterResume.plusSeconds(600));
+                        afterResume.plusSeconds((50 - EXPECTED_CATEGORY_PREVIEW_IDS.size()) * 15L));
 
         Instant firstPaidExpiry =
                 paid.getExpiresAt();
 
 
         // ========================================================
-        // Refresh cannot grant another 600 seconds
+        // Refresh cannot grant another answering window
         // ========================================================
 
         ExamStartResponse refreshed =
@@ -519,11 +515,11 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
     }
 
     @Test
-    void restartingFromTheExistingStartActionCreatesTheSameTenQuestionPreview() {
+    void restartingFromTheExistingStartActionCreatesTheSameCategoryPreview() {
         ExamStartResponse started = examService.startExamResponse(userId);
         Long pausedExamId = started.getExamId();
 
-        for (Long questionId : FIXED_PREVIEW_IDS) {
+        for (Long questionId : EXPECTED_CATEGORY_PREVIEW_IDS) {
             examService.recordQuestionTimeout(
                     pausedExamId,
                     questionId,
@@ -542,7 +538,7 @@ class FreeExamPreviewPostgreSqlIntegrationTest {
         assertThat(restarted.getResumeQuestionOrder()).isEqualTo(1);
         assertThat(restarted.getQuestions())
                 .extracting(ExamQuestionDTO::getQuestionId)
-                .containsExactlyElementsOf(FIXED_PREVIEW_IDS);
+                .containsExactlyElementsOf(EXPECTED_CATEGORY_PREVIEW_IDS);
 
         assertThat(jdbc.queryForObject(
                 "SELECT status FROM exam_simulations WHERE id = ?",

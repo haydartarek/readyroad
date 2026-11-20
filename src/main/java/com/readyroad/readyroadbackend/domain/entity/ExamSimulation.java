@@ -57,7 +57,7 @@ public class ExamSimulation extends BaseEntity {
     private boolean previewAttempt = false;
 
     /**
-     * Set once the free learner finalizes question 10.
+     * Set once the free learner finalizes the last category preview question.
      * While this is set and fullAccessResumedAt is null,
      * the global exam clock is paused at the paywall.
      */

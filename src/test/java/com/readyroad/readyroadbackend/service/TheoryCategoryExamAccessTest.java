@@ -33,6 +33,7 @@ class TheoryCategoryExamAccessTest {
     private final TheoryQuestionCoverageStore coverage = mock(TheoryQuestionCoverageStore.class);
     private final QuizService quiz = mock(QuizService.class);
     private final PracticeService practice = mock(PracticeService.class);
+    private final TheoryExamPreviewCatalog previewCatalog = mock(TheoryExamPreviewCatalog.class);
     private final Clock clock = mock(Clock.class);
     private TheoryCategoryPracticeService service;
     private QuizQuestion question;
@@ -53,12 +54,12 @@ class TheoryCategoryExamAccessTest {
         when(questions.findAllByIdWithOptionsAndCategory(List.of(501L))).thenReturn(List.of(question));
         when(questions.findById(501L)).thenReturn(Optional.of(question));
         service = new TheoryCategoryPracticeService(categories, questions, quiz, practice,
-                new TheoryExamAccessService(entitlements, users, clock), coverage);
+                new TheoryExamAccessService(entitlements, users, clock), coverage, previewCatalog);
     }
 
     @ParameterizedTest
     @EnumSource(PaymentPlan.class)
-    void everyPlanStopsBothDeliveryAndAnswersExactlyAtItsPurchasedExpiry(PaymentPlan plan) {
+    void everyPlanFallsBackToFreePreviewAtItsPurchasedExpiry(PaymentPlan plan) {
         User user = new User(); user.setRole(Role.USER);
         when(users.findById(USER_ID)).thenReturn(Optional.of(user));
         Instant expiry = NOW.plus(plan.days(), ChronoUnit.DAYS);
@@ -71,20 +72,24 @@ class TheoryCategoryExamAccessTest {
         service.submitAnswer(USER_ID, "TH01", 501L, new SubmitPracticeAnswerRequest(1L, 1));
         clearInvocations(practice, coverage, questions);
         when(clock.instant()).thenReturn(expiry);
-        denied(() -> service.getExamQuestions(USER_ID, "TH01", "en"));
-        denied(() -> service.submitAnswer(USER_ID, "TH01", 501L, new SubmitPracticeAnswerRequest(1L, 1)));
-        verifyNoInteractions(practice, coverage, questions);
+        when(previewCatalog.questionForCategory("TH01", "en")).thenReturn(question);
+        assertThat(service.getExamQuestions(USER_ID, "TH01", "en")).containsExactly(question);
+        service.submitAnswer(USER_ID, "TH01", 501L, new SubmitPracticeAnswerRequest(1L, 1));
+        verify(practice).submitPracticeAnswer(eq(USER_ID), eq(501L), any());
+        verifyNoInteractions(coverage);
     }
 
     @ParameterizedTest
     @EnumSource(value = Role.class, names = {"USER", "STUDENT"})
-    void regularMembersWithoutAnEntitlementCannotGetOrAnswerQuestions(Role role) {
+    void regularMembersWithoutAnEntitlementCanOnlyGetAndAnswerPreviewQuestion(Role role) {
         User user = new User(); user.setRole(role);
         when(users.findById(USER_ID)).thenReturn(Optional.of(user));
         when(entitlements.findById(USER_ID)).thenReturn(Optional.empty());
-        denied(() -> service.getExamQuestions(USER_ID, "TH01", "en"));
-        denied(() -> service.submitAnswer(USER_ID, "TH01", 501L, new SubmitPracticeAnswerRequest(1L, 1)));
-        verifyNoInteractions(coverage, questions, practice);
+        when(previewCatalog.questionForCategory("TH01", "en")).thenReturn(question);
+        assertThat(service.getExamQuestions(USER_ID, "TH01", "en")).containsExactly(question);
+        service.submitAnswer(USER_ID, "TH01", 501L, new SubmitPracticeAnswerRequest(1L, 1));
+        verify(practice).submitPracticeAnswer(eq(USER_ID), eq(501L), any());
+        verifyNoInteractions(coverage);
     }
 
     @ParameterizedTest

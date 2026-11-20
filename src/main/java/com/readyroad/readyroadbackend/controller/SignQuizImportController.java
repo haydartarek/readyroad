@@ -6,6 +6,9 @@ import com.readyroad.readyroadbackend.dto.SignImportResultDto;
 import com.readyroad.readyroadbackend.domain.entity.SignImportRun;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.SignQuizImportService;
+import com.readyroad.readyroadbackend.service.SignQuizImportService.SourceQuestion;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -43,6 +46,7 @@ public class SignQuizImportController {
 
     private final SignQuizImportService importService;
     private final BackendMessageService messages;
+    private final ObjectMapper objectMapper;
 
     // ── POST /api/admin/sign-quiz/import ────────────────────────────────────
 
@@ -119,6 +123,28 @@ public class SignQuizImportController {
                     log.warn("Sign not found: {}", code);
                     return errorResponse(messages.get("error.resource_not_found"));
                 });
+    }
+
+    @GetMapping("/signs/{code}/questions/{questionRef}")
+    public SourceQuestionPayload getQuestionSource(@PathVariable String code,
+            @PathVariable String questionRef) {
+        return toPayload(importService.getSourceQuestion(code, questionRef));
+    }
+
+    @PutMapping("/signs/{code}/questions/{questionRef}")
+    public SourceQuestionPayload updateQuestionSource(@PathVariable String code,
+            @PathVariable String questionRef, @RequestBody SourceQuestionPayload edit) {
+        return toPayload(importService.updateSourceQuestion(code, questionRef,
+                new SourceQuestion(objectMapper.valueToTree(edit.question()), edit.revision())));
+    }
+
+    public record SourceQuestionPayload(Map<String, Object> question, String revision) {
+    }
+
+    private SourceQuestionPayload toPayload(SourceQuestion source) {
+        return new SourceQuestionPayload(
+                objectMapper.convertValue(source.question(), new TypeReference<Map<String, Object>>() {}),
+                source.revision());
     }
 
     // ── GET /api/admin/sign-quiz/stats ──────────────────────────────────────

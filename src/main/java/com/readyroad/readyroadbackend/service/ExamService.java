@@ -152,7 +152,7 @@ public class ExamService {
                 // The existing exam-start action is also the free-preview
                 // restart action. Once the learner has declined payment,
                 // abandon that paused attempt before creating a new one so
-                // the fixed ten-question preview starts again at question 1.
+                // the category-based preview starts again at question 1.
                 activeExam.setStatus(ExamSimulation.ExamStatus.ABANDONED);
                 activeExam.setCompletedAt(null);
                 activeExam.setCorrectAnswers(null);
@@ -312,6 +312,24 @@ public class ExamService {
         return examQuestions;
     }
 
+    /** The persisted question order fixes the preview size for this attempt. */
+    private int freeQuestionLimit(ExamSimulation exam) {
+        return freeQuestionLimit(getExamQuestions(exam.getId()));
+    }
+
+    private int freeQuestionLimit(List<ExamSimulationQuestion> questions) {
+        Set<Long> seenCategories = new java.util.HashSet<>();
+        for (ExamSimulationQuestion item : questions) {
+            QuizQuestion question = item.getQuestion();
+            if (question == null || question.getCategory() == null
+                    || question.getCategory().getId() == null
+                    || !seenCategories.add(question.getCategory().getId())) {
+                break;
+            }
+        }
+        return seenCategories.size();
+    }
+
     /**
      * Check if user can start exam.
      *
@@ -468,7 +486,7 @@ public class ExamService {
         if (exam.isPreviewAttempt()
                 && !examAccessService.hasFullAccess(userId)
                 && answerRepository.countByExamId(examId)
-                        >= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+                        >= freeQuestionLimit(exam)) {
             throw new FreeExamLimitReachedException(examId, null);
         }
 
@@ -874,7 +892,7 @@ public class ExamService {
         ExamAccessState answerAccessState;
         if (fullAccess) {
             answerAccessState = ExamAccessState.FULL_ACTIVE;
-        } else if (totalAnswered >= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+        } else if (totalAnswered >= freeQuestionLimit(exam)) {
             answerAccessState = ExamAccessState.FREE_LIMIT_REACHED;
         } else {
             answerAccessState = ExamAccessState.PREVIEW_ACTIVE;
@@ -998,6 +1016,7 @@ public class ExamService {
 
         List<ExamSimulationQuestion> allQuestions =
                 getExamQuestions(exam.getId());
+        int previewLimit = freeQuestionLimit(allQuestions);
 
         List<ExamSimulationAnswer> finalizedAnswers =
                 answerRepository.findByExamId(exam.getId());
@@ -1014,7 +1033,7 @@ public class ExamService {
                         : allQuestions.stream()
                                 .filter(question ->
                                         question.getQuestionOrder()
-                                                <= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT)
+                                                <= previewLimit)
                                 .toList();
 
         List<Long> visibleFinalizedIds = visibleQuestions.stream()
@@ -1027,7 +1046,7 @@ public class ExamService {
                 (int) allQuestions.stream()
                         .filter(question ->
                                 question.getQuestionOrder()
-                                        <= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT)
+                                        <= previewLimit)
                         .filter(question ->
                                 finalizedIds.contains(question.getQuestionId()))
                         .count();
@@ -1048,7 +1067,7 @@ public class ExamService {
         if (fullAccess) {
             accessState = ExamAccessState.FULL_ACTIVE;
         } else if (finalizedPreviewCount
-                >= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+                >= previewLimit) {
             accessState = ExamAccessState.FREE_LIMIT_REACHED;
         } else {
             accessState = ExamAccessState.PREVIEW_ACTIVE;
@@ -1060,7 +1079,7 @@ public class ExamService {
                 && accessState == ExamAccessState.FREE_LIMIT_REACHED) {
 
             resumeQuestionOrder =
-                    TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT + 1;
+                    previewLimit + 1;
 
         } else {
 
@@ -1069,7 +1088,7 @@ public class ExamService {
                             .filter(question ->
                                     fullAccess
                                             || question.getQuestionOrder()
-                                                    <= TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT)
+                                                    <= previewLimit)
                             .filter(question ->
                                     !finalizedIds.contains(question.getQuestionId()))
                             .map(ExamSimulationQuestion::getQuestionOrder)
@@ -1085,7 +1104,7 @@ public class ExamService {
         response.setAccessMode(accessMode);
         response.setAccessState(accessState);
         response.setFreeQuestionLimit(
-                TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT);
+                previewLimit);
         response.setResumeQuestionOrder(resumeQuestionOrder);
         response.setFinalizedQuestionIds(visibleFinalizedIds);
 
@@ -1157,7 +1176,7 @@ public class ExamService {
         }
 
         if (examQuestion.getQuestionOrder()
-                > TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+                > freeQuestionLimit(exam)) {
 
             long finalizedCount =
                     answerRepository.countByExamId(
@@ -1189,7 +1208,7 @@ public class ExamService {
 
         if (fullAccess
                 || finalizedCount
-                        < TheoryExamPreviewCatalog.FREE_QUESTION_LIMIT) {
+                        < freeQuestionLimit(exam)) {
             return;
         }
 
@@ -1238,8 +1257,8 @@ public class ExamService {
     /**
      * Restarts only the remaining answering window after payment.
      *
-     * For the normal free-preview upgrade:
-     * 50 total - 10 finalized = 40  15s = 600 seconds.
+     * The remaining time follows the number of questions left after the
+     * category preview, at 15 seconds per question.
      *
      * Idempotent: once fullAccessResumedAt is set, refreshes do not
      * grant additional time.

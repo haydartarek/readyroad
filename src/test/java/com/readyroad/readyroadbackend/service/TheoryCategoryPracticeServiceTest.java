@@ -52,6 +52,9 @@ class TheoryCategoryPracticeServiceTest {
     @Mock
     private TheoryQuestionCoverageStore coverageStore;
 
+    @Mock
+    private TheoryExamPreviewCatalog previewCatalog;
+
     private TheoryCategoryPracticeService service;
 
     @BeforeEach
@@ -62,7 +65,8 @@ class TheoryCategoryPracticeServiceTest {
                 quizService,
                 practiceService,
                 theoryExamAccessService,
-                coverageStore);
+                coverageStore,
+                previewCatalog);
     }
 
     @Test
@@ -88,6 +92,74 @@ class TheoryCategoryPracticeServiceTest {
 
         verifyNoInteractions(categoryRepository);
         verifyNoInteractions(quizService);
+    }
+
+    @Test
+    void freeLearnerReceivesOneQuestionFromNewCategory() {
+        Category category = activeTheoryCategory(CATEGORY_ID, "TH11");
+        QuizQuestion preview = new QuizQuestion();
+        preview.setId(QUESTION_ID);
+        preview.setCategory(category);
+        when(categoryRepository.findByCode("TH11")).thenReturn(Optional.of(category));
+        when(theoryExamAccessService.hasFullAccess(USER_ID)).thenReturn(false);
+        when(previewCatalog.questionForCategory("TH11", "en")).thenReturn(preview);
+
+        assertEquals(List.of(preview), service.getExamQuestions(USER_ID, "TH11", "en"));
+        verifyNoInteractions(coverageStore);
+    }
+
+    @Test
+    void paidLearnerReceivesFullNewCategoryExam() {
+        Category category = activeTheoryCategory(CATEGORY_ID, "TH11");
+        QuizQuestion first = new QuizQuestion();
+        QuizQuestion second = new QuizQuestion();
+        when(categoryRepository.findByCode("TH11")).thenReturn(Optional.of(category));
+        when(theoryExamAccessService.hasFullAccess(USER_ID)).thenReturn(true);
+        when(coverageStore.findEligibleQuestionIds(CATEGORY_ID, "en")).thenReturn(List.of(1L, 2L));
+        when(quizQuestionRepository.findAllByIdWithOptionsAndCategory(List.of(1L, 2L)))
+                .thenReturn(List.of(first, second));
+
+        assertEquals(2, service.getExamQuestions(USER_ID, "TH11", "en").size());
+        verifyNoInteractions(previewCatalog);
+    }
+
+    @Test
+    void freeLearnerCannotAnswerAnyQuestionBeyondTheCategoryPreview() {
+        Category category = activeTheoryCategory(CATEGORY_ID, "TH11");
+        QuizQuestion requested = new QuizQuestion();
+        requested.setId(QUESTION_ID);
+        requested.setCategory(category);
+        QuizQuestion preview = new QuizQuestion();
+        preview.setId(777L);
+        preview.setCategory(category);
+        SubmitPracticeAnswerRequest request = new SubmitPracticeAnswerRequest();
+        when(categoryRepository.findByCode("TH11")).thenReturn(Optional.of(category));
+        when(quizQuestionRepository.findById(QUESTION_ID)).thenReturn(Optional.of(requested));
+        when(theoryExamAccessService.hasFullAccess(USER_ID)).thenReturn(false);
+        when(previewCatalog.questionForCategory("TH11", "en")).thenReturn(preview);
+
+        ResponseStatusException error = assertThrows(ResponseStatusException.class,
+                () -> service.submitAnswer(USER_ID, "TH11", QUESTION_ID, request));
+
+        assertEquals(HttpStatus.FORBIDDEN, error.getStatusCode());
+        verifyNoInteractions(practiceService);
+    }
+
+    @Test
+    void freeLearnerCanAnswerExactlyTheDeliveredPreviewQuestion() {
+        Category category = activeTheoryCategory(CATEGORY_ID, "TH11");
+        QuizQuestion preview = new QuizQuestion();
+        preview.setId(QUESTION_ID);
+        preview.setCategory(category);
+        SubmitPracticeAnswerRequest request = new SubmitPracticeAnswerRequest();
+        SubmitPracticeAnswerResponse expected = new SubmitPracticeAnswerResponse();
+        when(categoryRepository.findByCode("TH11")).thenReturn(Optional.of(category));
+        when(quizQuestionRepository.findById(QUESTION_ID)).thenReturn(Optional.of(preview));
+        when(theoryExamAccessService.hasFullAccess(USER_ID)).thenReturn(false);
+        when(previewCatalog.questionForCategory("TH11", "en")).thenReturn(preview);
+        when(practiceService.submitPracticeAnswer(USER_ID, QUESTION_ID, request)).thenReturn(expected);
+
+        assertSame(expected, service.submitAnswer(USER_ID, "TH11", QUESTION_ID, request));
     }
 
     @Test
@@ -165,7 +237,7 @@ class TheoryCategoryPracticeServiceTest {
                         ResponseStatusException.class,
                         () -> service.getQuestions(
                                 USER_ID,
-                                "TH11",
+                                "TH_AB",
                                 10));
 
         assertEquals(
@@ -242,9 +314,6 @@ class TheoryCategoryPracticeServiceTest {
 
         SubmitPracticeAnswerRequest request =
                 new SubmitPracticeAnswerRequest();
-
-        when(theoryExamAccessService.hasFullAccess(USER_ID))
-                .thenReturn(true);
 
         when(categoryRepository.findByCode("TH01"))
                 .thenReturn(Optional.of(requestedCategory));
@@ -332,9 +401,6 @@ class TheoryCategoryPracticeServiceTest {
 
         SubmitPracticeAnswerRequest request =
                 new SubmitPracticeAnswerRequest();
-
-        when(theoryExamAccessService.hasFullAccess(USER_ID))
-                .thenReturn(true);
 
         when(categoryRepository.findByCode("TH01"))
                 .thenReturn(Optional.of(category));

@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.enums.SignDifficulty;
@@ -28,7 +29,16 @@ import org.springframework.transaction.support.TransactionTemplate;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 import java.util.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 /**
  * Sign Quiz Importer — reads the signs_import/ directory and populates
@@ -270,6 +280,149 @@ public class SignQuizImportService {
                 fStatus, fCreated, fUpdated, fSkipped, fQCreated, fQUpdated, fECreated, fErrors);
 
         return saved;
+    }
+
+    public record SourceQuestion(JsonNode question, String revision) {
+    }
+
+    /** Read the canonical source instead of a transformed database projection. */
+    public synchronized SourceQuestion getSourceQuestion(String signCode, String questionRef) {
+        File directory = findSignSourceDirectory(signCode);
+        Path source = directory.toPath().resolve("questions.json");
+        try {
+            byte[] bytes = Files.readAllBytes(source);
+            JsonNode questions = mapper.readTree(bytes);
+            return new SourceQuestion(findSourceQuestion(questions, questionRef).deepCopy(), revision(bytes));
+        } catch (IOException e) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
+                    "Sign question source is unavailable", e);
+        }
+    }
+
+    /** Validate, persist and import only the edited sign, preserving its canonical JSON source. */
+    public synchronized SourceQuestion updateSourceQuestion(
+            String signCode, String questionRef, SourceQuestion edit) {
+        if (edit == null || edit.question() == null || edit.revision() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Question and revision are required");
+        }
+        File directory = findSignSourceDirectory(signCode);
+        Path source = directory.toPath().resolve("questions.json");
+        byte[] previous;
+        ArrayNode questions;
+        JsonNode signNode;
+        JsonNode examsNode;
+        try {
+            previous = Files.readAllBytes(source);
+            JsonNode parsed = mapper.readTree(previous);
+            if (!(parsed instanceof ArrayNode array)) {
+                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY,
+                        "questions.json must be an array");
+            }
+            questions = array.deepCopy();
+            signNode = mapper.readTree(new File(directory, "sign.json"));
+            examsNode = mapper.readTree(new File(directory, "exams.json"));
+        } catch (IOException e) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
+                    "Sign question source is unavailable", e);
+        }
+        if (!revision(previous).equals(edit.revision())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Sign question source changed; reload it");
+        }
+        if (!questionRef.equals(edit.question().path("question_id").asText())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Question reference cannot change");
+        }
+        int index = -1;
+        for (int i = 0; i < questions.size(); i++) {
+            if (questionRef.equals(questions.get(i).path("question_id").asText())) {
+                index = i;
+                break;
+            }
+        }
+        if (index < 0) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Sign question not found");
+        }
+        questions.set(index, edit.question().deepCopy());
+        try {
+            validateQuestionsJson(questions, directory.getName());
+            validateExamsJson(examsNode, extractQuestionRefs(questions, signNode),
+                    extractQuestionDifficulties(questions), directory.getName());
+        } catch (ImportValidationException e) {
+            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, e.getMessage(), e);
+        }
+        try {
+            byte[] updated = mapper.writerWithDefaultPrettyPrinter().writeValueAsBytes(questions);
+            writeAtomically(source, updated);
+            try {
+                RoadSign sign = roadSignRepo.findFirstActiveBySignCodeCaseSensitive(
+                        signNode.path("code").asText())
+                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                                "Imported sign not found"));
+                txTemplate.execute(status -> upsertQuestions(questions, sign));
+            } catch (RuntimeException syncError) {
+                try {
+                    writeAtomically(source, previous);
+                } catch (IOException restoreError) {
+                    syncError.addSuppressed(restoreError);
+                }
+                throw syncError;
+            }
+            return new SourceQuestion(edit.question().deepCopy(), revision(updated));
+        } catch (IOException e) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
+                    "Sign question source is not writable", e);
+        }
+    }
+
+    private File findSignSourceDirectory(String signCode) {
+        File[] directories = resolveImportDirectory().listFiles(File::isDirectory);
+        if (directories != null) {
+            for (File directory : directories) {
+                try {
+                    if (signCode.equalsIgnoreCase(mapper.readTree(new File(directory, "sign.json"))
+                            .path("code").asText())) {
+                        return directory;
+                    }
+                } catch (IOException ignored) {
+                    // Another incomplete directory does not block this sign.
+                }
+            }
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Sign source not found");
+    }
+
+    private JsonNode findSourceQuestion(JsonNode questions, String questionRef) {
+        if (questions != null && questions.isArray()) {
+            for (JsonNode question : questions) {
+                if (questionRef.equals(question.path("question_id").asText())) {
+                    return question;
+                }
+            }
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Sign question not found");
+    }
+
+    private static String revision(byte[] bytes) {
+        try {
+            return Base64.getUrlEncoder().withoutPadding().encodeToString(
+                    MessageDigest.getInstance("SHA-256").digest(bytes));
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("SHA-256 unavailable", e);
+        }
+    }
+
+    private static void writeAtomically(Path target, byte[] contents) throws IOException {
+        Path temporary = Files.createTempFile(target.getParent(), ".sign-question-", ".tmp");
+        try {
+            Files.write(temporary, contents);
+            try {
+                Files.move(temporary, target, StandardCopyOption.REPLACE_EXISTING,
+                        StandardCopyOption.ATOMIC_MOVE);
+            } catch (java.nio.file.AtomicMoveNotSupportedException e) {
+                Files.move(temporary, target, StandardCopyOption.REPLACE_EXISTING);
+            }
+        } finally {
+            Files.deleteIfExists(temporary);
+        }
     }
 
     private File resolveImportDirectory() {

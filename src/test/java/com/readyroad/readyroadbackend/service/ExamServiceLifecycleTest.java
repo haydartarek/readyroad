@@ -655,6 +655,16 @@ class ExamServiceLifecycleTest {
         when(questionRepository.findById(17L))
                 .thenReturn(Optional.of(question));
 
+        List<ExamSimulationQuestion> previewQuestions = new ArrayList<>();
+        for (long categoryId = 1; categoryId <= 10; categoryId++) {
+            ExamSimulationQuestion previewQuestion = examQuestion(
+                    question(categoryId, category(categoryId, "TH" + categoryId, "Category")));
+            previewQuestion.setQuestionOrder((int) categoryId);
+            previewQuestions.add(previewQuestion);
+        }
+        when(examQuestionRepository.findByExamIdOrderByQuestionOrder(42L))
+                .thenReturn(previewQuestions);
+
         when(answerRepository.countByExamId(42L))
                 .thenReturn(10L);
 
@@ -784,7 +794,7 @@ class ExamServiceLifecycleTest {
 
         when(examAccessService.hasFullAccess(7L)).thenReturn(false);
         when(examQuestionRepository.findByExamIdOrderByQuestionOrder(any()))
-                .thenReturn(List.of());
+                .thenReturn(List.of(examQuestion(question(1L, category(1L, "TH01", "Category")))));
         when(answerRepository.findByExamId(any())).thenReturn(List.of());
         when(examMapper.toStartResponse(any(), any()))
                 .thenReturn(new ExamStartResponse());

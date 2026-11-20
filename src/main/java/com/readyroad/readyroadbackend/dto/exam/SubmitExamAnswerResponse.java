@@ -58,7 +58,7 @@ public class SubmitExamAnswerResponse {
 
     /**
      * Allows the frontend to transition directly to the paywall
-     * after question 10 without requesting question 11.
+     * after the category preview without requesting a paid question.
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private ExamAccessState accessState;
